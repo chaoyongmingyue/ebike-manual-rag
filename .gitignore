@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+qdrant_db/.lock
+*.sqlite-journal
+.DS_Store
+Thumbs.db
+models/

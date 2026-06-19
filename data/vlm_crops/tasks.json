@@ -1,0 +1,317 @@
+[
+  {
+    "page": 5,
+    "item": 13,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\11c5d8aa65dc8e7da2759bb3c649879919092d7d00ecb4ef4589387e6e8363b3.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P5_I13_image.jpg"
+  },
+  {
+    "page": 6,
+    "item": 1,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\a2cc7486d32ae06deac4d184eba4e62fa1689fdc14f2c17a083aa136e39c93d1.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P6_I1_image.jpg"
+  },
+  {
+    "page": 6,
+    "item": 3,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\32461479f2356b604c4fc90071ce1ddb7c23c12eef2fe03dc989101556229768.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P6_I3_image.jpg"
+  },
+  {
+    "page": 6,
+    "item": 5,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\ea8bb2ea5122073ff4f98a36d068aa831375595df626cffd1bc5aaee5afd0724.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P6_I5_image.jpg"
+  },
+  {
+    "page": 7,
+    "item": 1,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\aa38853b037fbcc3371bc36182cc35b97cf73495a251be1d0bc6bb3a001c719c.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P7_I1_image.jpg"
+  },
+  {
+    "page": 7,
+    "item": 3,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\697ae2d2326590bf895e6c0c6fd3ac0643fd19975ca6e70a53915e0505db99c0.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P7_I3_image.jpg"
+  },
+  {
+    "page": 9,
+    "item": 1,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\a38ec4109aed4e8221f400bb8a94236cd7ca67da860da08f31f5b4664402adb8.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P9_I1_image.jpg"
+  },
+  {
+    "page": 10,
+    "item": 0,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\5c4ac3c889dc68b9a5c21a3625e646874bcb14d4b8e289a390ccb296a041ff15.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P10_I0_image.jpg"
+  },
+  {
+    "page": 11,
+    "item": 7,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\f8b8193600b9b41a059c8581a5ffa33455fff67f8ae5b212badebcad5b2b613d.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P11_I7_image.jpg"
+  },
+  {
+    "page": 11,
+    "item": 8,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\8f116b64ac88fc4d5e002a8740f91c6af0f78c391b4f63027d4690d19485776e.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P11_I8_image.jpg"
+  },
+  {
+    "page": 11,
+    "item": 9,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\198c13dcc05f796364741e64c22d3778d131fb69e58e2cfb22f7b4669ce0ea5a.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P11_I9_image.jpg"
+  },
+  {
+    "page": 12,
+    "item": 2,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\b9b6ad647e0d42a8742fe67559933d0ff1606f0d91c10e2ace67d32149477c50.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P12_I2_image.jpg"
+  },
+  {
+    "page": 13,
+    "item": 3,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\3298f7eed3fc9b2945db3c27333782ccf8ccf8c9902df96412f8d87665fafcbf.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P13_I3_image.jpg"
+  },
+  {
+    "page": 13,
+    "item": 8,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\15e8e2648b06218fe811efd7cecb4f10dc9c6275bf8f031c4e26bb9523fa8822.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P13_I8_image.jpg"
+  },
+  {
+    "page": 13,
+    "item": 9,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\7f7136de61bf2209fe552f2730419f65c1330cc307d40e13f2324f1158948c64.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P13_I9_image.jpg"
+  },
+  {
+    "page": 13,
+    "item": 10,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\c53e89a7f482082123e8c93ecbe8cd1f50220ccb063261c96059e1f0d305c6c4.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P13_I10_image.jpg"
+  },
+  {
+    "page": 14,
+    "item": 1,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\a23d1f6454967e5fbcd7d908a73538b209719fe6fbb14b977b5d43fff742d59e.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P14_I1_image.jpg"
+  },
+  {
+    "page": 14,
+    "item": 2,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\c433d4f239698ac0ca1e2a099be938833141d06b3867bfd095daa0ba1048c7b3.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P14_I2_image.jpg"
+  },
+  {
+    "page": 14,
+    "item": 5,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\1f2908feddda6f360ce818a486dda219357cc5de3b91e841bed7d7d2e42c338d.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P14_I5_image.jpg"
+  },
+  {
+    "page": 14,
+    "item": 10,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\0d700feec9fab1b66c89d6b59b9e7cf60dd336adb5d4e05c74c6a7c2bd6461b2.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P14_I10_image.jpg"
+  },
+  {
+    "page": 15,
+    "item": 1,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\48a0b84fdc2ef84b25e7fabaad525dc9a1f5e164c885402903a1becc701355c1.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P15_I1_image.jpg"
+  },
+  {
+    "page": 15,
+    "item": 8,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\b79eeb8485ebc08916bb501190a5c12e8f5449ecfaa120d0641ebfe4f2f15f19.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P15_I8_image.jpg"
+  },
+  {
+    "page": 16,
+    "item": 3,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\a36626bfa32c0d4cdf96afbeb1ec012396965b0022863159278b133f15fc8b8b.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P16_I3_image.jpg"
+  },
+  {
+    "page": 16,
+    "item": 6,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\a0ec600a848b1bddec68c1acff8928321ca04a99d2ab157cc7fe546d4154069f.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P16_I6_image.jpg"
+  },
+  {
+    "page": 16,
+    "item": 8,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\6fe0f42a1fb86048c5593fb471d18b4b3b18f5fddf6fe37434a7b5dc0e656068.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P16_I8_image.jpg"
+  },
+  {
+    "page": 16,
+    "item": 10,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\d567be368492f238606f773daea101f5be373cb83cb5d50dd382007a58c29a61.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P16_I10_image.jpg"
+  },
+  {
+    "page": 17,
+    "item": 2,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\78ccc70ca5f9fb2d1c96247953bc3980acf141316a77c80424a4816c85be2e19.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P17_I2_image.jpg"
+  },
+  {
+    "page": 18,
+    "item": 2,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\5bcb5458955c4c51ebeb3d042baea1bd875a68599c9d5372ed40b772550c2ca0.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P18_I2_image.jpg"
+  },
+  {
+    "page": 18,
+    "item": 10,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\e40d6dbdf89b79dd565abbb49b072fe027b0ef8a52cbd162dd2c9940a579766f.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P18_I10_image.jpg"
+  },
+  {
+    "page": 18,
+    "item": 13,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\a6f5a4fc4c5ed4b88877160b9601c212bdbc268d66334d0d40d82f755f2f4e6d.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P18_I13_image.jpg"
+  },
+  {
+    "page": 18,
+    "item": 14,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\526d056689bb8d83414e008820e9f5a2ab4ea943fb92629270b21b1fbfcf7837.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P18_I14_image.jpg"
+  },
+  {
+    "page": 19,
+    "item": 18,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\6ca653ada0740679e8393cffdff66d510fd1cad148e32e9650367b6fe4a255f2.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P19_I18_image.jpg"
+  },
+  {
+    "page": 21,
+    "item": 11,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\6ffbd4706923c29f30a9892a5696efb9eba6ea17c43ba4126142a377a9b0d421.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P21_I11_image.jpg"
+  },
+  {
+    "page": 21,
+    "item": 15,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\3ca5b7c1fba7cb27dda09fd454392fdad1b6c5177ed9d361e0e685d3bbb61165.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P21_I15_image.jpg"
+  },
+  {
+    "page": 22,
+    "item": 1,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\d707279f4c25bc7324d36662ee811f16fb5d2b9a590671d1bbeb8154af84d194.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P22_I1_image.jpg"
+  },
+  {
+    "page": 22,
+    "item": 3,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\d4153f2fe6e835e766a9e20d38482b3635d77cf0716643f2c0cd2c479e0ab805.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P22_I3_image.jpg"
+  },
+  {
+    "page": 22,
+    "item": 5,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\0b2674d0e45460844b22c92c2cfbd67f1b1beadc0ed0e034a68606a07bd9fcc4.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P22_I5_image.jpg"
+  },
+  {
+    "page": 23,
+    "item": 1,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\1118fccd3d6e7f7d728a00398c73e87ed02802090c82cbbc4b9564e0c1788469.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P23_I1_image.jpg"
+  },
+  {
+    "page": 23,
+    "item": 3,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\aba3eaf2f4c27ade6af5a41c3c7533884f30552d864a5531be4c12c13e0de4b9.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P23_I3_image.jpg"
+  },
+  {
+    "page": 23,
+    "item": 5,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\1f21625c645b15cafed1424f26a963caa060d0bb740fd660a0d6ae799b509fc1.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P23_I5_image.jpg"
+  },
+  {
+    "page": 24,
+    "item": 3,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\cbe87c5af4814a20ce7ddb7e0bdd66c88afa61ab6d6265df2605e78d180ed623.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P24_I3_image.jpg"
+  },
+  {
+    "page": 24,
+    "item": 5,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\5746e8444db82bda33f9e4cb4d43db54f7d2d2363923738cec1a9013f957f5de.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P24_I5_image.jpg"
+  },
+  {
+    "page": 29,
+    "item": 0,
+    "type": "table",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P29_I0_table.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P29_I0_table.jpg"
+  },
+  {
+    "page": 32,
+    "item": 2,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\4703e15e571c439b4690e7b0930c64b4eb24a30b268bf90844f6d6fd7654efc2.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P32_I2_image.jpg"
+  },
+  {
+    "page": 34,
+    "item": 0,
+    "type": "image",
+    "image": "D:/Mineru/out/电动自行车说明书\\auto\\images\\587bfc01d3e70cdff74f163d5ab7ee929a12b452f39fe160dd2011804f45b875.jpg",
+    "target": "D:/Mineru/out/电动自行车说明书\\auto\\vlm_crops\\P34_I0_image.jpg"
+  }
+]

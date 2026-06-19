@@ -1,0 +1,2279 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "part001",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 1 安全注意事项",
+      "token_count": 4,
+      "parent_id": null,
+      "child_ids": [
+        "txt002",
+        "txt004",
+        "txt005",
+        "stp008",
+        "txt009",
+        "stp011"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 1",
+        "section": "安全注意事项",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt002",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "尊敬的用户朋友，为了您和家人的安全，防止意外事故发生，请务必仔细阅读并遵守以下安全注意事项，否则引起的一切后果，由您自行承担，本公司概不负责。\n\n## 行车安全",
+      "token_count": 20,
+      "parent_id": "part001",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 1",
+        "section": "行车安全",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt004",
+      "semantic_type": "风险警告",
+      "content_type": "warning",
+      "text": "## 注意：\n\n1. 禁止16周岁以下人员驾驶电动自行车上道路行驶；\n\n\n2. 骑行时必须佩戴头盔，建议佩戴护目镜等防护用品；\n\n电动摩托车的细节包括：\n- 前部有圆形大灯及挡风板结构；\n- 车身呈流线型设计，中部设有座椅；\n- 两轮均带有轮胎，后轮可见刹车装置或尾灯等部件；\n- 整体线条简洁流畅，突出车辆的基本形态。\n\n背景为纯白色，画面四周环绕着虚线边框（四角略带圆润），起到装饰性边框效果。**画面中未包含任何文字信息**，仅由黑白线条构成人物与交通工具的简笔画风格表达。\n\n\n3. 在湿滑地面/下坡骑行时，防止刹车抱死，引起摔车，请勿急刹。\n\n电动摩托车的细节包括：\n- 前部有圆形大灯及挡风板结构；\n- 车身呈流线型设计，中部设有座椅；\n- 两轮均带有轮胎，后轮可见刹车装置或尾灯等部件；\n- 整体线条简洁流畅，突出车辆的基本形态。\n\n背景为纯白色，画面四周环绕着虚线边框（四角略带圆润），起到装饰性边框效果。**画面中未包含任何文字信息**，仅由黑白线条构成人物与交通工具的简笔画风格表达。\n\n\n4. 雨、雪天骑行，制动距离会延长，易发生侧滑，请减速慢行；暴雨等恶劣天气，尽量避免出行。\n\n电动摩托车的细节包括：\n- 前部有圆形大灯及挡风板结构；\n- 车身呈流线型设计，中部设有座椅；\n- 两轮均带有轮胎，后轮可见刹车装置或尾灯等部件；\n- 整体线条简洁流畅，突出车辆的基本形态。\n\n背景为纯白色，画面四周环绕着虚线边框（四角略带圆润），起到装饰性边框效果。**画面中未包含任何文字信息**，仅由黑白线条构成人物与交通工具的简笔画风格表达。\n\n\n5. 转弯时请勿将内侧的脚蹬放在最低处，以防脚蹬和地面接触导致车辆倾倒;\n\n画面中央是一位骑电动车的人物简笔画：人物佩戴白色头盔，身穿长袖上衣和长裤，双手握住车把，身体略微倾斜，呈骑行姿态。电动车为两轮结构，前轮与后轮清晰可见，车身以黑色轮廓线勾勒出基本形态（包括车架、座椅等）。\n\n画面左下角有一个**红色箭头**，从电动车前轮下方指向画面下方，可能示意在转弯时重心转移的方向或受力方向。",
+      "token_count": 218,
+      "parent_id": "part001",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "caution",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 1",
+        "section": "行车安全",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "caution"
+      }
+    },
+    {
+      "chunk_id": "txt005",
+      "semantic_type": "风险警告",
+      "content_type": "warning",
+      "text": "图片中**无任何文字信息**，仅包含图形符号与线条构成的示意图。\n\n\n6. 车辆在行驶时严禁将手、脚或物品伸入车轮、链条、脚蹬等旋转部件及间隙中，以防危机人身安全。\n\n画面中央是一位骑电动车的人物简笔画：人物佩戴白色头盔，身穿长袖上衣和长裤，双手握住车把，身体略微倾斜，呈骑行姿态。电动车为两轮结构，前轮与后轮清晰可见，车身以黑色轮廓线勾勒出基本形态（包括车架、座椅等）。\n\n画面左下角有一个**红色箭头**，从电动车前轮下方指向画面下方，可能示意在转弯时重心转移的方向或受力方向。\n\n图片中**无任何文字信息**，仅包含图形符号与线条构成的示意图。\n\n## 使用安全事项\n\n## 警告：",
+      "token_count": 73,
+      "parent_id": "part001",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "caution",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 1",
+        "section": "行车安全",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "caution"
+      }
+    },
+    {
+      "chunk_id": "stp008",
+      "semantic_type": "故障诊断",
+      "content_type": "steps",
+      "text": "1. 禁止将电动车停放在建筑门厅、楼梯、走道、安全出口等区域，堵塞通道\n\n2. 严格遵守道路交通法规，谨慎驾驶，保持车距；禁止超速、闯红灯、逆向行驶；\n\n3. 电动自行车应在非机动车道内行驶，最高时速不得超过15km/h；在没有非机动车道的道路上，应靠车行道的右侧行驶；\n\n4. 请勿将电动自行车借给不会操纵的人员驾驶，以免发生人身伤害；\n\n5. 电动自行车应当按法律法规规定搭载人员或物品。\n\n6. 夜间骑行必须开启大灯，车距保持50米以上，能够熟练进行远近光切换；发现对面有车辆、行人时要减速，需开启近光，若对方车辆灯光使自己目眩，要立即靠边行驶，或停车避让；\n\n7. 禁止酒后驾驶，患有高血压、疝气、脑震荡后遗症、癫痫病以及血管病等易突发疾病，请勿驾驶；\n\n8. 如果驾驶时发生异常，请立刻停止驾驶。并及时联系售后服务，在找出异常原因并修复前，请勿骑行。",
+      "token_count": 95,
+      "parent_id": "part001",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": "8. 如果驾驶时发生异常，请立刻停止驾驶。并及时联系售后服务",
+      "repair_action": "在找出异常原因并修复前，请勿骑行。",
+      "repair_level": "经销商/用户",
+      "risk_level": null,
+      "fault_triplet": [
+        {
+          "symptom": "8. 如果驾驶时发生异常，请立刻停止驾驶。并及时联系售后服务",
+          "cause": "",
+          "action": "在找出异常原因并修复前，请勿骑行。"
+        }
+      ],
+      "metadata": {
+        "part": "PART 1",
+        "section": "使用安全事项",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt009",
+      "semantic_type": "风险警告",
+      "content_type": "warning",
+      "text": "## 危险：\n\n禁止将电动车在居住建筑内和家庭室内充电和停放，充电时应远离可燃物，充电时间不宜过长；充电过程中，若有异味、温度过高、电池出现鼓包等现象时，请立即停止充电，并送至雅迪授权服务商检修。\n\n## 注意：",
+      "token_count": 26,
+      "parent_id": "part001",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "danger",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 1",
+        "section": "使用安全事项",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "danger"
+      }
+    },
+    {
+      "chunk_id": "stp011",
+      "semantic_type": "操作步骤",
+      "content_type": "steps",
+      "text": "1. 骑行时，保持正确坐姿，双手握紧车把，双脚踩在脚踏板上;\n\n2. 骑行时，保持车距，通过交叉路口时减速慢行 ，转弯前应发出转弯信号；\n\n3. 骑行过路口时，注意礼让行人，避让机动车；\n\n4. 水洗的注意事项：清洗前断开整车电源，禁止使用高压水枪冲洗，以免造成内部电子部件和线路进水造成事故隐患。",
+      "token_count": 37,
+      "parent_id": "part001",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 1",
+        "section": "使用安全事项",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "part012",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 2 部件说明",
+      "token_count": 3,
+      "parent_id": null,
+      "child_ids": [
+        "txt013",
+        "tbl014",
+        "txt015",
+        "tbl016",
+        "txt017",
+        "txt019",
+        "txt022",
+        "txt025"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "部件说明",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt013",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "这是一张摩托车的线稿示意图，采用黑白线条绘制，展示一辆踏板摩托车的侧面视图。图像通过编号标注了不同部件的位置，具体如下：\n\n### 顶部编号（1-7）\n从左至右依次排列，每个编号通过垂直线指向摩托车对应部位：\n- **1**：位于最左侧，指向前轮上方左侧区域，可能对应转向灯或前叉上的部件。\n- **2**：紧邻编号1右侧，指向车把左侧部分，可能是仪表盘或控制装置的位置。\n- **3**：位于车把右侧，指向后视镜或仪表盘区域。\n- **4**：指向车身中部偏上位置，可能对应座椅上方的储物空间或车体结构。\n- **5**：指向车身右侧下方区域，关联减震器支架或后轮附近的部件。\n- **6**：位于车尾附近，可能指示尾灯的位置。\n- **7**：位于最右侧，指向车尾末端，可能是牌照架或尾灯下方的结构。\n\n### 底部编号（8-18）\n从右至左依次排列（因图像为侧面视图，右侧为后轮），每个编号通过垂直线指向摩托车下部部件：\n- **8**：最右侧，指向后轮外侧轮胎边缘。\n- **9**：指向后轮内侧区域，可能对应刹车盘或轮毂中心。\n- **10**：指向后轮上方的传动部件（如链条或齿轮）。\n- **11**：指向车架右侧下方，可能是减震器连接点。\n- **12**：指向脚踏板位置，用于骑行者踩踏。\n- **13**：指向车架中部偏下区域，可能对应弹簧减震器的位置（摩托车后轮通常配备减震器）。\n- **14**：指向车架底部的支撑结构，确保车辆稳定。\n- **15**：指向车身左侧下方区域，可能是座椅下方的储物空间或固定部件。\n- **16**：指向前轮上方区域，可能对应前刹车盘或前叉结构。\n- **17**：指向前轮内侧区域，可能为轮毂中心位置。\n- **18**：指向前轮外侧轮胎边缘。\n\n### 整体内容说明\n图像以简洁的线条勾勒出摩托车的主要结构：车头部分包含车把、仪表盘和转向灯；车身中部设有座椅及储物空间；后部可见尾灯、减震器、传动系统（链条）以及前后",
+      "token_count": 209,
+      "parent_id": "part012",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "部件说明",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl014",
+      "semantic_type": "参数查询",
+      "content_type": "table",
+      "text": "[上下文] 这是一张摩托车的线稿示意图，采用黑白线条绘制，展示一辆踏板摩托车的侧面视图。图像通过编号标注了不同部件的位置，具体如下： ### 顶部编号（1-7） 从左至右依次排列，每个编号通过垂直线指向摩托车对应部位： - **1**：位于最左侧，指向前轮上方左侧区域，可能对应转向灯或前叉上的部件。 - **2**：紧邻编号1右侧，指向车把左侧部分，可能是仪表盘或控制装置的位置。 - **3**：位于车把右侧，指向后视镜或仪表盘区域。 - **4**：指向车身中部偏上位置，可能对应座椅上方的储物空间或车体结构。 - **5**：指向车身右侧下方区域，关联减震器支架或后轮附近的部件。 - **6**：位于车尾附近，可能指示尾灯的位置。 - **7**：位于最右侧，指向车尾末端，可能是牌照架或尾灯下方的结构。 ### 底部编号（8-18） 从右至左依次排列（因图像为侧面视图，右侧为后轮），每个编号通过垂直线指向摩托车下部部件： - **8**：最右侧，指向后轮外侧轮胎边缘。 - **9**：指向后轮内侧区域，可能对应刹车盘或轮毂中心。 - **10**：指向后轮上方的传动部件（如链条或齿轮）。 - **11**：指向车架右侧下方，可能是减震器连接点。 - **12**：指向脚踏板位置，用于骑行者踩踏。 - **13**：指向车架中部偏下区域，可能对应弹簧减震器的位置（摩托车后轮通常配备减震器）。 - **14**：指向车架底部的支撑结构，确保车辆稳定。 - **15**：指向车身左侧下方区域，可能是座椅下方的储物空间或固定部件。 - **16**：指向前轮上方区域，可能对应前刹车盘或前叉结构。 - **17**：指向前轮内侧区域，可能为轮毂中心位置。 - **18**：指向前轮外侧轮胎边缘。 ### 整体内容说明 图像以简洁的线条勾勒出摩托车的主要结构：车头部分包含车把、仪表盘和转向灯；车身中部设有座椅及储物空间；后部可见尾灯、减震器、传动系统（链条）以及前后\n\n| 1前泥板 | 7后尾灯 13侧支架 |\n| --- | --- |\n| 2前照灯 | 8后反射器 14蓄电池 |\n| 3方向把 | 9后轮胎 15 VIN码 |\n| 4衣帽钩 | 10电动机 16前轮胎 |\n| 5座垫 | 11后減震 17 减震前叉 |\n| 6后衣架 | 12主支架 18前碟刹盘 |",
+      "token_count": 249,
+      "parent_id": "part012",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "部件说明",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt015",
+      "semantic_type": "部件说明",
+      "content_type": "text",
+      "text": "图中通过数字标号（1至9）对关键部件进行指示：\n- **标号1**：位于车头最左侧，是一个带有条纹的圆柱形结构，推测为前轮区域或前灯罩。\n- **标号2**：位于车头右侧中部，靠近车身主体位置，可能对应控制手柄或仪表盘区域。\n- **标号3、4、5、6**：从左至右依次排列在车辆上方（俯视图中为顶部），这些标号指向车把上的部件，如刹车把手、油门把手等。\n- **标号7**：位于车辆下方中部偏左位置，可能对应车把下方的脚踏板或支架结构。\n- **标号8**：位于车辆下方中部偏右位置，推测为另一处控制部件或支撑结构。\n- **标号9**：位于车辆右侧下方，可能指向尾部区域（如后轮、尾灯等）。\n\n此外，车身中间部分存在网格状的结构区域，该区域与“310”标识相邻，可能是仪表盘或控制面板。整个示意图通过简洁的线条和数字标注，清晰展示了电动车的关键部位布局及相对位置关系。",
+      "token_count": 96,
+      "parent_id": "part012",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "部件说明",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl016",
+      "semantic_type": "概述说明",
+      "content_type": "table",
+      "text": "[上下文] 图中通过数字标号（1至9）对关键部件进行指示： - **标号1**：位于车头最左侧，是一个带有条纹的圆柱形结构，推测为前轮区域或前灯罩。 - **标号2**：位于车头右侧中部，靠近车身主体位置，可能对应控制手柄或仪表盘区域。 - **标号3、4、5、6**：从左至右依次排列在车辆上方（俯视图中为顶部），这些标号指向车把上的部件，如刹车把手、油门把手等。 - **标号7**：位于车辆下方中部偏左位置，可能对应车把下方的脚踏板或支架结构。 - **标号8**：位于车辆下方中部偏右位置，推测为另一处控制部件或支撑结构。 - **标号9**：位于车辆右侧下方，可能指向尾部区域（如后轮、尾灯等）。 此外，车身中间部分存在网格状的结构区域，该区域与“310”标识相邻，可能是仪表盘或控制面板。整个示意图通过简洁的线条和数字标注，清晰展示了电动车的关键部位布局及相对位置关系。\n\n| 1前照灯 | 4调速转把 7左把套 |\n| --- | --- |\n| 2前转向灯 5挡风板 | 8左后刹把 |\n| 3 右前剎把 | 6仪表 9充电孔 |",
+      "token_count": 118,
+      "parent_id": "part012",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "部件说明",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt017",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "## VIN码\n\n示例：77942××××××××××\n\n高度7mm 深度0.2mm\n\nVIN打刻位置：车架主梁管\n\n电动机编码打刻电动机编码位置：电动机边盖或轮辋\n\n## 车辆铭牌\n\n铭牌安装位置：铆接在后平叉右侧",
+      "token_count": 27,
+      "parent_id": "part012",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "VIN码",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt019",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### 主要结构与部件：\n1. **顶部固定连接部分**\n- 顶部有一个长条状构件，其顶端连接着一个小方块（可能是安装孔或固定端），旁边还附有一个钩子状部件（类似卡扣设计），用于与其他结构连接。\n\n2. **中间连杆部分**\n- 一根较长的直杆从顶部连接处向下延伸，构成主要运动路径。\n- 连杆中部有一个圆点标记，表示铰接点（即转动关节），表明该部位可自由旋转。\n\n3. **底部支撑部分**\n- 底部是一个水平长条形底座，其末端连接着一个圆形转轴符号（通常代表轴承或转动部件）。\n- 转轴处有明显的圆圈标记，暗示此处为固定支点，允许机构绕该点转动。\n\n4. **红色箭头指示**\n- 图中有一支**红色箭头**指向连杆的下部区域，可能表示施加力的方向、运动轨迹或作用点（例如：外力推动连杆时的受力方向）。\n\n### 文字信息：\n- 整个图像中**未包含任何文字内容**（如标签、说明文字、字母编号等），仅由线条、几何形状和箭头构成，属于纯示意图类型。\n\n### 总结：",
+      "token_count": 108,
+      "parent_id": "part012",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "车辆铭牌",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt022",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### 主要结构与部件：\n1. **顶部固定连接部分**\n- 顶部有一个长条状构件，其顶端连接着一个小方块（可能是安装孔或固定端），旁边还附有一个钩子状部件（类似卡扣设计），用于与其他结构连接。\n\n2. **中间连杆部分**\n- 一根较长的直杆从顶部连接处向下延伸，构成主要运动路径。\n- 连杆中部有一个圆点标记，表示铰接点（即转动关节），表明该部位可自由旋转。\n\n3. **底部支撑部分**\n- 底部是一个水平长条形底座，其末端连接着一个圆形转轴符号（通常代表轴承或转动部件）。\n- 转轴处有明显的圆圈标记，暗示此处为固定支点，允许机构绕该点转动。\n\n4. **红色箭头指示**\n- 图中有一支**红色箭头**指向连杆的下部区域，可能表示施加力的方向、运动轨迹或作用点（例如：外力推动连杆时的受力方向）。\n\n### 文字信息：\n- 整个图像中**未包含任何文字内容**（如标签、说明文字、字母编号等），仅由线条、几何形状和箭头构成，属于纯示意图类型。\n\n### 总结：",
+      "token_count": 108,
+      "parent_id": "part012",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "车辆铭牌",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt025",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### 主要结构与部件：\n1. **顶部固定连接部分**\n- 顶部有一个长条状构件，其顶端连接着一个小方块（可能是安装孔或固定端），旁边还附有一个钩子状部件（类似卡扣设计），用于与其他结构连接。\n\n2. **中间连杆部分**\n- 一根较长的直杆从顶部连接处向下延伸，构成主要运动路径。\n- 连杆中部有一个圆点标记，表示铰接点（即转动关节），表明该部位可自由旋转。\n\n3. **底部支撑部分**\n- 底部是一个水平长条形底座，其末端连接着一个圆形转轴符号（通常代表轴承或转动部件）。\n- 转轴处有明显的圆圈标记，暗示此处为固定支点，允许机构绕该点转动。\n\n4. **红色箭头指示**\n- 图中有一支**红色箭头**指向连杆的下部区域，可能表示施加力的方向、运动轨迹或作用点（例如：外力推动连杆时的受力方向）。\n\n### 文字信息：\n- 整个图像中**未包含任何文字内容**（如标签、说明文字、字母编号等），仅由线条、几何形状和箭头构成，属于纯示意图类型。\n\n### 总结：",
+      "token_count": 108,
+      "parent_id": "part012",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 2",
+        "section": "车辆铭牌",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "part028",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "# PART 3 功能介绍",
+      "token_count": 3,
+      "parent_id": null,
+      "child_ids": [
+        "txt029",
+        "tbl030",
+        "txt031",
+        "tbl034",
+        "txt035",
+        "txt037",
+        "txt038"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 3",
+        "section": "功能介绍",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt029",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "仪表指示灯\n\n\n1. **顶部圆环区域**：\n- 在圆环上方依次标有数字编号 **1、2、3、4、5、6**，这些编号可能对应不同的功能按键或接口位置。\n\n2. **中间上部**：\n- 显示文字 **“READY”**（表示准备状态），旁边有一个油箱形状的图标（通常用于指示电量或燃料状态）。\n- 右侧区域标注了字母 **“D”**，可能代表特定功能或指示灯标识。\n\n3. **左侧中部**：\n- 标注了 **“BCU”**（Control Unit 的缩写，即控制单元）和 **“(M)”**（可能表示模式选择功能）。\n\n4. **中央显示区域**：\n- 有两个较大的矩形数字显示框（用于显示主要数据，如速度、电量等），具体数值未标出。\n- 中间下方偏右位置有单位标识 **“km/h”**（公里/小时），旁边有一个向右的箭头符号，指向编号 **7** 的位置。\n\n5. **右侧中部**：\n- 有一个电池形状的图标，旁边标注了 **“Ah”**（安时数，表示电量或容量）。\n- 编号 **8、9** 对应该区域，其中编号 **9** 附近标有文字 **“TRIP km”**（行程里程功能标识）。\n\n6. **底部中央**：\n- 清晰显示品牌名称 **“YADEA”**。\n\n7. **左侧下部**：\n- 标注了编号 **10、11**，左侧有一个向左的箭头符号（可能表示返回、设置或导航功能）。\n\n8. **其他细节**：\n- 中间下方还有一个小的数字显示区域，标有 **“0.0”**（可能是小数点和数值），但具体文字未明确。\n- 整个仪表盘设计简洁，通过编号和文字标注清晰区分各功能区。\n\n此外，图中还包含以下关键元素：\n- 顶部圆环的分段结构（可能对应按键或接口位置）。\n- 右侧箭头符号指向编号 **7**，左侧箭头符号指向编号 **10、11**。\n- 品牌标识“YADEA”位于底部中央，突出产品归属。\n\n综上，该示意图详细标注了仪表盘的各功能区域及对应文字信息，适用于设备操作说明或技术文档参考。",
+      "token_count": 214,
+      "parent_id": "part028",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 3",
+        "section": "功能介绍",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl030",
+      "semantic_type": "概述说明",
+      "content_type": "table",
+      "text": "[上下文] **“(M)”**（可能表示模式选择功能）。 4. **中央显示区域**： - 有两个较大的矩形数字显示框（用于显示主要数据，如速度、电量等），具体数值未标出。 - 中间下方偏右位置有单位标识 **“km/h”**（公里/小时），旁边有一个向右的箭头符号，指向编号 **7** 的位置。 5. **右侧中部**： - 有一个电池形状的图标，旁边标注了 **“Ah”**（安时数，表示电量或容量）。 - 编号 **8、9** 对应该区域，其中编号 **9** 附近标有文字 **“TRIP km”**（行程里程功能标识）。 6. **底部中央**： - 清晰显示品牌名称 **“YADEA”**。 7. **左侧下部**： - 标注了编号 **10、11**，左侧有一个向左的箭头符号（可能表示返回、设置或导航功能）。 8. **其他细节**： - 中间下方还有一个小的数字显示区域，标有 **“0.0”**（可能是小数点和数值），但具体文字未明确。 - 整个仪表盘设计简洁，通过编号和文字标注清晰区分各功能区。 此外，图中还包含以下关键元素： - 顶部圆环的分段结构（可能对应按键或接口位置）。 - 右侧箭头符号指向编号 **7**，左侧箭头符号指向编号 **10、11**。 - 品牌标识“YADEA”位于底部中央，突出产品归属。 综上，该示意图详细标注了仪表盘的各功能区域及对应文字信息，适用于设备操作说明或技术文档参考。\n\n| 序号 | 图标 | 名称 | 说明 |\n| --- | --- | --- | --- |\n| 1 | ? | 电机故障指示灯 | 电机出现故障时，指示灯亮起； |\n| 2 | ? | 控制器故障指示灯 | 控制器出现故障时，指示灯亮起； |\n| 3 | 88 | 速度表 | 显示当前速度； |\n| 4 | B | 充电指示灯 | 车辆充电时，指示灯点亮； |\n| 5 | READY | READY指示灯 | 车辆解除P档，进入推车/骑行状态或车速为0时，指示灯点亮； |\n| 6 | D | 远光指示灯 | 远光灯开启时，指示灯亮起； |\n| 7 |  | 右转指示灯 | 转向灯开关向右推动，指示灯闪烁； |\n| 8 | 0 | 动力电池电量指示 | 显示当前电量剩余； |\n| 9 | 88： | 里程 | 开机显示总里程，5s后显示短里程；车辆处于倒车档时，显示R； |\n| 10 | 8.88. | 反充电电量 | 反充电模式时，累计反充电电量； |\n| 11 | 个 | 左转指示灯 | 转向灯开关向左推动，指示灯闪烁； |",
+      "token_count": 273,
+      "parent_id": "part028",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 3",
+        "section": "功能介绍",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt031",
+      "semantic_type": "风险警告",
+      "content_type": "warning",
+      "text": "## 注意：\n\n动力电池电量过低时，蓄电池充电状态指示灯长亮，提示需及时充电。\n\n## 电门锁开关\n\n\n1.电源开启：钥匙插入电门锁开关，向右顺时针旋转至 位置，接通电源，钥匙不能被拔出。\n\n2.电源关闭：向左逆时针旋转至 位置，关闭电源，此时钥匙可以被拔出。\n\n3.座垫锁：钥匙插入电门锁开关，直接向左逆时针旋转至 PUSH 位置，即可开启座垫锁开关。\n\n4.防盗锁：钥匙插入电门锁开关，车头向左偏转到最大角度，将锁芯按下后向左逆时针旋转至 位置，锁舌插入转向机构，方向把锁死。\n\n## 遥控器",
+      "token_count": 62,
+      "parent_id": "part028",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "caution",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 3",
+        "section": "功能介绍",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "caution"
+      }
+    },
+    {
+      "chunk_id": "tbl034",
+      "semantic_type": "概述说明",
+      "content_type": "table",
+      "text": "[上下文] ## 注意： 动力电池电量过低时，蓄电池充电状态指示灯长亮，提示需及时充电。 ## 电门锁开关 1.电源开启：钥匙插入电门锁开关，向右顺时针旋转至 位置，接通电源，钥匙不能被拔出。 2.电源关闭：向左逆时针旋转至 位置，关闭电源，此时钥匙可以被拔出。 3.座垫锁：钥匙插入电门锁开关，直接向左逆时针旋转至 PUSH 位置，即可开启座垫锁开关。 4.防盗锁：钥匙插入电门锁开关，车头向左偏转到最大角度，将锁芯按下后向左逆时针旋转至 位置，锁舌插入转向机构，方向把锁死。 ## 遥控器\n\n| 设防 | 轻按或遥控器离开车辆3米以外，防盗器进入防盗状态! |\n| --- | --- |\n| 解防 | 轻按或遥控器靠近车辆2米以内，防盗器进入解防状态。 |\n| 电启动 | 轻按双击马闪电符号，整车进入远程启动状态（30米以内）。 |\n| •以上遥控器按键操作需要遥控器离车辆70米以内。 |  |",
+      "token_count": 100,
+      "parent_id": "part028",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 3",
+        "section": "遥控器",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt035",
+      "semantic_type": "风险警告",
+      "content_type": "text",
+      "text": "## 左组合开关\n\n\n1.远光开关：“ ”灯光总开关打开时，向前按下打开远光灯。\n\n2.近光开关：“ ”灯光总开关打开时，向后按下打开近光灯。\n\n3.转向开关：开关拨到左边打开左转向指示灯 ；开关复位，关 闭转向指示灯；开关拨到右边打开右转向指示灯。\n\n4.喇叭开关：按住喇叭按钮即可发出喇叭提示音。\n\n## 注意：\n\n转弯前先打转向灯示意，转弯结束后及时关闭转向灯。",
+      "token_count": 46,
+      "parent_id": "part028",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "caution",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 3",
+        "section": "左组合开关",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "caution"
+      }
+    },
+    {
+      "chunk_id": "txt037",
+      "semantic_type": "操作步骤",
+      "content_type": "text",
+      "text": "## 右组合开关\n\n\n1. **大灯&位置灯开关**：\n该标注指向图中上部的一个矩形区域内的小方块（代表开关按钮），在该矩形区域附近还标有“3D”字样。此部分用于控制车辆的大灯和位置灯的开启与关闭。\n\n2. **P档开关**：\n该标注指向图中下方偏左的一个椭圆形按钮，按钮表面清晰显示两个文字标识：“P”（代表驻车挡功能）和“MODE”（可能表示模式切换功能）。此部件用于选择车辆的驻车挡位及切换驾驶模式。\n\n3. **档位开关**：\n该标注指向图中底部区域，对应车辆的档位控制部分。此标注说明了档位操作相关的开关位置。\n\n整个示意图通过简洁的线条勾勒出各部件的位置关系，左侧的文字标注明确指出了每个开关的功能和布局，用于直观展示汽车内部相关控制元件的结构与用途。\n\n\n1.大灯&位置灯开关：\n\n电源锁打开的状态下，开关处于中间位置“ ”，可打开前、后位置灯、牌照灯；\n\n开关拨到左边“ ”，可以打开灯光总开关（此时前、后位置灯以及牌照灯处于点亮状态），再由远近光开关控制可打开远近光灯；开关拨到右边“ ”关闭前位灯、后位灯、牌照灯以及远、近光灯。\n\n2.P档开关：“ ”刹车和P档，同时按下的时候，解除P档状态。\n\n3.档位开关：“ ”两档控制。档位处于1挡状态下，按下档位变为2挡，再按一下档位变为1挡。",
+      "token_count": 138,
+      "parent_id": "part028",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 3",
+        "section": "右组合开关",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt038",
+      "semantic_type": "操作步骤",
+      "content_type": "text",
+      "text": "## 空气开关\n\n\n1. **大灯&位置灯开关**：\n该标注指向图中上部的一个矩形区域内的小方块（代表开关按钮），在该矩形区域附近还标有“3D”字样。此部分用于控制车辆的大灯和位置灯的开启与关闭。\n\n2. **P档开关**：\n该标注指向图中下方偏左的一个椭圆形按钮，按钮表面清晰显示两个文字标识：“P”（代表驻车挡功能）和“MODE”（可能表示模式切换功能）。此部件用于选择车辆的驻车挡位及切换驾驶模式。\n\n3. **档位开关**：\n该标注指向图中底部区域，对应车辆的档位控制部分。此标注说明了档位操作相关的开关位置。\n\n整个示意图通过简洁的线条勾勒出各部件的位置关系，左侧的文字标注明确指出了每个开关的功能和布局，用于直观展示汽车内部相关控制元件的结构与用途。\n\n\n拨动空气开关至“ON”位置,整车通电，至“OFF”位置，整车断电。\n\n提示：长时间不骑行时，建议关闭空气开关。",
+      "token_count": 97,
+      "parent_id": "part028",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 3",
+        "section": "空气开关",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "part039",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 4 后视镜安装",
+      "token_count": 3,
+      "parent_id": null,
+      "child_ids": [
+        "txt040",
+        "txt041",
+        "txt042"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 4",
+        "section": "后视镜安装",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt040",
+      "semantic_type": "部件说明",
+      "content_type": "text",
+      "text": "请按照以下步骤安装后视镜。\n\n如图所示，将后视镜按顺时针方向旋转至合适位置。\n\n\n- **左侧**：一只灰色的手（手掌朝向右侧）握持着一个扳手工具，扳手夹住一个**橙色圆柱形物体**（推测为火花塞）。\n- **中间**：另一只灰色的手辅助操作，手指轻触或固定该橙色部件的位置。\n- **橙色部件周围**：有两个**向下的箭头**，指示旋转方向（可能表示顺时针拧动），用于说明操作步骤。\n- **右侧**：可见汽车后视镜的轮廓线（简化线条勾勒），表明该部件安装在车辆上。\n\n**文字信息**：图片中**无任何文字标注**（如“火花塞”“拆卸”等说明性文字），仅通过图形、箭头和手部动作示意操作流程。整体风格为简洁的手绘示意图，用于直观展示汽车维修中的具体步骤。",
+      "token_count": 82,
+      "parent_id": "part039",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 4",
+        "section": "装配有后视镜连接件的车辆",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt041",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "## 装配有后视镜连接件的车辆\n\n将后视镜连接件安装在方向把上，按顺时针方向旋转，并用扳手拧紧。\n\n\n- **左侧**：一只灰色的手（手掌朝向右侧）握持着一个扳手工具，扳手夹住一个**橙色圆柱形物体**（推测为火花塞）。\n- **中间**：另一只灰色的手辅助操作，手指轻触或固定该橙色部件的位置。\n- **橙色部件周围**：有两个**向下的箭头**，指示旋转方向（可能表示顺时针拧动），用于说明操作步骤。\n- **右侧**：可见汽车后视镜的轮廓线（简化线条勾勒），表明该部件安装在车辆上。\n\n**文字信息**：图片中**无任何文字标注**（如“火花塞”“拆卸”等说明性文字），仅通过图形、箭头和手部动作示意操作流程。整体风格为简洁的手绘示意图，用于直观展示汽车维修中的具体步骤。\n\n\n- text_listunordered\n\n\n- **左侧**：一只灰色的手（手掌朝向右侧）握持着一个扳手工具，扳手夹住一个**橙色圆柱形物体**（推测为火花塞）。\n- **中间**：另一只灰色的手辅助操作，手指轻触或固定该橙色部件的位置。\n- **橙色部件周围**：有两个**向下的箭头**，指示旋转方向（可能表示顺时针拧动），用于说明操作步骤。\n- **右侧**：可见汽车后视镜的轮廓线（简化线条勾勒），表明该部件安装在车辆上。\n\n**文字信息**：图片中**无任何文字标注**（如“火花塞”“拆卸”等说明性文字），仅通过图形、箭头和手部动作示意操作流程。整体风格为简洁的手绘示意图，用于直观展示汽车维修中的具体步骤。\n\n\n使用一个扳手固定连接件，再使用一个扳手按顺时针方向拧紧锁紧螺母，移动保护套，盖住螺母。\n\n\n- **左侧**：一只灰色的手（手掌朝向右侧）握持着一个扳手工具，扳手夹住一个**橙色圆柱形物体**（推测为火花塞）。\n- **中间**：另一只灰色的手辅助操作，手指轻触或固定该橙色部件的位置。\n- **橙色部件周围**：有两个**向下的箭头**，指示旋转方向（可能表示顺时针拧动），用于说明操作步骤。\n- **右侧**：可见汽车后视镜的轮廓线（简化线条勾勒），表明该部件安装在车辆上。",
+      "token_count": 223,
+      "parent_id": "part039",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 4",
+        "section": "装配有后视镜连接件的车辆",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt042",
+      "semantic_type": "部件说明",
+      "content_type": "text",
+      "text": "**文字信息**：图片中**无任何文字标注**（如“火花塞”“拆卸”等说明性文字），仅通过图形、箭头和手部动作示意操作流程。整体风格为简洁的手绘示意图，用于直观展示汽车维修中的具体步骤。",
+      "token_count": 23,
+      "parent_id": "part039",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 4",
+        "section": "装配有后视镜连接件的车辆",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "part043",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 5 电池安装",
+      "token_count": 3,
+      "parent_id": null,
+      "child_ids": [
+        "txt044",
+        "stp045",
+        "txt046"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 5",
+        "section": "电池安装",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt044",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "## 装配锂电池",
+      "token_count": 2,
+      "parent_id": "part043",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 5",
+        "section": "装配锂电池",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "stp045",
+      "semantic_type": "操作步骤",
+      "content_type": "steps",
+      "text": "1. **电源连接器(插头)**：位于图像顶部偏左位置，是一个带有插头接口的部件，旁边还有一根弯曲的线缆连接至该区域。\n2. **空气开关**：位于图像右侧中部，是一个矩形的开关装置。\n3. **蓄电池提手**：位于图像右侧下方，呈长条状结构，用于提起或固定蓄电池。\n4. **蓄电池**：位于图像底部中央位置，是一个较大的矩形部件，标注在电池主体区域。",
+      "token_count": 44,
+      "parent_id": "part043",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 5",
+        "section": "装配锂电池",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt046",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "此外，在设备内部中间偏左的位置，有一个竖直排列的“YUAN”字样（可能是品牌标识）。图像中还可见一些细节结构，例如设备边缘的螺丝孔、固定点等。整个示意图以线条勾勒出设备内部布局，清晰展示了各部件的位置关系和功能标注。\n\n\n电池安装方法：\n\n1. 使用备用钥匙开启座垫，关闭空气开关；\n2.将蓄电池放入座桶中；\n\n3. 稳固连接电源连接插头；\n4. 打开空气开关，锁好座垫锁。\n\n## 危险：\n\n·为了您和爱车的安全，请严格按照电池连接示意图连接，如电池连接线破损，请及时维修;\n\n·电池安装有危险，安装时必须由专业安装人员（本公司指定经销单位）负责安装。私自操作导致意外事故，用户自行承担一切后果。\n\n## 警告：\n\n在电池盒上张贴有牢固高压警告及触电危险标志，不得遮盖及撕毁。",
+      "token_count": 84,
+      "parent_id": "part043",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "danger",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 5",
+        "section": "装配锂电池",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "danger"
+      }
+    },
+    {
+      "chunk_id": "part049",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 6 电池充电",
+      "token_count": 3,
+      "parent_id": null,
+      "child_ids": [
+        "txt050",
+        "txt055",
+        "txt060",
+        "txt064",
+        "txt068",
+        "txt073"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 6",
+        "section": "电池充电",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt050",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "## 整车充电\n\n### 1. **左侧接口与导线**\n- 左侧有一个**双方块结构**（类似插座或接线端子），由两个小矩形组成，可能是电源输入或信号连接点。\n- 一根**橙色导线**从该双方块延伸而出，连接至中间的矩形部件。\n\n### 2. **中间核心部件**\n- 中间区域有一个**矩形电路板/连接器**，其上标注有：\n- 一个显眼的**“+”号符号**（可能表示正极或特定功能接口）。\n- 围绕“+”号周围分布着多个**小圆点**（推测为接线端子、焊点或连接标记）。\n- 一条**红色箭头**从上方弯曲指向该矩形部件，暗示操作方向（如插拔、旋转或信号流向）。\n\n### 3. **右侧导线与符号**\n- 右侧有**多条平行线条**（代表导线或接口），依次排列以下符号：\n- 最上方：一个**圆圈符号“○”**。\n- 中间：一个**钻石形状符号“◇”**（可能表示特定功能标识，如电源、信号或安全认证）。\n- 下方：一个**圆圈符号“○”**和一个**U形符号“U”**。\n\n### 4. **其他细节**\n- 整个图示以简笔线条勾勒，风格偏向技术说明图（如电子设备接线图、充电器内部结构或模块连接示意图）。\n- 橙色导线用于连接左侧接口与中间部件，红色箭头可能指示信号传输路径或操作步骤。",
+      "token_count": 137,
+      "parent_id": "part049",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 6",
+        "section": "整车充电",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt055",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### 5. **文字信息**\n图中**无明确字母/数字文字**（如“A123”），但包含以下符号作为关键标识：\n- “+”号：表示正极或特定功能接口。\n- 圆圈“○”：可能代表连接点、端子或通用接口。\n- 钻石“◇”：推测为功能标识（如电源、信号或安全认证）。\n- U形符号“U”：可能对应某种接口类型（如USB或其他标准化接口）。\n\n### 总结\n\n\n1.确认空气开关处于“ON”状态；\n\n2.打开充电口翻盖，将充电器先插入充电孔，后加市电；\n\n3.充足后，先切断市电，后拔充电孔插头。\n\n注：充电器红灯长亮表面正在充电，充电完成时绿灯常亮。电量充满后请及时断电。\n\n## 外置充电\n\n适用于装配锂电池的车型\n\n1 打开座桶， 旋转电池连接插头拉环，脱开电池连接插头。\n\n### 1. **左侧接口与导线**\n- 左侧有一个**双方块结构**（类似插座或接线端子），由两个小矩形组成，可能是电源输入或信号连接点。\n- 一根**橙色导线**从该双方块延伸而出，连接至中间的矩形部件。\n\n### 2. **中间核心部件**\n- 中间区域有一个**矩形电路板/连接器**，其上标注有：\n- 一个显眼的**“+”号符号**（可能表示正极或特定功能接口）。\n- 围绕“+”号周围分布着多个**小圆点**（推测为接线端子、焊点或连接标记）。\n- 一条**红色箭头**从上方弯曲指向该矩形部件，暗示操作方向（如插拔、旋转或信号流向）。",
+      "token_count": 153,
+      "parent_id": "part049",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 6",
+        "section": "整车充电",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt060",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### 3. **右侧导线与符号**\n- 右侧有**多条平行线条**（代表导线或接口），依次排列以下符号：\n- 最上方：一个**圆圈符号“○”**。\n- 中间：一个**钻石形状符号“◇”**（可能表示特定功能标识，如电源、信号或安全认证）。\n- 下方：一个**圆圈符号“○”**和一个**U形符号“U”**。\n\n### 4. **其他细节**\n- 整个图示以简笔线条勾勒，风格偏向技术说明图（如电子设备接线图、充电器内部结构或模块连接示意图）。\n- 橙色导线用于连接左侧接口与中间部件，红色箭头可能指示信号传输路径或操作步骤。\n\n### 5. **文字信息**\n图中**无明确字母/数字文字**（如“A123”），但包含以下符号作为关键标识：\n- “+”号：表示正极或特定功能接口。\n- 圆圈“○”：可能代表连接点、端子或通用接口。\n- 钻石“◇”：推测为功能标识（如电源、信号或安全认证）。\n- U形符号“U”：可能对应某种接口类型（如USB或其他标准化接口）。\n\n### 总结\n\n\n2 提出电池。\n\n3 充电器先插电池，后加市电。充足后，先切断市电， 后拔电池插头。",
+      "token_count": 121,
+      "parent_id": "part049",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 6",
+        "section": "外置充电",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt064",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### 1. **左侧接口与导线**\n- 左侧有一个**双方块结构**（类似插座或接线端子），由两个小矩形组成，可能是电源输入或信号连接点。\n- 一根**橙色导线**从该双方块延伸而出，连接至中间的矩形部件。\n\n### 2. **中间核心部件**\n- 中间区域有一个**矩形电路板/连接器**，其上标注有：\n- 一个显眼的**“+”号符号**（可能表示正极或特定功能接口）。\n- 围绕“+”号周围分布着多个**小圆点**（推测为接线端子、焊点或连接标记）。\n- 一条**红色箭头**从上方弯曲指向该矩形部件，暗示操作方向（如插拔、旋转或信号流向）。\n\n### 3. **右侧导线与符号**\n- 右侧有**多条平行线条**（代表导线或接口），依次排列以下符号：\n- 最上方：一个**圆圈符号“○”**。\n- 中间：一个**钻石形状符号“◇”**（可能表示特定功能标识，如电源、信号或安全认证）。\n- 下方：一个**圆圈符号“○”**和一个**U形符号“U”**。\n\n### 4. **其他细节**\n- 整个图示以简笔线条勾勒，风格偏向技术说明图（如电子设备接线图、充电器内部结构或模块连接示意图）。\n- 橙色导线用于连接左侧接口与中间部件，红色箭头可能指示信号传输路径或操作步骤。",
+      "token_count": 134,
+      "parent_id": "part049",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 6",
+        "section": "外置充电",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt068",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### 5. **文字信息**\n图中**无明确字母/数字文字**（如“A123”），但包含以下符号作为关键标识：\n- “+”号：表示正极或特定功能接口。\n- 圆圈“○”：可能代表连接点、端子或通用接口。\n- 钻石“◇”：推测为功能标识（如电源、信号或安全认证）。\n- U形符号“U”：可能对应某种接口类型（如USB或其他标准化接口）。\n\n### 总结\n\n### 1. **左侧接口与导线**\n- 左侧有一个**双方块结构**（类似插座或接线端子），由两个小矩形组成，可能是电源输入或信号连接点。\n- 一根**橙色导线**从该双方块延伸而出，连接至中间的矩形部件。\n\n### 2. **中间核心部件**\n- 中间区域有一个**矩形电路板/连接器**，其上标注有：\n- 一个显眼的**“+”号符号**（可能表示正极或特定功能接口）。\n- 围绕“+”号周围分布着多个**小圆点**（推测为接线端子、焊点或连接标记）。\n- 一条**红色箭头**从上方弯曲指向该矩形部件，暗示操作方向（如插拔、旋转或信号流向）。\n\n### 3. **右侧导线与符号**\n- 右侧有**多条平行线条**（代表导线或接口），依次排列以下符号：\n- 最上方：一个**圆圈符号“○”**。\n- 中间：一个**钻石形状符号“◇”**（可能表示特定功能标识，如电源、信号或安全认证）。\n- 下方：一个**圆圈符号“○”**和一个**U形符号“U”**。",
+      "token_count": 151,
+      "parent_id": "part049",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 6",
+        "section": "外置充电",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt073",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### 4. **其他细节**\n- 整个图示以简笔线条勾勒，风格偏向技术说明图（如电子设备接线图、充电器内部结构或模块连接示意图）。\n- 橙色导线用于连接左侧接口与中间部件，红色箭头可能指示信号传输路径或操作步骤。\n\n### 5. **文字信息**\n图中**无明确字母/数字文字**（如“A123”），但包含以下符号作为关键标识：\n- “+”号：表示正极或特定功能接口。\n- 圆圈“○”：可能代表连接点、端子或通用接口。\n- 钻石“◇”：推测为功能标识（如电源、信号或安全认证）。\n- U形符号“U”：可能对应某种接口类型（如USB或其他标准化接口）。\n\n### 总结",
+      "token_count": 71,
+      "parent_id": "part049",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 6",
+        "section": "外置充电",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "part076",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 7 正确驾驶",
+      "token_count": 3,
+      "parent_id": null,
+      "child_ids": [
+        "txt077",
+        "txt081"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 7",
+        "section": "正确驾驶",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt077",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "为了您和家人的安全，学习驾驶前，请仔细阅读本产品使用说明书，遵守交通规则，不超速、不闯红灯、不逆行。请佩戴经过认证的头盔和其他保护装备，以便把任何可能的伤害降至最低。\n\n## 开机\n\n电源开启：钥匙插入电门锁开关，向右顺时针旋转至 位置，接通电源，钥匙不能被拔出。\n\n## 关机\n\n电源关闭：向左逆时针旋转至 位置，关闭电源，此时钥匙可以被拔出。\n\n## 驾驶",
+      "token_count": 45,
+      "parent_id": "part076",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 7",
+        "section": "开机",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt081",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "## 骑行前的检查\n\n请在骑行前按照以下方式仔细检查您的车辆，如有异常及时前往雅迪授权服务商处进行维修。\n\n·驾驶前必须佩戴安全头盔等保护用品;\n\n·电量：检查蓄电池电量，根据出行距离判断是否充足;\n\n·刹车：刹车效果，灵敏性，保证刹车处于良好状态，必要时调整或更换；\n\n·胎压：检查前后轮胎压是否正常，气压不足会增加轮胎与路面摩擦力，缩短续航里程，也会影响骑行舒适性和安全性（查看厂家推荐胎压）；\n\n·后视镜：是否破损，角度是否合适，保证随时可以观察后方情况；（不可随意拆卸）\n\n·反射器：检查反射器是否有污损或破损；\n\n·紧固件：检查车把、前后轮轴螺母等零部件的紧固状态；\n\n·电器系统：灯光、喇叭、调速转把等是否正常。\n\n收起边撑，坐在座垫上，两脚撑地，向内轻拧油门转把，开启您的行程。\n\n\n**左侧图**：展示一名骑乘电动车的人的侧视图。人物身穿长袖上衣与长裤，身体略微前倾，双手握住车把，双脚踩在踏板或地面（脚部区域有红色箭头标注）。电动车结构清晰可见，包括前轮、后轮、座椅、车架及车把上的后视镜等部件。在人物左脚附近有一个明显的 **“L”** 字母标注，可能用于指示左侧位置。\n\n**右侧图**：聚焦于电动车车把与仪表盘的特写。画面中左右两侧各有一个后视镜，中间是矩形的仪表盘（显示屏）。两侧的手柄上分布着按钮或开关等控制部件。在右侧手柄区域，有一个 **红色圆圈标记**，并配有简笔画风格的手部指向该位置，可能表示操作点。\n\n图片中仅明确的文字信息为左侧图中的 **“L”** 字母标注，其余均为图形符号（如红色圆圈、箭头、手部示意等），无其他文字内容。",
+      "token_count": 171,
+      "parent_id": "part076",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 7",
+        "section": "骑行前的检查",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "part082",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 8 维护和保养",
+      "token_count": 3,
+      "parent_id": null,
+      "child_ids": [
+        "txt083",
+        "stp085",
+        "txt086",
+        "stp093",
+        "txt094",
+        "txt095",
+        "txt096",
+        "txt097",
+        "txt098",
+        "stp100"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 8",
+        "section": "维护和保养",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt083",
+      "semantic_type": "风险警告",
+      "content_type": "text",
+      "text": "## 整车清洁\n\n## 水洗清洁注意事项",
+      "token_count": 5,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "caution",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 8",
+        "section": "整车清洁",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "caution"
+      }
+    },
+    {
+      "chunk_id": "stp085",
+      "semantic_type": "操作步骤",
+      "content_type": "steps",
+      "text": "1. 清洗前断开整车电源，禁止用湿手、金属导体碰触带电部位，如电池充、放电口等；\n\n2. 严禁水流冲击电器部件，车辆清洗时应当用湿毛巾甩干后对整车外观进行擦拭，如出现以难以去除的污垢，可使用牙刷刷洗，清洗后，请用软布将车辆擦干；\n\n3. 避免水流冲击充电插口、线束接插件及保险丝等，不可直接向纳物箱内泼水等；\n\n4. 不可直接向制动器，电动机及前后轴处泼水，以防进水影响整车部件寿命；\n\n5. 不可使用蒸汽或高压水管冲洗车辆。",
+      "token_count": 53,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 8",
+        "section": "整车清洁",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt086",
+      "semantic_type": "风险警告",
+      "content_type": "warning",
+      "text": "## 注意：\n\n·请勿使用酒精、汽油、煤油或其它有腐蚀性、挥发性的溶剂清洗。这些物质可能会损坏车体外观和内部结构。\n\n·禁止使用高压水枪或水管喷淋冲刷。\n\n## 存放\n\n请将车辆存放于平坦稳固、干燥的位置、阴凉的室内，避免日晒及雨淋，以免零部件锈蚀或老化；\n\n## 铅酸电池\n\n如电池长时间不使用，建议电池电量在满电存放，并拔开电池插头，建议2个月补电一次，否则将会极大影响电池使用寿命，严重者会造成电池报废。\n\n## 锂电电池\n\n如电池长时间不使用，建议电池30%-60%SOC电量存放，并拔开电池插头，建议3个月补电一次，否则将会极大影响电池使用寿命，严重者会造成电池报废。\n\n## 注意：\n\n您在保养过程请检查各个部位是否有异常，若发现异常，请联系售后或指定授权服务网点或拨打全国服务热线：400-900-1212。\n\n## 零部件保养\n\n## 电机",
+      "token_count": 94,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "caution",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 8",
+        "section": "整车清洁",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "caution"
+      }
+    },
+    {
+      "chunk_id": "stp093",
+      "semantic_type": "故障诊断",
+      "content_type": "steps",
+      "text": "1. 电机正常使用中无须调整或保养，只需进行表面除尘等清洁工作即可。切勿随意在传动部件上添加润滑油 ;\n\n2. 涉水驾驶时，水位高度不能超过后轮电机轴承座的下沿，以防止电机进水造成损坏;\n\n3. 定期检查电动机接线是否松动，外观有无变形，电动机相线有无破损;\n\n4. 电动机轮毂不能受到猛烈撞击，电动机不能在堵转情况下强行运行，严禁电动机超载;\n\n5. 严禁在凸凹不平的路面上驾驶，会严重损伤轮毂和电机 ;\n\n6. 车出售前已安装调试到最佳状态，在使用中请不要随意拆装电器及相关部件。骑行时如发现传动部件发出异 响、通电不工作等异常情况，应请联系售后或指定授权服务网点。",
+      "token_count": 71,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [
+        "电机"
+      ],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": [],
+      "metadata": {
+        "part": "PART 8",
+        "section": "电机",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt094",
+      "semantic_type": "故障诊断",
+      "content_type": "text",
+      "text": "## 控制器\n\n控制器在电动自行车出厂时已调整至最佳状态。骑行时若出现电器故障或失控现象，非专业维修人员只可对线缆、接插件进行检查，若不能排除故障，应立即联系售后或指定授权服务网点。",
+      "token_count": 22,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [
+        "控制器"
+      ],
+      "fault_symptom": "控制器在电动自行车出厂时已调整至最佳状态。骑行时若出现电器故障或失控现象",
+      "repair_action": "非专业维修人员只可对线缆、接插件进行检查，若不能排除故障，应立即联系售后或指定授权服务网点。",
+      "repair_level": "授权服务站",
+      "risk_level": null,
+      "fault_triplet": [
+        {
+          "symptom": "控制器在电动自行车出厂时已调整至最佳状态。骑行时若出现电器故障或失控现象",
+          "cause": "",
+          "action": "非专业维修人员只可对线缆、接插件进行检查，若不能排除故障，应立即联系售后或指定授权服务网点。"
+        }
+      ],
+      "metadata": {
+        "part": "PART 8",
+        "section": "控制器",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt095",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "## 蓄电池\n\n\n由于图像整体呈现低分辨率且模糊的状态，细节难以辨识：\n- 三角形的边角和边缘线条略显毛糙，颜色过渡不均匀；\n- 感叹号的形状虽可辨认，但因模糊程度较高，无法判断其具体粗细或是否带有其他装饰性元素。\n\n**关于文字信息**：图片中**没有包含任何可见的文字内容**（如“警告”“注意”等标识文字），仅由图形符号构成。该标志属于通用的安全警示类图标，常见于交通、工业或日常场景中的风险提示，但本图未附加具体文字说明。",
+      "token_count": 53,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 8",
+        "section": "蓄电池",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt096",
+      "semantic_type": "风险警告",
+      "content_type": "warning",
+      "text": "## 警告：\n\n1. 蓄电池是电动自行车的重要部件，请正确使用并妥善保护；\n2. 充电时请务必使用本公司配置的专用充电器；\n\n由于图像整体呈现低分辨率且模糊的状态，细节难以辨识：\n- 三角形的边角和边缘线条略显毛糙，颜色过渡不均匀；\n- 感叹号的形状虽可辨认，但因模糊程度较高，无法判断其具体粗细或是否带有其他装饰性元素。\n\n**关于文字信息**：图片中**没有包含任何可见的文字内容**（如“警告”“注意”等标识文字），仅由图形符号构成。该标志属于通用的安全警示类图标，常见于交通、工业或日常场景中的风险提示，但本图未附加具体文字说明。\n\n\n3. 后期使用尽量保持电池电量不低于20%，及时充电，可延长电池的使用寿命；\n\n1. **左侧电池图标**：\n- 由灰色线条勾勒出简化的电池轮廓，顶部有两个小方块状的端子（类似电池的正负极）。\n- 电池主体为矩形区域，内部用醒目的橙色字体清晰显示文字“20%”。\n\n2. **右侧图形元素**：\n- 一个D形轮廓的图标（可能代表扬声器或喇叭），位于电池图标的右方。\n- D形图标旁有三条斜向排列的短横线，这些线条呈放射状分布，可能表示声音提示、音效或信号指示。\n\n图片背景为纯白色，所有文字信息仅包含“20%”这一橙色数字与百分号，其余均为图形符号（电池轮廓、D形图标及短线）。整体设计简洁明了，突出显示电量状态（20%）和可能的音频提示功能。\n\n\n4. 不要在电池电量过低或完全用尽后再充电，避免因“过放电”而造成电池损坏，缩短使用寿命；\n\n1. **左侧电池图标**：\n- 由灰色线条勾勒出简化的电池轮廓，顶部有两个小方块状的端子（类似电池的正负极）。\n- 电池主体为矩形区域，内部用醒目的橙色字体清晰显示文字“20%”。\n\n2. **右侧图形元素**：\n- 一个D形轮廓的图标（可能代表扬声器或喇叭），位于电池图标的右方。\n- D形图标旁有三条斜向排列的短横线，这些线条呈放射状分布，可能表示声音提示、音效或信号指示。",
+      "token_count": 208,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "warning",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 8",
+        "section": "蓄电池",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "warning"
+      }
+    },
+    {
+      "chunk_id": "txt097",
+      "semantic_type": "风险警告",
+      "content_type": "warning",
+      "text": "图片背景为纯白色，所有文字信息仅包含“20%”这一橙色数字与百分号，其余均为图形符号（电池轮廓、D形图标及短线）。整体设计简洁明了，突出显示电量状态（20%）和可能的音频提示功能。\n\n\n5. 电池不可靠近火源、热源，严禁在阳光下暴晒、放入火中、投入水中或弄湿电池；\n\n1. **左侧电池图标**：\n- 由灰色线条勾勒出简化的电池轮廓，顶部有两个小方块状的端子（类似电池的正负极）。\n- 电池主体为矩形区域，内部用醒目的橙色字体清晰显示文字“20%”。\n\n2. **右侧图形元素**：\n- 一个D形轮廓的图标（可能代表扬声器或喇叭），位于电池图标的右方。\n- D形图标旁有三条斜向排列的短横线，这些线条呈放射状分布，可能表示声音提示、音效或信号指示。\n\n图片背景为纯白色，所有文字信息仅包含“20%”这一橙色数字与百分号，其余均为图形符号（电池轮廓、D形图标及短线）。整体设计简洁明了，突出显示电量状态（20%）和可能的音频提示功能。\n\n\n6. 严禁电池正负极反接、短路；\n\n\n7. 严禁电池倒置、卧放、重压、穿刺，以及使电池受到剧烈震动、碰撞；\n\n\n8.不要随意丢弃废旧蓄电池，也不可擅自拆解蓄电池，以免污染环境。本产品的废蓄电池由雅迪授权经销商协助回收或相关专业部门组织回收。",
+      "token_count": 134,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "warning",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 8",
+        "section": "蓄电池",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "warning"
+      }
+    },
+    {
+      "chunk_id": "txt098",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "## 充电器\n\n1. 充电前应当检查充电器的电池类型和充电器规格是否相互匹配；\n2. 充电时，①先插充电孔，②再连接电源；充足后，③先断开电源，④再拔充电孔连接线；\n\n\n3. 充电时应放置在通风环境下，严禁在室内或烈日及高温环境下充电，不得将充电器放在座桶或尾箱内充电；\n\n## 警告：",
+      "token_count": 35,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "warning",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 8",
+        "section": "充电器",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "warning"
+      }
+    },
+    {
+      "chunk_id": "stp100",
+      "semantic_type": "故障诊断",
+      "content_type": "steps",
+      "text": "4. 当绿灯亮起应及时切断电源，禁止在不充电的情况下，长时间将充电器空载连接在交流电源上；\n\n5. 在充电过程中，如指示灯异常、出现异味或充电器外壳过热，应立即停止充电，并送至雅迪授权服务商处检修或更换；\n\n6. 充电器在使用和保管过程中，注意避免异物进入，特别是避免流入水或其他液体，谨防雨淋，以免造成充电器内部短路；\n\n7. 充电器尽量不要随车携带，如确需携带的，应在做好减震处理后放置于工具箱内；\n\n8. 充电器内含有高压电路，不得自行拆卸或更换充电器内的器件；\n\n9. 如果电源或充电系统出现故障，请前往雅迪授权服务商处进行更换和维修。",
+      "token_count": 68,
+      "parent_id": "part082",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [
+        "充电器"
+      ],
+      "fault_symptom": "5. 在充电过程中，如指示灯异常、出现异味或充电器外壳过热",
+      "repair_action": "应立即停止充电，并送至雅迪授权服务商处检修或更换；",
+      "repair_level": "授权服务站",
+      "risk_level": null,
+      "fault_triplet": [
+        {
+          "symptom": "5. 在充电过程中，如指示灯异常、出现异味或充电器外壳过热",
+          "cause": "",
+          "action": "应立即停止充电，并送至雅迪授权服务商处检修或更换；"
+        },
+        {
+          "symptom": "9. 如果电源或充电系统出现故障",
+          "cause": "",
+          "action": "请前往雅迪授权服务商处进行更换和维修。"
+        }
+      ],
+      "metadata": {
+        "part": "PART 8",
+        "section": "充电器",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "part101",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 9 检查、故障排除",
+      "token_count": 4,
+      "parent_id": null,
+      "child_ids": [
+        "tbl102",
+        "tbl103",
+        "txt104",
+        "tbl106",
+        "txt107",
+        "tbl108",
+        "txt109",
+        "tbl110",
+        "txt111"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 9",
+        "section": "检查、故障排除",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl102",
+      "semantic_type": "故障诊断",
+      "content_type": "table",
+      "text": "| 检查项目 | 检查内容 |\n| --- | --- |\n| 大灯、转向灯、尾灯、刹车灯 | 是否正常工作 |\n| 喇叭 | 工作时响声是否正常 |\n| 前、后刹车制动间隙 | 是否正常制动 |\n| 前、后轮胎 | 气压是否正常，表面是否有杂物或磨损 |\n| 仪表 | 各信号灯和指示器是否正常 |\n| 电源锁、尾箱锁、座垫锁 | 开启是否正常，锁板活动部位是否需要加润滑油 |\n| 后视镜角度 | 是否可以清楚看到后方情况 |\n| 车把、前叉 | 转动是否灵活，是否有松动或卡滞现象 |\n| 前后轮轴、平叉轴等紧固件 | 是否有松动现象 |",
+      "token_count": 68,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": "是否正常工作",
+      "repair_action": "",
+      "repair_level": "经销商/用户",
+      "risk_level": null,
+      "fault_triplet": [
+        {
+          "symptom": "是否正常工作",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "工作时响声是否正常",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "是否正常制动",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "气压是否正常，表面是否有杂物或磨损",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "各信号灯和指示器是否正常",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "开启是否正常，锁板活动部位是否需要加润滑油",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "是否可以清楚看到后方情况",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "转动是否灵活，是否有松动或卡滞现象",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "是否有松动现象",
+          "cause": "",
+          "action": ""
+        }
+      ],
+      "metadata": {
+        "part": "PART 9",
+        "section": "检查、故障排除",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl103",
+      "semantic_type": "故障诊断",
+      "content_type": "table",
+      "text": "| 故障现象 | 故障原因及排除方法 |\n| --- | --- |\n| 整车不通电 | 电源锁故障：维修或更换电源锁或接插件。 |\n| 保险丝断路：查明原因并更换保险丝。 |  |\n| 电路接触不良：重新固定电源导线插头。 |  |\n| 接通电源，仪表正常显示，调速失灵 | 电池电压过低：充足电。 |\n| 断电刹把失灵：维修或更换断电刹把。 |  |\n| 调速转把故障：更换调速转把。 |  |\n| 控制器或电机故障：联系授权服务站检测维修。 |  |\n| 一次充电后续行里程不足 | 轮胎气压不足：轮胎充气至标准气压。 |\n| 充电不足：检查充电器，并将电池充满电。 |  |\n| 电池老化：联系授权服务站更换电池。 |  |\n| 刹车异常：调节刹车，使前后轮转动顺畅。 |  |\n| 机械传动阻塞：给转动，传动部件定期润滑。 |  |\n| 骑行环境：上坡多、逆风大、频繁刹车启动、载重大等，建议脚踏助力，减少刹车、启动次数，减轻载重。 |  |\n| 其他故障 | 当您遇到通过上述指导不能自行排除故障或无法判定故障时，或者遇到电机、控制器、充电器、电池组损坏时，请及时联系驻地授权服务站，切勿擅自打开以上部件，否则将会失去本公司的保修承诺。 |",
+      "token_count": 131,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [
+        "控制器",
+        "电机",
+        "充电器",
+        "仪表",
+        "调速转把",
+        "刹把",
+        "保险丝",
+        "电池"
+      ],
+      "fault_symptom": "整车不通电",
+      "repair_action": "",
+      "repair_level": "经销商/用户",
+      "risk_level": null,
+      "fault_triplet": [
+        {
+          "symptom": "整车不通电",
+          "cause": "电源锁故障：维修或更换电源锁或接插件。",
+          "action": ""
+        },
+        {
+          "symptom": "保险丝断路：查明原因并更换保险丝。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "电路接触不良：重新固定电源导线插头。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "接通电源，仪表正常显示，调速失灵",
+          "cause": "电池电压过低：充足电。",
+          "action": ""
+        },
+        {
+          "symptom": "断电刹把失灵：维修或更换断电刹把。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "调速转把故障：更换调速转把。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "控制器或电机故障：联系授权服务站检测维修。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "一次充电后续行里程不足",
+          "cause": "轮胎气压不足：轮胎充气至标准气压。",
+          "action": ""
+        },
+        {
+          "symptom": "充电不足：检查充电器，并将电池充满电。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "电池老化：联系授权服务站更换电池。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "刹车异常：调节刹车，使前后轮转动顺畅。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "机械传动阻塞：给转动，传动部件定期润滑。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "骑行环境：上坡多、逆风大、频繁刹车启动、载重大等，建议脚踏助力，减少刹车、启动次数，减轻载重。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "其他故障",
+          "cause": "当您遇到通过上述指导不能自行排除故障或无法判定故障时，或者遇到电机、控制器、充电器、电池组损坏时，请及时联系驻地授权服务站，切勿擅自打开以上部件，否则将会失去本公司的保修承诺。",
+          "action": ""
+        }
+      ],
+      "metadata": {
+        "part": "PART 9",
+        "section": "检查、故障排除",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt104",
+      "semantic_type": "故障诊断",
+      "content_type": "text",
+      "text": "## 常见故障及维修方案\n\n## 充电器常见故障判断和排除",
+      "token_count": 7,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [
+        "充电器"
+      ],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": [],
+      "metadata": {
+        "part": "PART 9",
+        "section": "常见故障及维修方案",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl106",
+      "semantic_type": "故障诊断",
+      "content_type": "table",
+      "text": "[上下文] ## 常见故障及维修方案 ## 充电器常见故障判断和排除\n\n| 问题现象 | 原因 | 处理方法 |\n| --- | --- | --- |\n| 充电器接入，绿灯闪烁 | 充电器欠压或过压 | 正常现象，检查所充电池的最低和最高。 |\n| 电压是否符合充电器充电范围。 |  |  |\n| 充电器指示灯红灯闪烁 | 故障保护 | 插拔电池插头，返厂维修。 |\n| 充电器不充电 | 接触不良 | 将充电器输入，输出插头重新接插。 |\n| 充电器损坏 | 联系授权服务站更换充电器。 |  |\n| 电池组开路 | 重新连接电池线。 |  |",
+      "token_count": 68,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [
+        "充电器",
+        "电池"
+      ],
+      "fault_symptom": "充电器接入，绿灯闪烁",
+      "repair_action": "正常现象，检查所充电池的最低和最高。",
+      "repair_level": "授权服务站",
+      "risk_level": null,
+      "fault_triplet": [
+        {
+          "symptom": "充电器接入，绿灯闪烁",
+          "cause": "充电器欠压或过压",
+          "action": "正常现象，检查所充电池的最低和最高。"
+        },
+        {
+          "symptom": "电压是否符合充电器充电范围。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "充电器指示灯红灯闪烁",
+          "cause": "故障保护",
+          "action": "插拔电池插头，返厂维修。"
+        },
+        {
+          "symptom": "充电器不充电",
+          "cause": "接触不良",
+          "action": "将充电器输入，输出插头重新接插。"
+        },
+        {
+          "symptom": "充电器损坏",
+          "cause": "联系授权服务站更换充电器。",
+          "action": ""
+        },
+        {
+          "symptom": "电池组开路",
+          "cause": "重新连接电池线。",
+          "action": ""
+        }
+      ],
+      "metadata": {
+        "part": "PART 9",
+        "section": "充电器常见故障判断和排除",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt107",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "## 电池常见故障判断和排除",
+      "token_count": 3,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 9",
+        "section": "电池常见故障判断和排除",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl108",
+      "semantic_type": "故障诊断",
+      "content_type": "table",
+      "text": "[上下文] ## 电池常见故障判断和排除\n\n| 问题现象 | 原因 | 处理方法 |\n| --- | --- | --- |\n| 上电开不了机 | 整车未上电电池没电 | 检查电池插头是否插紧。 |\n| 充电器给电池充电后再装上车查看。 |  |  |\n| 开机无电量显示 | 通讯丢失 | 重新插拔插头。 |\n| 送售后监测点维修。 |  |  |\n| 低电量行驶时断电 | 电池没电 | 正常现象，建议找地方充电。 |\n| 骑行中速度只能限制在一档 | 通讯丢失 | 重新插拔插头。 |\n| 送售后监测点维修。 |  |  |\n| 骑行中仪表断电 | 电池保护 | 重新插拔插头。 |\n| 送售后监测点维修。 |  |  |\n| 电池没电后，整车接入充电器无法充电 | 电池欠压保护 | 重新插拔电池插头，再接入充电器。 |\n| 整车不通电 | 电源锁故障 | 维修或更换电源锁或接插件。 |\n| 保险丝断路 | 查明原因并更换保险丝。 |  |\n| 电路接触不良 | 重新固定电源导线插头。 |  |\n| 接通电源，仪表正常显示，调速失灵 | 电池电压过低 | 充足电。 |\n| 断电刹把失灵 | 维修或更换断电刹把。 |  |\n| 调速转把故障 | 更换调速转把。 |  |\n| 控制器或电机故障 | 联系授权服务站检测维修。 |  |",
+      "token_count": 143,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [
+        "控制器",
+        "电机",
+        "充电器",
+        "仪表",
+        "调速转把",
+        "刹把",
+        "保险丝",
+        "电池"
+      ],
+      "fault_symptom": "上电开不了机",
+      "repair_action": "检查电池插头是否插紧。",
+      "repair_level": "用户可操作",
+      "risk_level": null,
+      "fault_triplet": [
+        {
+          "symptom": "上电开不了机",
+          "cause": "整车未上电电池没电",
+          "action": "检查电池插头是否插紧。"
+        },
+        {
+          "symptom": "充电器给电池充电后再装上车查看。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "开机无电量显示",
+          "cause": "通讯丢失",
+          "action": "重新插拔插头。"
+        },
+        {
+          "symptom": "送售后监测点维修。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "低电量行驶时断电",
+          "cause": "电池没电",
+          "action": "正常现象，建议找地方充电。"
+        },
+        {
+          "symptom": "骑行中速度只能限制在一档",
+          "cause": "通讯丢失",
+          "action": "重新插拔插头。"
+        },
+        {
+          "symptom": "送售后监测点维修。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "骑行中仪表断电",
+          "cause": "电池保护",
+          "action": "重新插拔插头。"
+        },
+        {
+          "symptom": "送售后监测点维修。",
+          "cause": "",
+          "action": ""
+        },
+        {
+          "symptom": "电池没电后，整车接入充电器无法充电",
+          "cause": "电池欠压保护",
+          "action": "重新插拔电池插头，再接入充电器。"
+        },
+        {
+          "symptom": "整车不通电",
+          "cause": "电源锁故障",
+          "action": "维修或更换电源锁或接插件。"
+        },
+        {
+          "symptom": "保险丝断路",
+          "cause": "查明原因并更换保险丝。",
+          "action": ""
+        },
+        {
+          "symptom": "电路接触不良",
+          "cause": "重新固定电源导线插头。",
+          "action": ""
+        },
+        {
+          "symptom": "接通电源，仪表正常显示，调速失灵",
+          "cause": "电池电压过低",
+          "action": "充足电。"
+        },
+        {
+          "symptom": "断电刹把失灵",
+          "cause": "维修或更换断电刹把。",
+          "action": ""
+        },
+        {
+          "symptom": "调速转把故障",
+          "cause": "更换调速转把。",
+          "action": ""
+        },
+        {
+          "symptom": "控制器或电机故障",
+          "cause": "联系授权服务站检测维修。",
+          "action": ""
+        }
+      ],
+      "metadata": {
+        "part": "PART 9",
+        "section": "电池常见故障判断和排除",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt109",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "## 车辆定期保养\n\n电动车在正常使用过程中会接触各种各样的环境，整车各零部件在使用过程中会存在不同程度磨损，但有些关键零部件若不及时维修更换，将会影响车辆的性能甚至危害人身安全，所以雅迪向广大车主提供了定期免费保养服务。",
+      "token_count": 27,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 9",
+        "section": "车辆定期保养",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl110",
+      "semantic_type": "概述说明",
+      "content_type": "table",
+      "text": "[上下文] ## 车辆定期保养 电动车在正常使用过程中会接触各种各样的环境，整车各零部件在使用过程中会存在不同程度磨损，但有些关键零部件若不及时维修更换，将会影响车辆的性能甚至危害人身安全，所以雅迪向广大车主提供了定期免费保养服务。\n\n| 自购车之日起，以先到公里数或使用时间为准 |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n| 保养明细 | 部件名称 | 里程（公里）/时间（月) |  |  |  |\n| 线路 | 电缆线检查、控制器插头检查、电源连头检查 | • |  |  | ★ |\n| 外观 | 轮胎检查、分析检查、整车塑件外观 | ● | ▲ |  | ★ |\n| 刹车系统 | 刹车油量检查、刹车线检查、刹车盘检查、制动器油管检查、弹簧片检查、刹车片检查、刹车外观检查、刹车效果检查 | • |  |  | ★ |\n| 结构件 | 轮辋检查、各安装支架紧固、前后轮紧固、中撑/边撑、整车螺丝螺栓螺母紧固件 | • | ci: |  | ★ |\n| 电器件 | 智能APP功能检查、电机检查、防盗器检查、喇叭检查、开关检查、仪表显示检查、灯光检查、电源锁检查 | • |  | - | ★ |\n| 悬挂+转向系统 | 车把转向检查、前后减震检查、钢柱和轴承检查、前轮检查、后平叉检查 | • |  |  | ★ |\n| 整车骑行 | 驻车检查、整车异响检查、整车运行检查 | ● | ▲ |  | ★ |\n| 电池 | 电池插孔检查、充电检测、防水性检查、电池盒外观检查、电池检测 | • | ▲ |  |  |",
+      "token_count": 174,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 9",
+        "section": "车辆定期保养",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt111",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "4500公里/18个月\n\n6000公里/24个月",
+      "token_count": 6,
+      "parent_id": "part101",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 9",
+        "section": "车辆定期保养",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "part112",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 10 配件三包",
+      "token_count": 3,
+      "parent_id": null,
+      "child_ids": [
+        "txt113",
+        "tbl116",
+        "txt117",
+        "tbl118",
+        "txt119",
+        "stp123",
+        "txt124",
+        "tbl125",
+        "tbl126",
+        "txt127"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "配件三包",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt113",
+      "semantic_type": "风险警告",
+      "content_type": "text",
+      "text": "尊敬的用户：\n\n感谢您使用本公司生产的电动自行车，为保护您的合法权益，请妥善保管好此手册。当您使用本车辆时应当场检验、调试。您有权要求销售人员提供正确操作方法及维护事项，提供有效购车票证、保修卡及保修单位的地址和联系电话。\n\n请不要私自对车体、线缆、电器件及其他有关该车结构性能进行改造。电缆线、电器件参数的私自更改，会造成整车性能下降或电气性能的失效及其他情况发生，缩短该车的使用寿命，性能达不到有效保障。由此产生的责任与损失，雅迪公司概不负责，一律由用户自行承担。\n\n## 注意：\n\n·敬请选用带“雅迪专用”字样或雅迪公司选配的零部件。\n\n·请至雅迪授权服务站维修，若有疑问，请致电400-900-1212\n\n## 三包范围及期限",
+      "token_count": 79,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "caution",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "配件三包",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "caution"
+      }
+    },
+    {
+      "chunk_id": "tbl116",
+      "semantic_type": "参数查询",
+      "content_type": "table",
+      "text": "[上下文] 尊敬的用户： 感谢您使用本公司生产的电动自行车，为保护您的合法权益，请妥善保管好此手册。当您使用本车辆时应当场检验、调试。您有权要求销售人员提供正确操作方法及维护事项，提供有效购车票证、保修卡及保修单位的地址和联系电话。 请不要私自对车体、线缆、电器件及其他有关该车结构性能进行改造。电缆线、电器件参数的私自更改，会造成整车性能下降或电气性能的失效及其他情况发生，缩短该车的使用寿命，性能达不到有效保障。由此产生的责任与损失，雅迪公司概不负责，一律由用户自行承担。 ## 注意： ·敬请选用带“雅迪专用”字样或雅迪公司选配的零部件。 ·请至雅迪授权服务站维修，若有疑问，请致电400-900-1212 ## 三包范围及期限\n\n| 部件所属种类 | 部件名称 | 保修期限 | 质保说明 |\n| --- | --- | --- | --- |\n| 电动车体件 | 车架 | 24个月 | 产品原因开焊、脱焊、断裂、扭曲、掉漆可以质保，因撞击、超重、私自改动等人为原因损坏不予三包 |\n| 主/侧支架 | 12个月 | 因产品原因发生性能故障无法修复、开焊、脱焊、断裂、扭曲可以更换，因撞击、私自改动等人为撞击造成的损坏不予三包 |  |\n| 方向把、方向柱、后平叉、前轮载 | 24个月 | 因产品原因开焊、脱焊、断裂、扭曲、掉漆可以质保，因撞击、私自改动超重等人为原因造成的损坏不予三包 |  |\n| 转把、前/后减震器、真空胎、曲柄、中轴、牙盘、单撑断电开关、烤漆塑件、碟刹泵、碟刹盘、电镀件、飞轮、链条、座垫锁板、锂电充电孔、坐垫拉锁线、电子龙头锁拉线 | 12个月 | （1）因产品原因发生性能故障无法修复、开焊、脱焊、断裂、扭曲可以更换，减震漏油、变形可以更换，因撞击、私自改装，更改线路等人为撞击造成的损坏不予三包（2）烤漆塑件件因烤漆质量问题脱皮、龟裂面积在1平方厘米以上的可以更换，撞击等人为损坏、腐蚀不予三包（3）真空胎因产品质量出现的爆胎、漏气、鼓包现象可以三包，因自行修补或骑行不当等扎钉造成的损坏不予更换 |  |\n| 电动车体件 | 脚蹬、左/右搁脚、后视镜 | 6个月 | 因产品质量断裂、扭曲可以更换，因撞击、私自改动等人为撞击造成的损坏不予三包 |\n| 电机 | 电机 | 26个月 | 因线圈缺相、烧毁，磁钢退磁、脱落轮轴变形等质量问题无法修复，可以质保，因胎压不足过减速带、坑等原因，导致轮毂变形引起电机问题的不予三包；油封、霍尔、磁钢、轴承属于易损件，仅质保12个月 |\n| 电器件 | 控制器 | 12个月 | 因产品原因发性能故障法修复可以三包，因撞击、私自改动线路等人为因素造成的损坏不予三包 |\n| 充电器 | 12个月 | 因产品原因发生性能故障无法修复可以三包，因撞击、私自改动，泡水等人为因素造成的损坏不予三包 |  |\n| 主、副线缆、喇叭、仪表备用电源 | 12个月 | 因产品原因发生性能故障无法修复可以更换，私自改装，更改线路等人为造成的损坏不予 |  |\n| 刹把、转把、转换器、仪表、套锁、闪光器、防盗器、空气开关、GPS、断电开关、电机霍尔 | 12个月 | 因产品原因发生性能故障无法修复、开焊、脱焊、断裂、扭曲可以更换，减震漏油、变形可以更换，因撞击、私自改装，更改线路等人为造成的损坏不予 |  |\n| 锂电池 | 翼能量Ⅲ | 3年 | 购车日期前24个月换新，25-36个月换售后维护电池 |\n| TTFAR碳纤维锂电 | 5年 | 购车日期前48个月换新，49-60个月换售后维护电池 |  |",
+      "token_count": 372,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "三包范围及期限",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt117",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "### **产品保修期限表格（Markdown格式）**",
+      "token_count": 7,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "三包范围及期限",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl118",
+      "semantic_type": "参数查询",
+      "content_type": "table",
+      "text": "[上下文] ### **产品保修期限表格（Markdown格式）**\n\n| 产品类别 | 具体部件 | 保修期限 | 保修说明 |\n|----------|----------|----------|----------|\n| 电动车体件 | 脚蹬、左/右搁脚、后视镜 | 6个月 | 因产品质量断裂、扭曲可以更换，因撞击、私自改动等人为造成的损坏不予三包 |\n| 电机 | 电机 | 26个月 | 因线圈缺相、烧毁，磁钢退磁、脱落，轮轴变形等质量问题无法修复，可以质保。因胎压不足过减速带、抗等原因，导致轮毂变形引起电机问题的不予三包；油封、霍尔、磁钢、轴承属于易损件，仅质保12个月 |\n| 电器件 | 控制器 | 12个月 | 因产品原因发生性能故障无法修复可以三包，因撞击、私自改动线路等人造成损坏不予以三包 |\n|  | 充电器 | 12个月 | 因产品原因发生性能故障无法修复可以三包，因撞击、私自改动，泡水等人为因素造成的损坏不予三包 |\n|  | 主、副线缆、喇叭、仪表备用电源 | 12个月 | 因产品原因发生性能故障无法修复可以更换，私自改装，更改线路等人为造成的损坏不予 |\n|  | 刹把、转把、转换器、仪表、套锁、闪光器、防盗器、空气开关、GPS、断电开关、电机霍尔 | 12个月 | 因产品原因发生性能故障无法修复、开焊、脱焊、断裂、扭曲可以更换，因撞击、私自改装，更改线路等人为造成的损坏不予 |\n| 锂电池 | 赛能量III | 3年 | 购车日期前24个月换新，25-36个月换售后维护电池 |\n|  | TTFAR碳纤维锂电 | 5年 | 购车日期前48个月换新，49-60个月换售后维护电池 |",
+      "token_count": 179,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "三包范围及期限",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt119",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "### **文字说明部分**\n\n#### **售后服务及保修范围**\n尊敬的用户：\n\n## 售后服务及保修范围\n\n## 尊敬的用户：\n\n感谢您使用本公司生产的电动自行车，为保护您的合法权益，请妥善保管好此手册。当您使用本车辆时，请当场检验、调试并有权要求销售人员提供正确操作方法及维护事项，提供有效购车票证和保修卡及保修单位的地址和联系电话。\n\n## 不属“三包”的范围及内容",
+      "token_count": 47,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "售后服务及保修范围",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "stp123",
+      "semantic_type": "故障诊断",
+      "content_type": "steps",
+      "text": "1. 雅迪授权服务商或运输单位因管理、仓储、运输不善造成包装破损、零部件缺损、锈蚀、氧化、变质和损坏的；\n\n2. 不可抗力（如地震、台风、火灾等）造成损坏的；\n\n3. 用户使用不当、保管不善、不遵守使用保养规定而引起故障损坏、正常磨损、损耗的零件；\n\n4. 用户人为或意外发生碰撞、水浸、火烧及事故而引起故障损坏的零件；\n\n5. 用户未在官方授权服务店进行维修，自行改造、分解、维修以及破坏产品整体及零部件正常使用状态的；\n\n6. 用户使用非原厂配件造成的车辆零部件损坏或擅自改动电路、线路配置的;\n\n7. 用户发现故障后应立即报修，若因故拖延不送保修，耽误时间超出造成保修期超出的；\n\n8. 轮胎表面损伤、花纹正常磨损、刹车片正常磨损及使用中正常磨损的其他零件；\n\n9. 充电器、控制器等有商标、封条的，人为撕毁的不予三包，套锁钥匙折断在内，不予三包。\n\n10. 正常损耗的消耗品：如轮胎表面损伤、花纹，刹车片正常磨损，不予保修。",
+      "token_count": 104,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": "7. 用户发现故障后应立即报修，若因故拖延不送保修",
+      "repair_action": "耽误时间超出造成保修期超出的；",
+      "repair_level": "经销商/用户",
+      "risk_level": null,
+      "fault_triplet": [
+        {
+          "symptom": "7. 用户发现故障后应立即报修，若因故拖延不送保修",
+          "cause": "",
+          "action": "耽误时间超出造成保修期超出的；"
+        }
+      ],
+      "metadata": {
+        "part": "PART 10",
+        "section": "不属“三包”的范围及内容",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt124",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "## 车辆保养/维修记录",
+      "token_count": 3,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "车辆保养/维修记录",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl125",
+      "semantic_type": "故障诊断",
+      "content_type": "table",
+      "text": "[上下文] ## 车辆保养/维修记录\n\n| 日期 | 公里数/使用时长(月) | 保养内容或故障原因 | 检修单位 | 检修人 | 用户签字 |\n| --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |",
+      "token_count": 72,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": [],
+      "metadata": {
+        "part": "PART 10",
+        "section": "车辆保养/维修记录",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "tbl126",
+      "semantic_type": "参数查询",
+      "content_type": "table",
+      "text": "| 产品型号 | TDR2699Z |\n| --- | --- |\n| 长×宽×高 | 1667×708×1063mm |\n| 轴距 | 1210mm |\n| 整车质量 | 55kg |\n| 载重量 | 75kg |\n| 传动方式 | 电机驱动：电力式；脚踏骑行：机械式 |\n| 电动机型式 | 永磁电动机 |\n| 电动机生产单位 | 无锡市祥鹏车辆配件有限公司 |\n| 江苏雅迪科技发展有限公司宁波分公司 |  |\n| 电动机额定电压 | 48V |\n| 电动机额定转速 | 330r/min |\n| 电动机标称功率 | 400W |\n| 蓄电池类型 | 锂电池 |\n| 蓄电池额定容量 | 24Ah |\n| 蓄电池标称电压 | 48V |\n| 百公里耗电量 | 1.2kw.h/100km |\n| 欠压保护值 | 42±0.5V |\n| 过流保护值 | 25±1A |\n| 最高车速 | 25km/h |\n| 续驶里程 | 60km |",
+      "token_count": 105,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "车辆保养/维修记录",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt127",
+      "semantic_type": "风险警告",
+      "content_type": "warning",
+      "text": "## 注意：\n\n本说明书的目的是为了用户更好的使用车辆，我司保留随时进行产品优化变更的权利以及对本说明书的解释权。整车图片、技术参数、性能、功能随之发生的变化，造成客户使用不便，敬请谅解！若有疑问，请致电400-900-1212。",
+      "token_count": 28,
+      "parent_id": "part112",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": "caution",
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 10",
+        "section": "车辆保养/维修记录",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": "caution"
+      }
+    },
+    {
+      "chunk_id": "part128",
+      "semantic_type": "概述说明",
+      "content_type": "heading",
+      "text": "## PART 12 电气原理图",
+      "token_count": 4,
+      "parent_id": null,
+      "child_ids": [
+        "txt129",
+        "txt130",
+        "txt131",
+        "txt132",
+        "txt133",
+        "txt134",
+        "txt135"
+      ],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 12",
+        "section": "电气原理图",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt129",
+      "semantic_type": "概述说明",
+      "content_type": "text",
+      "text": "电气原理图",
+      "token_count": 1,
+      "parent_id": "part128",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 12",
+        "section": "售后保修卡",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt130",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### **一、顶部左侧区域**\n1. **电源与保险丝**\n- 左上角标注“**开关**”（可能为点火开关或总电源开关），通过导线连接至“**保险丝**”。\n- 保险丝旁标注“**+5V**”，表示该电路的正电压输入。\n\n2. **控制组核心模块**\n- 中央偏上位置有一个矩形框，内部标注“**控制组**”（可能为ECU或主控单元）。\n- 控制组周围有多个线路连接：\n- “**信号线**”（多条导线）；\n- 标注“**+6V**”的电源线；\n- 三个接口标注“**Hc**”、“**Ha**”、“**Hb**”（可能代表不同功能的信号输入/输出端口）。",
+      "token_count": 69,
+      "parent_id": "part128",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 12",
+        "section": "售后保修卡",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt131",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### **二、左侧照明系统区域**\n1. **仪表盘指示灯**\n- 左侧上方有一个矩形框，标注“**仪表盘指示灯**”，内部包含多个小方块（可能表示仪表盘上的各类指示灯，如故障灯、充电指示等）。\n\n2. **转向灯与灯光**\n- **头罩左转向灯**：用圆圈加叉号符号表示；\n- **尾灯左转向灯**：同上；\n- **头罩右转向灯**：同上；\n- **尾灯右转向灯**：同上；\n- **前照灯**（大灯）：标注“**前照灯**”；\n- **后照灯**（小灯）：标注“**后照灯**”。\n\n3. **其他灯光控制**\n- “**头罩左转向灯**”、“**尾灯左转向灯**”等均通过导线连接至控制组。",
+      "token_count": 74,
+      "parent_id": "part128",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 12",
+        "section": "售后保修卡",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt132",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### **三、中间偏下区域**\n1. **防盗系统**\n- 中央偏下位置有一个矩形框，标注“**防盗器**”。\n- 防盗器旁标注“**天线**”，表示防盗系统的信号接收端口（可能用于无线防盗功能）。\n\n2. **控制组连接线路**\n- 控制组通过多条导线连接至以下部件：\n- “**信号线**”；\n- “**+6V**”电源线；\n- 与“**Hc**”、“**Ha**”、“**Hb**”接口相连。",
+      "token_count": 50,
+      "parent_id": "part128",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 12",
+        "section": "售后保修卡",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt133",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### **四、右侧电源与控制区域**\n1. **汽车电源系统**\n- 右上角标注“**汽车电源**”，连接至“**保险丝**”。\n- 保险丝旁标注“**+5V**”（可能为低压供电）。\n\n2. **继电器与电门锁**\n- “**继电器**”：矩形框内含线圈和触点符号，用于控制大电流设备。\n- “**电门锁**”：标注在继电器旁，可能指车门锁或防盗锁。\n\n3. **防盗器与信号线**\n- 防盗器通过导线连接至“**天线**”，并有“**信号线**”延伸至其他模块。",
+      "token_count": 58,
+      "parent_id": "part128",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 12",
+        "section": "售后保修卡",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt134",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### **五、底部控制开关区域**\n1. **灯光控制开关**\n- “**大灯开关**”：矩形框内标注，用于控制前照灯和后照灯。\n- “**前制动开关**”、“**后制动开关**”：分别标注在电路图下方，可能用于制动信号输入。\n\n2. **转向与辅助开关**\n- “**左转向开关**”：标注在底部右侧，控制左侧转向灯。\n- “**右转向开关**”（未明确标注，但逻辑上应存在）。\n\n3. **其他功能开关**\n- “**前制动开关**”、“**后制动开关**”：可能用于制动信号传输至控制组。",
+      "token_count": 62,
+      "parent_id": "part128",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 12",
+        "section": "售后保修卡",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    },
+    {
+      "chunk_id": "txt135",
+      "semantic_type": "电路拓扑",
+      "content_type": "text",
+      "text": "### **六、其他关键标注**\n- **电源负极**：图中多处标注“**-**”符号（如保险丝下方），表示接地线。\n- **线路功能说明**：\n- “**信号线**”：连接各模块的通信或控制信号；\n- “**Hc**”、“**Ha**”、“**Hb**”：可能代表不同传感器或执行器的接口（如转向灯、制动信号等）。\n- **元件符号**：\n- 保险丝：矩形框加横线；\n- 继电器：线圈+触点符号；\n- 开关：方块或圆圈符号；\n- 灯光：圆圈带叉号符号。\n\n### **总结**\n该电路图完整展示了汽车电气系统的**电源分配、控制逻辑、照明系统及防盗功能**的连接关系，核心模块为“**控制组**”，通过多路信号线（Hc/Ha/Hb）与各子系统（转向灯、大灯、防盗器等）交互。线路标注清晰，包含电源输入（+5V/+6V）、保险丝保护、继电器驱动及各类开关的控制逻辑，符合汽车电气系统的典型设计规范。\n\n## 售后保修卡\n\n\n整个图像中**没有可见的文字信息**，仅包含黑白方块组成的二维码矩阵和中心的橙色品牌标识图案。\n\n\n雅迪车主平 台\n\n生产企业：浙江雅迪机车有限公司\n\n地 址：浙江省宁波市杭州湾新区滨海大道288号\n\n服务电话：400-900-1212\n\n企业网址：www.yadea.com.cn",
+      "token_count": 138,
+      "parent_id": "part128",
+      "child_ids": [],
+      "mom_id": null,
+      "component": [],
+      "fault_symptom": null,
+      "repair_action": null,
+      "repair_level": null,
+      "risk_level": null,
+      "fault_triplet": null,
+      "metadata": {
+        "part": "PART 12",
+        "section": "售后保修卡",
+        "page": null,
+        "is_vlm_enhanced": false,
+        "warning_level": null
+      }
+    }
+  ],
+  "stats": {
+    "total_chunks": 82,
+    "by_semantic_type": {
+      "概述说明": 28,
+      "风险警告": 11,
+      "故障诊断": 11,
+      "操作步骤": 5,
+      "电路拓扑": 20,
+      "参数查询": 4,
+      "部件说明": 3
+    },
+    "fault_triplet_count": 51,
+    "avg_token_count": 81.9,
+    "fragment_count": 19
+  }
+}
