@@ -3,179 +3,416 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>⚡ DM6 说明书 · 分块数据看板</title>
+<title>DM6 知识库分块数据看板</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-  :root {
-    --bg: #0d1117; --card-bg: #161b22; --border: #30363d;
-    --text: #e6edf3; --text2: #8b949e; --accent: #58a6ff;
-    --red: #f85149; --orange: #d2991d; --blue: #58a6ff; --green: #3fb950;
-    --purple: #bc8cff; --cyan: #39d2c0; --gray: #8b949e;
-    --st-fault: #E63946; --st-warn: #F4A261; --st-step: #457B9D;
-    --st-param: #2A9D8F; --st-comp: #9B5DE5; --st-circuit: #00B4D8; --st-overview: #6C757D;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-  .header{background:#161b22;border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10;flex-wrap:wrap}
-  .header h1{font-size:18px;font-weight:600;display:flex;align-items:center;gap:8px}
-  .header .badge{background:rgba(88,166,255,.15);color:var(--accent);padding:4px 12px;border-radius:12px;font-size:13px;font-weight:500}
-  .header .sub{font-size:12px;color:var(--text2);margin-left:auto}
-  .container{max-width:1200px;margin:0 auto;padding:20px 24px}
-  /* KPI Cards */
-  .kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px}
-  .kpi-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:18px 16px;text-align:center;transition:transform .2s,box-shadow .2s;cursor:default}
-  .kpi-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.4)}
-  .kpi-card .kpi-num{font-size:28px;font-weight:700;line-height:1.2}
-  .kpi-card .kpi-label{font-size:12px;color:var(--text2);margin-top:4px}
-  .kpi-card .kpi-icon{font-size:20px;margin-bottom:4px}
-  .kpi-ok{color:var(--green)} .kpi-warn{color:var(--orange)} .kpi-danger{color:var(--red)}
-  .kpi-accent{color:var(--accent)} .kpi-purple{color:var(--purple)}
-  /* Charts */
-  .charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
-  .chart-box{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:16px}
-  .chart-box h3{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--text);display:flex;align-items:center;gap:6px}
-  .chart-box canvas{max-height:300px}
-  /* Filters */
-  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
-  .filters select,.filters input,.filters button{padding:8px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;color:var(--text);outline:none;transition:border-color .15s}
-  .filters select:focus,.filters input:focus{border-color:var(--accent)}
-  .filters input{flex:1;min-width:140px}
-  .filters label{font-size:12px;color:var(--text2);display:flex;align-items:center;gap:4px;cursor:pointer;user-select:none}
-  .filters label input[type=checkbox]{accent-color:var(--accent)}
-  .filters .clear-btn{padding:8px 14px;cursor:pointer;transition:all .15s}
-  .filters .clear-btn:hover{border-color:var(--red);color:var(--red)}
-  /* Chunk cards */
-  .chunk-card{background:var(--card-bg);border:1px solid var(--border);border-left:4px solid #30363d;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:border-color .15s}
-  .chunk-card:hover{border-color:#58a6ff;border-left-width:4px}
-  .chunk-card .card-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-  .chunk-card .type-icon{font-size:15px;flex-shrink:0}
-  .chunk-card .part-label{font-weight:600;font-size:13px;flex:1;min-width:120px}
-  .chunk-card .token-badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;white-space:nowrap}
-  .t-red{background:rgba(248,81,73,.15);color:var(--red)}
-  .t-green{background:rgba(63,185,80,.15);color:var(--green)}
-  .t-yellow{background:rgba(210,153,29,.15);color:var(--orange)}
-  .chunk-card .card-preview{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:6px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-  /* Progress bar */
-  .progress-bar{height:4px;background:var(--border);border-radius:2px;margin-bottom:6px;overflow:hidden}
-  .progress-bar .fill{height:100%;border-radius:2px;transition:width .3s}
-  /* Chips */
-  .chips{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-  .chip{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:500;white-space:nowrap}
-  .chip-comp{background:rgba(88,166,255,.12);color:var(--accent)}
-  .chip-trip{background:rgba(210,153,29,.12);color:var(--orange)}
-  .chip-domain{background:rgba(188,140,255,.12);color:var(--purple)}
-  .chip-warn{background:rgba(248,81,73,.12);color:var(--red)}
-  /* Expanded */
-  .chunk-card.expanded{border-color:var(--accent)}
-  .chunk-detail{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
-  .chunk-card.expanded .chunk-detail{display:block}
-  .detail-text{background:#0d1117;border:1px solid var(--border);border-radius:8px;padding:14px;font-size:13px;line-height:1.7;white-space:pre-wrap;max-height:350px;overflow-y:auto;color:var(--text);margin-bottom:12px}
-  .detail-section{margin-bottom:10px}
-  .detail-section h4{font-size:11px;color:var(--text2);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
-  .detail-section .val{font-size:13px;color:var(--text)}
-  .triplet-card{background:rgba(210,153,29,.06);border:1px solid rgba(210,153,29,.2);border-radius:8px;padding:10px 14px;margin-bottom:6px;font-size:13px}
-  .triplet-card .trip-row{display:flex;gap:8px;margin-bottom:3px;flex-wrap:wrap}
-  .triplet-card .trip-label{font-weight:600;color:var(--orange);min-width:48px}
-  /* Pagination */
-  .pagination{display:flex;justify-content:center;align-items:center;gap:12px;padding:20px 0;font-size:14px}
-  .pagination button{padding:8px 16px;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;font-family:inherit;color:var(--text);transition:all .15s}
-  .pagination button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
-  .pagination button:disabled{opacity:.3;cursor:not-allowed}
-  .pagination .page-info{color:var(--text2);font-size:13px}
-  .pagination .total-info{color:var(--text2);font-size:12px}
-  /* Loading */
-  .loading{text-align:center;padding:40px;color:var(--text2)}
-  .spinner{display:inline-block;width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .no-results{text-align:center;padding:60px 20px;color:var(--text2)}
-  .no-results .icon{font-size:40px;margin-bottom:12px}
-  /* Semantic type text colors */
-  .st-故障诊断{color:var(--st-fault)} .st-风险警告{color:var(--st-warn)} .st-操作步骤{color:var(--st-step)}
-  .st-参数查询{color:var(--st-param)} .st-部件说明{color:var(--st-comp)} .st-电路拓扑{color:var(--st-circuit)} .st-概述说明{color:var(--st-overview)}
-  /* Semantic type border-left */
-  .bl-故障诊断{border-left-color:var(--st-fault)!important}
-  .bl-风险警告{border-left-color:var(--st-warn)!important}
-  .bl-操作步骤{border-left-color:var(--st-step)!important}
-  .bl-参数查询{border-left-color:var(--st-param)!important}
-  .bl-部件说明{border-left-color:var(--st-comp)!important}
-  .bl-电路拓扑{border-left-color:var(--st-circuit)!important}
-  .bl-概述说明{border-left-color:var(--st-overview)!important}
-  /* Responsive */
-  @media (max-width:900px){.kpi-row{grid-template-columns:repeat(3,1fr)}.charts-row{grid-template-columns:1fr}}
-  @media (max-width:600px){.kpi-row{grid-template-columns:repeat(2,1fr)}}
+/* ── Design Tokens ───────────────────────────────── */
+:root {
+  --canvas:    #08090a;
+  --panel:     #0f1011;
+  --card:      #191a1b;
+  --hover:     #28282c;
+  --tx1:       #f7f8f8;
+  --tx2:       #d0d6e0;
+  --tx3:       #8a8f98;
+  --tx4:       #62666d;
+  --accent:    #5e6ad2;
+  --accent-h:  #828fff;
+  --green:     #10b981;
+  --orange:    #F4A261;
+  --red:       #E63946;
+  --border:    rgba(255,255,255,0.08);
+  --border-sub:rgba(255,255,255,0.05);
+  --badge-fault:   #E63946;
+  --badge-warn:    #F4A261;
+  --badge-step:    #457B9D;
+  --badge-param:   #10b981;
+  --badge-comp:    #9B5DE5;
+  --badge-circuit: #00B4D8;
+  --badge-overview:#6C757D;
+}
+/* ── Reset & Base ────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--canvas);color:var(--tx1);font-family:"Inter",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.5;font-feature-settings:"cv01","ss03";-webkit-font-smoothing:antialiased}
+body{min-height:100vh}
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.18)}
+/* ── Header ──────────────────────────────────────── */
+.header{
+  position:sticky;top:0;z-index:20;
+  background:var(--panel);
+  border-bottom:1px solid var(--border-sub);
+  padding:0 32px;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+}
+.header-left{font-size:14px;font-weight:500;color:var(--tx2);letter-spacing:-0.2px;white-space:nowrap}
+.header-right{font-size:13px;font-weight:400;color:var(--tx3);white-space:nowrap}
+/* ── Container ───────────────────────────────────── */
+.container{max-width:1200px;margin:0 auto}
+/* ── KPI Row ─────────────────────────────────────── */
+.kpi-row{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:12px;
+  padding:24px 32px;
+}
+.kpi-card{
+  background:var(--card);border-radius:8px;padding:16px 20px;
+  border-left:3px solid var(--accent);
+  display:flex;flex-direction:column;gap:4px;
+}
+.kpi-card.kpi-warn{border-left-color:var(--orange)}
+.kpi-card.kpi-danger{border-left-color:var(--red)}
+.kpi-card.kpi-ok{border-left-color:var(--green)}
+.kpi-card .kpi-num{
+  font-size:32px;font-weight:600;color:var(--tx1);
+  line-height:1.1;letter-spacing:-0.704px;
+  font-feature-settings:"cv01","ss03","tnum";
+}
+.kpi-card .kpi-label{font-size:13px;font-weight:400;color:var(--tx3);margin-top:2px}
+/* ── Charts ──────────────────────────────────────── */
+.charts-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  padding:0 32px 24px;
+}
+.chart-box{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:20px 20px 12px;
+  position:relative;min-width:0;overflow:hidden;
+}
+.chart-box h3{
+  font-size:13px;font-weight:500;color:var(--tx2);
+  margin-bottom:4px;letter-spacing:-0.1px;
+}
+.chart-box .chart-hint{
+  font-size:11px;font-weight:400;color:var(--tx4);
+  margin-bottom:12px;
+}
+.chart-box canvas{max-height:260px;max-width:100%}
+/* ── Filters ─────────────────────────────────────── */
+.filters{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  padding:0 32px 12px;
+}
+.filters select,.filters input,.filters button{
+  height:34px;padding:0 12px;
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--border);border-radius:6px;
+  font-size:13px;font-family:inherit;color:var(--tx1);
+  outline:none;transition:border-color .15s;
+}
+.filters select{min-width:120px;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a8f98'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
+.filters select option{background:var(--card);color:var(--tx1)}
+.filters input{flex:1;min-width:140px}
+.filters select:focus,.filters input:focus{border-color:var(--accent)}
+.filters label{
+  font-size:12px;color:var(--tx3);display:flex;align-items:center;gap:6px;
+  cursor:pointer;user-select:none;white-space:nowrap;height:34px;padding:0 12px;
+  background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:6px;
+}
+.filters label input[type=checkbox]{accent-color:var(--accent);width:14px;height:14px;cursor:pointer}
+.filters .clear-btn{
+  cursor:pointer;transition:all .15s;height:34px;padding:0 14px;
+  background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:6px;
+  font-size:13px;font-family:inherit;color:var(--tx3);
+}
+.filters .clear-btn:hover{border-color:var(--red);color:var(--red)}
+/* ── Stats Bar ───────────────────────────────────── */
+.stats-bar{
+  padding:0 32px 16px;
+  font-size:13px;font-weight:400;color:var(--tx3);
+}
+/* ── Chunk List ──────────────────────────────────── */
+.chunk-list{padding:0 32px}
+/* ── Chunk Card ──────────────────────────────────── */
+.chunk-card{
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--border);
+  border-left:3px solid var(--border);
+  border-radius:0 8px 8px 0;
+  padding:14px 16px;margin-bottom:8px;
+  transition:border-color .15s,background .15s;
+}
+.chunk-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
+.chunk-card.expanded{border-color:var(--accent);background:rgba(94,106,210,0.04)}
+/* ── Border-left semantic colors ─────────────────── */
+.bl-故障诊断{border-left-color:var(--badge-fault)!important}
+.bl-风险警告{border-left-color:var(--badge-warn)!important}
+.bl-操作步骤{border-left-color:var(--badge-step)!important}
+.bl-参数查询{border-left-color:var(--badge-param)!important}
+.bl-部件说明{border-left-color:var(--badge-comp)!important}
+.bl-电路拓扑{border-left-color:var(--badge-circuit)!important}
+.bl-概述说明{border-left-color:var(--badge-overview)!important}
+/* ── Card Top Row ────────────────────────────────── */
+.card-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+/* ── Semantic type badge (pill) ──────────────────── */
+.sem-badge{
+  display:inline-flex;align-items:center;
+  font-size:11px;font-weight:500;line-height:1;
+  padding:3px 10px;border-radius:9999px;
+  white-space:nowrap;cursor:pointer;
+  transition:filter .15s;
+}
+.sem-badge:hover{filter:brightness(1.3)}
+.sem-badge.sem-故障诊断{background:rgba(230,57,70,0.15);color:var(--badge-fault)}
+.sem-badge.sem-风险警告{background:rgba(244,162,97,0.15);color:var(--badge-warn)}
+.sem-badge.sem-操作步骤{background:rgba(69,123,157,0.15);color:var(--badge-step)}
+.sem-badge.sem-参数查询{background:rgba(16,185,129,0.15);color:var(--badge-param)}
+.sem-badge.sem-部件说明{background:rgba(155,93,229,0.15);color:var(--badge-comp)}
+.sem-badge.sem-电路拓扑{background:rgba(0,180,216,0.15);color:var(--badge-circuit)}
+.sem-badge.sem-概述说明{background:rgba(108,117,125,0.15);color:var(--badge-overview)}
+/* ── Part·Section label ─────────────────────────── */
+.card-part-label{font-weight:500;font-size:13px;color:var(--tx2);flex:1;min-width:100px}
+/* ── Token badge ─────────────────────────────────── */
+.token-badge{
+  font-size:11px;font-weight:500;padding:2px 8px;border-radius:9999px;
+  white-space:nowrap;font-feature-settings:"tnum";
+}
+.token-red{background:rgba(230,57,70,0.12);color:var(--red)}
+.token-green{background:rgba(16,185,129,0.12);color:var(--green)}
+.token-yellow{background:rgba(244,162,97,0.12);color:var(--orange)}
+/* ── Text Preview ────────────────────────────────── */
+.card-preview{
+  font-size:13px;color:var(--tx3);line-height:1.55;margin-bottom:6px;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+}
+/* ── Progress bar (mini) ─────────────────────────── */
+.mini-progress{
+  height:4px;background:#23252a;border-radius:2px;margin-bottom:6px;overflow:hidden
+}
+.mini-progress .fill{height:100%;border-radius:2px;transition:width .3s}
+/* ── Chips row ───────────────────────────────────── */
+.chips{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-bottom:4px}
+.chip{
+  font-size:10px;font-weight:500;padding:2px 8px;border-radius:9999px;
+  white-space:nowrap;border:1px solid var(--border-sub);
+  color:var(--tx3);
+}
+.chip-trip{background:rgba(244,162,97,0.08);color:var(--orange)}
+.chip-domain{background:rgba(155,93,229,0.08);color:var(--badge-comp)}
+/* ── Expand toggle button ────────────────────────── */
+.expand-toggle{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12px;font-weight:500;color:var(--tx4);
+  background:rgba(255,255,255,0.02);border:1px solid var(--border);
+  border-radius:6px;padding:4px 12px;cursor:pointer;
+  transition:all .15s;margin-top:4px;
+  font-family:inherit;
+}
+.expand-toggle:hover{color:var(--tx2);border-color:rgba(255,255,255,0.15)}
+/* ── Expanded Detail ─────────────────────────────── */
+.chunk-detail-wrapper{
+  max-height:0;overflow:hidden;
+  transition:max-height .3s ease;
+}
+.chunk-detail-wrapper.open{max-height:2000px}
+.chunk-detail{
+  margin-top:12px;padding-top:12px;
+  border-top:1px solid var(--border-sub);
+}
+.detail-text{
+  background:var(--panel);border:1px solid var(--border-sub);border-radius:6px;
+  padding:16px;font-family:"JetBrains Mono","Cascadia Code","Consolas",monospace;
+  font-size:13px;font-weight:400;line-height:1.7;white-space:pre-wrap;
+  max-height:400px;overflow-y:auto;color:var(--tx1);
+  font-feature-settings:"calt","liga" 0;
+}
+/* ── Triplet cards ───────────────────────────────── */
+.triplet-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:8px;margin-bottom:12px;
+}
+.triplet-card{
+  background:var(--panel);border:1px solid var(--border-sub);
+  border-radius:8px;padding:12px 14px;
+  font-size:13px;line-height:1.6;
+}
+.triplet-card .trip-field{margin-bottom:4px}
+.triplet-card .trip-field:last-child{margin-bottom:0}
+.triplet-card .trip-key{font-weight:500;color:var(--orange);font-size:11px;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:1px}
+.triplet-card .trip-val{color:var(--tx2);font-size:13px}
+/* ── Detail sections ─────────────────────────────── */
+.detail-section{margin-bottom:12px}
+.detail-section:last-child{margin-bottom:0}
+.detail-section .ds-heading{
+  font-size:11px;font-weight:500;color:var(--tx4);
+  text-transform:uppercase;letter-spacing:0.3px;margin-bottom:6px;
+}
+.detail-section .ds-content{font-size:13px;color:var(--tx2);line-height:1.6}
+.detail-tags{display:flex;flex-wrap:wrap;gap:4px}
+.detail-tags .chip{font-size:11px;padding:3px 10px}
+/* ── Loading & Empty ─────────────────────────────── */
+.loading,.empty-state{text-align:center;padding:60px 20px;color:var(--tx3)}
+.spinner{
+  display:inline-block;width:24px;height:24px;
+  border:2px solid var(--border);border-top-color:var(--accent);
+  border-radius:50%;animation:spin .7s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty-state p{margin-top:8px;font-size:13px}
+/* ── Pagination ──────────────────────────────────── */
+.pagination{
+  display:flex;justify-content:center;align-items:center;gap:16px;
+  padding:24px 32px;font-size:13px;color:var(--tx3);
+}
+.pagination button{
+  height:34px;padding:0 18px;
+  background:rgba(255,255,255,0.02);border:1px solid var(--border);
+  border-radius:6px;cursor:pointer;font-size:13px;font-family:inherit;
+  color:var(--tx2);transition:all .15s;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.pagination button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.pagination button:disabled{opacity:.3;cursor:not-allowed}
+.pagination .page-num{font-weight:500;color:var(--tx2)}
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width:900px){
+  .kpi-row{grid-template-columns:repeat(3,1fr)}
+  .charts-row{grid-template-columns:1fr}
+}
+@media (max-width:768px){
+  .header{padding:0 16px;height:auto;min-height:48px;gap:8px;padding-top:8px;padding-bottom:8px}
+  .kpi-row{grid-template-columns:repeat(2,1fr);padding:16px;gap:8px}
+  .kpi-card{padding:14px 16px}
+  .kpi-card .kpi-num{font-size:26px}
+  .charts-row{padding:0 16px 16px}
+  .filters{padding:0 16px 8px;gap:6px}
+  .stats-bar{padding:0 16px 12px}
+  .chunk-list{padding:0 16px}
+  .chunk-card{padding:12px 14px}
+  .pagination{padding:16px}
+  .filters input{min-width:100px}
+}
+@media (max-width:480px){
+  .kpi-row{grid-template-columns:1fr;padding:12px;gap:6px}
+  .kpi-card{padding:12px 14px;flex-direction:row;align-items:center;gap:12px;border-left-width:3px;border-top:none}
+  .kpi-card .kpi-num{font-size:24px}
+  .kpi-card .kpi-label{font-size:12px}
+  .charts-row{padding:0 12px 12px}
+  .filters{padding:0 12px 6px}
+  .stats-bar{padding:0 12px 10px;font-size:12px}
+  .chunk-list{padding:0 12px}
+  .chunk-card{padding:10px 12px;border-radius:0 6px 6px 0}
+  .pagination{padding:12px;gap:8px}
+  .pagination button{padding:0 12px;font-size:12px}
+  .filters select,.filters input{min-width:80px;font-size:12px}
+  .card-top{gap:4px}
+  /* touch targets >= 44px */
+  .filters select,.filters input,.filters button,
+  .filters label,.expand-toggle,.pagination button,
+  .sem-badge{min-height:44px;padding-top:0;padding-bottom:0}
+}
+/* ── Reduced Motion ──────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  .chunk-detail-wrapper{transition:none}
+  .chunk-card,.filters select,.filters input,
+  .expand-toggle,.pagination button,.sem-badge,
+  .mini-progress .fill{transition:none}
+  .spinner{animation-duration:2s}
+}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>⚡ DM6 说明书 · 知识库分块数据看板</h1>
-  <span class="badge" id="total-badge">-- chunks</span>
-  <span class="sub" id="subtitle">加载中…</span>
-</div>
+<!-- ── Header ───────────────────────────────────── -->
+<header class="header">
+  <span class="header-left">⚡ DM6 知识库分块数据看板</span>
+  <span class="header-right" id="header-summary">加载中…</span>
+</header>
 
 <div class="container">
 
-  <!-- KPI Cards -->
-  <div class="kpi-row" id="kpi-row"></div>
+<!-- ── KPI Cards ─────────────────────────────────── -->
+<div class="kpi-row" id="kpi-row"></div>
 
-  <!-- Charts -->
-  <div class="charts-row">
-    <div class="chart-box">
-      <h3>📊 语义类型分布 <span style="font-size:11px;color:var(--text2);font-weight:400">（点击柱子筛选）</span></h3>
-      <canvas id="semanticChart"></canvas>
-    </div>
-    <div class="chart-box">
-      <h3>📈 Token 分布直方图 <span style="font-size:11px;color:var(--text2);font-weight:400">（红色虚线=阈值）</span></h3>
-      <canvas id="tokenChart"></canvas>
-    </div>
+<!-- ── Charts ────────────────────────────────────── -->
+<div class="charts-row">
+  <div class="chart-box">
+    <h3>语义类型分布</h3>
+    <div class="chart-hint">点击柱子筛选对应类型</div>
+    <canvas id="semanticChart"></canvas>
   </div>
-
-  <!-- Filters -->
-  <div class="filters">
-    <select id="filter-semantic"><option value="">全部语义类型</option></select>
-    <select id="filter-part"><option value="">全部 PART</option></select>
-    <input type="text" id="filter-search" placeholder="搜索 chunk_id / 文本…">
-    <select id="filter-sort"><option value="">默认排序</option><option value="token_count">按 Token 数</option><option value="part">按 PART</option><option value="semantic_type">按语义类型</option></select>
-    <select id="filter-order"><option value="asc">升序</option><option value="desc">降序</option></select>
-    <label><input type="checkbox" id="filter-fault"> 仅三元组</label>
-    <button class="clear-btn" onclick="clearFilters()">✕ 清除</button>
+  <div class="chart-box">
+    <h3>Token 分布直方图</h3>
+    <div class="chart-hint">红色虚线标注碎片阈值 50t 与硬上限 768t</div>
+    <canvas id="tokenChart"></canvas>
   </div>
+</div>
 
-  <!-- Chunk list -->
-  <div id="chunk-list"></div>
+<!-- ── Filters ──────────────────────────────────── -->
+<div class="filters" id="filters">
+  <select id="filter-semantic"><option value="">语义类型 ▾</option></select>
+  <select id="filter-part"><option value="">PART ▾</option></select>
+  <input type="text" id="filter-search" placeholder="搜索 chunk_id / 文本…">
+  <label><input type="checkbox" id="filter-fault"> 仅看三元组</label>
+  <select id="filter-sort">
+    <option value="">排序: 默认</option>
+    <option value="token_count">Token ↑</option>
+    <option value="-token_count">Token ↓</option>
+    <option value="part">PART ↑</option>
+    <option value="-part">PART ↓</option>
+    <option value="semantic_type">语义 ↑</option>
+    <option value="-semantic_type">语义 ↓</option>
+  </select>
+  <button class="clear-btn" onclick="clearFilters()">清除</button>
+</div>
 
-  <!-- Pagination -->
-  <div class="pagination" id="pagination"></div>
+<!-- ── Stats Bar ────────────────────────────────── -->
+<div class="stats-bar" id="stats-bar">—</div>
+
+<!-- ── Chunk List ───────────────────────────────── -->
+<div class="chunk-list" id="chunk-list"></div>
+
+<!-- ── Pagination ───────────────────────────────── -->
+<div class="pagination" id="pagination"></div>
 
 </div>
 
 <script>
+/* ── Chart.js Dark Theme ────────────────────────── */
+Chart.defaults.color = '#d0d6e0';
+Chart.defaults.borderColor = 'rgba(255,255,255,0.08)';
+Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(25,26,27,0.95)';
+Chart.defaults.plugins.tooltip.titleColor = '#f7f8f8';
+Chart.defaults.plugins.tooltip.bodyColor = '#d0d6e0';
+Chart.defaults.plugins.tooltip.borderColor = 'rgba(255,255,255,0.12)';
+Chart.defaults.plugins.tooltip.borderWidth = 1;
+Chart.defaults.plugins.tooltip.padding = 10;
+Chart.defaults.plugins.tooltip.cornerRadius = 6;
+Chart.defaults.plugins.tooltip.titleFont = {family: 'Inter', weight: '500', size: 12};
+Chart.defaults.plugins.tooltip.bodyFont = {family: 'Inter', size: 12};
+Chart.defaults.font.family = 'Inter';
+
+/* ── Constants ──────────────────────────────────── */
 const API = 'http://localhost:8001/api/chunks';
-const ICONS = {'故障诊断':'🔧','风险警告':'⚠️','操作步骤':'📋','参数查询':'📊','部件说明':'🔍','电路拓扑':'⚡','概述说明':'📝'};
+
 const SEM_COLORS = {
   '故障诊断':'#E63946','风险警告':'#F4A261','操作步骤':'#457B9D',
-  '参数查询':'#2A9D8F','部件说明':'#9B5DE5','电路拓扑':'#00B4D8','概述说明':'#6C757D'
+  '参数查询':'#10b981','部件说明':'#9B5DE5','电路拓扑':'#00B4D8','概述说明':'#6C757D'
 };
 const SEM_COLORS_RGBA = {
-  '故障诊断':'rgba(230,57,70,0.7)','风险警告':'rgba(244,162,97,0.7)','操作步骤':'rgba(69,123,157,0.7)',
-  '参数查询':'rgba(42,157,143,0.7)','部件说明':'rgba(155,93,229,0.7)','电路拓扑':'rgba(0,180,216,0.7)','概述说明':'rgba(108,117,125,0.7)'
+  '故障诊断':'rgba(230,57,70,0.72)','风险警告':'rgba(244,162,97,0.72)','操作步骤':'rgba(69,123,157,0.72)',
+  '参数查询':'rgba(16,185,129,0.72)','部件说明':'rgba(155,93,229,0.72)','电路拓扑':'rgba(0,180,216,0.72)','概述说明':'rgba(108,117,125,0.72)'
 };
 
+/* ── State ──────────────────────────────────────── */
 let state = {
   page:1, pageSize:20, total:0, totalPages:1,
-  semantic_type:'', part:'', content_type:'', search:'', has_fault:false,
+  semantic_type:'', part:'', search:'', has_fault:false,
   sort_by:'', sort_order:'asc',
-  filtersAvailable: null, debounceTimer:null,
-  currentStats: null
+  filtersAvailable: null, debounceTimer:null, currentStats: null
 };
 let semanticChart=null, tokenChart=null;
 let expandedCache={};
 
+/* ── API Fetch ──────────────────────────────────── */
 async function fetchData() {
   const params = new URLSearchParams();
   if (state.semantic_type) params.set('semantic_type', state.semantic_type);
   if (state.part) params.set('part', state.part);
-  if (state.content_type) params.set('content_type', state.content_type);
   if (state.search) params.set('search', state.search);
   if (state.has_fault) params.set('has_fault', 'true');
   if (state.sort_by) params.set('sort_by', state.sort_by);
@@ -190,8 +427,8 @@ async function fetchData() {
     const d = await r.json();
     state.total = d.total; state.totalPages = d.total_pages; state.page = d.page;
     state.currentStats = d.stats;
-    document.getElementById('total-badge').textContent = d.total + ' chunks';
-    document.getElementById('subtitle').textContent = '共 ' + d.total + ' 个知识块 · ' + Object.keys(d.stats.by_semantic_type).length + ' 种语义类型';
+    document.getElementById('header-summary').textContent =
+      '共 ' + d.total + ' 个知识块 · ' + Object.keys(d.stats.by_semantic_type).length + ' 种语义类型';
     if (!state.filtersAvailable && d.filters_available) {
       state.filtersAvailable = d.filters_available;
       populateFilters();
@@ -200,15 +437,18 @@ async function fetchData() {
     renderCharts(d.stats);
     renderChunks(d.chunks);
     renderPagination();
+    updateStatsBar();
   } catch(e) {
-    document.getElementById('chunk-list').innerHTML = '<div class="no-results"><div class="icon">⚠️</div><p>无法连接后端: ' + esc(e.message) + '</p></div>';
+    document.getElementById('chunk-list').innerHTML =
+      '<div class="empty-state"><p>无法连接后端服务</p><p style="font-size:11px;color:var(--tx4);margin-top:4px">' + esc(e.message) + '</p></div>';
   }
 }
 
+/* ── Filter Populate ────────────────────────────── */
 function populateFilters() {
   const fa = state.filtersAvailable;
-  populateSel('filter-semantic', fa.semantic_types, '全部语义类型');
-  populateSel('filter-part', fa.parts, '全部 PART');
+  populateSel('filter-semantic', fa.semantic_types, '语义类型 ▾');
+  populateSel('filter-part', fa.parts, 'PART ▾');
 }
 
 function populateSel(id, options, defaultLabel) {
@@ -219,19 +459,36 @@ function populateSel(id, options, defaultLabel) {
   sel.value = val;
 }
 
+function updateStatsBar() {
+  const el = document.getElementById('stats-bar');
+  const n = state.total;
+  const f = [];
+  if (state.semantic_type) f.push('类型: ' + state.semantic_type);
+  if (state.part) f.push('PART: ' + state.part);
+  if (state.search) f.push('搜索: "' + state.search + '"');
+  if (state.has_fault) f.push('仅三元组');
+  const filterStr = f.length > 0 ? ' · 筛选: ' + f.join(', ') : '';
+  el.textContent = n + ' 条结果' + filterStr + ' · 点击类型标签可快速筛选';
+}
+
+/* ── KPI Render ─────────────────────────────────── */
 function renderKPIs(stats) {
   const items = [
-    {num: stats.total_chunks, label: 'Chunks 总数', icon: '📦', cls: 'kpi-accent'},
-    {num: stats.avg_tokens, label: '平均 Token', icon: '📊', cls: 'kpi-accent', suffix: 't'},
-    {num: stats.fault_triplet_count, label: '故障三元组', icon: '🔧', cls: stats.fault_triplet_count>0?'kpi-accent':'kpi-ok'},
-    {num: stats.fragment_count, label: '碎片 <50t', icon: '⚠️', cls: stats.fragment_count>0?'kpi-warn':'kpi-ok'},
-    {num: stats.oversized_count, label: '超大 >768t', icon: '🔴', cls: stats.oversized_count>0?'kpi-danger':'kpi-ok'},
+    {num: stats.total_chunks, label: '知识块总数', color: 'kpi-accent', strip: 'var(--accent)'},
+    {num: stats.avg_tokens + 't', label: '平均 Token', color: 'kpi-accent', strip: 'var(--accent)'},
+    {num: stats.fault_triplet_count, label: '故障三元组', color: stats.fault_triplet_count>0?'kpi-accent':'kpi-ok', strip: stats.fault_triplet_count>0?'var(--accent)':'var(--green)'},
+    {num: stats.fragment_count, label: '碎片 &lt;50t', color: stats.fragment_count>0?'kpi-warn':'kpi-ok', strip: stats.fragment_count>0?'var(--orange)':'var(--green)'},
+    {num: stats.oversized_count, label: '超大 &gt;768t', color: stats.oversized_count>0?'kpi-danger':'kpi-ok', strip: stats.oversized_count>0?'var(--red)':'var(--green)'},
   ];
   document.getElementById('kpi-row').innerHTML = items.map(i =>
-    '<div class="kpi-card"><div class="kpi-icon">'+i.icon+'</div><div class="kpi-num '+i.cls+'">'+i.num+(i.suffix||'')+'</div><div class="kpi-label">'+i.label+'</div></div>'
+    '<div class="kpi-card '+i.color+'" style="border-left-color:'+i.strip+'">'+
+      '<div class="kpi-num">'+i.num+'</div>'+
+      '<div class="kpi-label">'+i.label+'</div>'+
+    '</div>'
   ).join('');
 }
 
+/* ── Charts Render ──────────────────────────────── */
 function renderCharts(stats) {
   renderSemanticChart(stats.by_semantic_type);
   renderTokenChart(stats.token_distribution);
@@ -242,22 +499,26 @@ function renderSemanticChart(byType) {
   const entries = Object.entries(byType || {});
   const labels = entries.map(([k]) => k);
   const data = entries.map(([,v]) => v);
-  const colors = labels.map(l => SEM_COLORS[l] || '#6C757D');
+  const colors = labels.map(l => SEM_COLORS_RGBA[l] || 'rgba(108,117,125,0.7)');
+  const borderColors = labels.map(l => SEM_COLORS[l] || '#6C757D');
 
   if (semanticChart) semanticChart.destroy();
   semanticChart = new Chart(ctx, {
     type: 'bar',
-    data: {labels, datasets: [{data, backgroundColor: colors, borderColor: colors, borderWidth: 0, borderRadius: 4}]},
+    data: {labels, datasets: [{data, backgroundColor: colors, borderColor: borderColors, borderWidth: 1, borderRadius: 4, borderSkipped: false}]},
     options: {
       indexAxis: 'y',
       responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: {display: false},
-        tooltip: {callbacks: {label: ctx => ctx.raw + ' chunks'}}
-      },
+      plugins: {legend: {display: false}},
       scales: {
-        x: {grid: {color:'rgba(255,255,255,0.06)'}, ticks: {color:'#8b949e', stepSize: Math.max(1, Math.ceil(Math.max(...data,1)/6))}},
-        y: {grid: {display: false}, ticks: {color:'#e6edf3', font: {size:12}}}
+        x: {
+          grid: {color: 'rgba(255,255,255,0.06)'},
+          ticks: {color: '#8a8f98', font: {size: 11, family: 'Inter'}, stepSize: Math.max(1, Math.ceil(Math.max(...data, 1)/5))}
+        },
+        y: {
+          grid: {display: false},
+          ticks: {color: '#d0d6e0', font: {size: 11, family: 'Inter', weight: '500'}}
+        }
       },
       onClick: (e, elements) => {
         if (elements.length > 0) {
@@ -279,153 +540,333 @@ function renderTokenChart(distribution) {
   const ctx = document.getElementById('tokenChart').getContext('2d');
   const labels = distribution.map(d => d.range);
   const data = distribution.map(d => d.count);
-  const barColors = labels.map((l,i) => {
-    if (i === 0) return 'rgba(248,81,73,0.5)';
-    if (i === 5) return 'rgba(210,153,29,0.5)';
-    return 'rgba(63,185,80,0.5)';
-  });
+
+  const barColors = [
+    'rgba(230,57,70,0.45)',    // 0-100
+    'rgba(16,185,129,0.45)',   // 100-200
+    'rgba(16,185,129,0.45)',   // 200-300
+    'rgba(16,185,129,0.45)',   // 300-400
+    'rgba(244,162,97,0.45)',   // 400-500
+    'rgba(244,162,97,0.45)',   // 500-600
+    'rgba(230,57,70,0.45)',    // 600+
+  ];
 
   if (tokenChart) tokenChart.destroy();
+
   tokenChart = new Chart(ctx, {
     type: 'bar',
-    data: {labels, datasets: [{data, backgroundColor: barColors, borderColor: barColors.map(c=>c.replace('0.5','0.8')), borderWidth: 1, borderRadius: 4}]},
+    data: {labels, datasets: [{data, backgroundColor: barColors, borderColor: barColors.map(c => c.replace('0.45','0.8')), borderWidth: 1, borderRadius: 4}]},
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: {display: false},
-        tooltip: {callbacks: {label: ctx => ctx.raw + ' chunks'}},
-        annotation_line1: {type:'line',xMin:0,xMax:0,borderColor:'#f85149',borderWidth:1,borderDash:[4,4],label:{content:'碎片阈值 50t',display:true,color:'#f85149',font:{size:10}}},
-        annotation_line2: {type:'line',xMin:6,xMax:6,borderColor:'#f85149',borderWidth:1,borderDash:[4,4],label:{content:'硬上限 768t',display:true,color:'#f85149',font:{size:10}}}
-      }.annotation_line1 ? {} : {legend: {display: false}},  // annotation plugin not loaded - skip
+      plugins: {legend: {display: false}},
       scales: {
-        x: {grid: {color:'rgba(255,255,255,0.06)'}, ticks: {color:'#8b949e', font:{size:11}}},
-        y: {grid: {color:'rgba(255,255,255,0.06)'}, ticks: {color:'#8b949e', stepSize: Math.max(1, Math.ceil(Math.max(...data,1)/5))}, title: {display:true, text:'chunks', color:'#8b949e'}}
+        x: {
+          grid: {color: 'rgba(255,255,255,0.06)'},
+          ticks: {color: '#8a8f98', font: {size: 10, family: 'Inter'}}
+        },
+        y: {
+          grid: {color: 'rgba(255,255,255,0.06)'},
+          ticks: {color: '#8a8f98', font: {size: 11, family: 'Inter'}, stepSize: Math.max(1, Math.ceil(Math.max(...data, 1)/5))},
+          title: {display: true, text: 'chunks', color: '#8a8f98', font: {size: 11, family: 'Inter'}}
+        }
       }
-    }
+    },
+    plugins: [{
+      id: 'thresholdLines',
+      afterDraw(chart) {
+        const {ctx, scales: {x, y}} = chart;
+        if (!x || !y) return;
+        ctx.save();
+        ctx.setLineDash([4, 4]);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = '#E63946';
+        ctx.fillStyle = '#E63946';
+        ctx.font = '10px Inter, sans-serif';
+
+        // 50t threshold — center of 0-100 bar
+        const x50 = x.getPixelForValue(0);
+        if (x50 >= x.left && x50 <= x.right) {
+          ctx.beginPath();
+          ctx.moveTo(x50, y.top);
+          ctx.lineTo(x50, y.bottom);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillText('50t 碎片阈值', x50 + 4, y.top + 10);
+          ctx.setLineDash([4, 4]);
+        }
+
+        // 768t threshold — past the 600+ bar
+        const barWidth = x.getPixelForValue(1) - x.getPixelForValue(0);
+        const x768 = x.getPixelForValue(6) + barWidth * 0.28;
+        if (x768 >= x.left && x768 <= x.right) {
+          ctx.beginPath();
+          ctx.moveTo(x768, y.top);
+          ctx.lineTo(x768, y.bottom);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillText('768t 硬上限', x768 + 4, y.top + 10);
+        }
+        ctx.restore();
+      }
+    }]
   });
 }
 
+/* ── Chunk List Render ──────────────────────────── */
 function renderChunks(chunks) {
   if (chunks.length === 0) {
-    document.getElementById('chunk-list').innerHTML = '<div class="no-results"><div class="icon">📭</div><p>没有匹配的分块</p></div>';
+    document.getElementById('chunk-list').innerHTML =
+      '<div class="empty-state"><p>没有匹配的分块</p></div>';
     return;
   }
   let html = '';
   chunks.forEach(c => {
-    const icon = ICONS[c.semantic_type] || '📝';
-    const stCls = 'st-' + (c.semantic_type||'');
-    const blCls = 'bl-' + (c.semantic_type||'');
+    const stype = c.semantic_type || '概述说明';
+    const blCls = 'bl-' + stype;
     const tc = c.token_count;
-    let tokenCls = 't-green';
-    if (tc < 50) tokenCls = 't-red';
-    else if (tc > 768) tokenCls = 't-red';
-    else if (tc > 512) tokenCls = 't-yellow';
+
+    let tokenCls = 'token-green';
+    if (tc < 50) tokenCls = 'token-red';
+    else if (tc > 768) tokenCls = 'token-red';
+    else if (tc > 512) tokenCls = 'token-yellow';
+
     const pct = Math.min(100, Math.round(tc / 768 * 100));
     let barColor = 'var(--green)';
     if (tc < 50) barColor = 'var(--red)';
     else if (tc > 768) barColor = 'var(--red)';
     else if (tc > 512) barColor = 'var(--orange)';
-    const preview = (c.text||'').replace(/\n/g,' ').slice(0, 120) + ((c.text||'').length>120?'…':'');
-    const partLabel = (c.part||'') + ' · ' + (c.section||'未知');
-    let chips = '';
-    (c.component||[]).forEach(co => chips += '<span class="chip chip-comp">🔩 '+esc(co)+'</span>');
-    if (c.fault_triplet && c.fault_triplet.length>0) chips += '<span class="chip chip-trip">🔺 三元组×'+c.fault_triplet.length+'</span>';
-    (c.domain_tags||[]).forEach(t => chips += '<span class="chip chip-domain">🏷 '+esc(t)+'</span>');
-    if (c.warning_level) chips += '<span class="chip chip-warn">⚠ '+esc(c.warning_level)+'</span>';
 
-    html += '<div class="chunk-card '+blCls+'" id="card-'+escAttr(c.chunk_id)+'" onclick="toggleCard(\''+escAttr(c.chunk_id)+'\')">'+
-      '<div class="card-top">'+
-        '<span class="type-icon">'+icon+'</span>'+
-        '<span class="part-label '+stCls+'">'+esc(partLabel)+'</span>'+
-        '<span class="token-badge '+tokenCls+'">'+tc+'t</span>'+
-        '<span style="font-size:10px;color:var(--text2)">'+pct+'%</span>'+
-      '</div>'+
-      '<div class="progress-bar"><div class="fill" style="width:'+pct+'%;background:'+barColor+'"></div></div>'+
-      '<div class="card-preview">'+esc(preview)+'</div>'+
-      '<div class="chips">'+chips+'</div>'+
-      '<div class="chunk-detail" id="detail-'+escAttr(c.chunk_id)+'"></div>'+
-    '</div>';
+    const preview = (c.text||'').replace(/\n/g, ' ').slice(0, 120) + ((c.text||'').length > 120 ? '…' : '');
+    const partLabel = (c.part||'') + ' · ' + (c.section||'未知');
+    const stCls = 'sem-' + stype;
+
+    let chips = '';
+    (c.component||[]).forEach(co => chips += '<span class="chip">' + esc(co) + '</span>');
+    if (c.fault_triplet && c.fault_triplet.length > 0) chips += '<span class="chip chip-trip">三元组×' + c.fault_triplet.length + '</span>';
+    (c.domain_tags||[]).forEach(t => chips += '<span class="chip chip-domain">' + esc(t) + '</span>');
+
+    const cid = escAttr(c.chunk_id);
+
+    html +=
+      '<div class="chunk-card '+blCls+'" id="card-'+cid+'">'+
+        // row 1: semantic badge + part·section + token
+        '<div class="card-top">'+
+          '<span class="sem-badge '+stCls+'" onclick="event.stopPropagation();filterBySemantic(\''+escAttr(stype)+'\')">'+esc(stype)+'</span>'+
+          '<span class="card-part-label">'+esc(partLabel)+'</span>'+
+          '<span class="token-badge '+tokenCls+'">'+tc+'t</span>'+
+        '</div>'+
+        // row 2: text preview
+        '<div class="card-preview">'+esc(preview)+'</div>'+
+        // row 3: chips
+        '<div class="chips">'+chips+'</div>'+
+        // row 4: mini progress bar
+        '<div class="mini-progress"><div class="fill" style="width:'+pct+'%;background:'+barColor+'"></div></div>'+
+        // expand toggle
+        '<button class="expand-toggle" id="toggle-'+cid+'" onclick="event.stopPropagation();toggleCard(\''+cid+'\')">展开</button>'+
+        // detail wrapper
+        '<div class="chunk-detail-wrapper" id="wrapper-'+cid+'">'+
+          '<div class="chunk-detail" id="detail-'+cid+'"></div>'+
+        '</div>'+
+      '</div>';
   });
   document.getElementById('chunk-list').innerHTML = html;
 }
 
+/* ── Expand / Collapse ──────────────────────────── */
 function toggleCard(chunkId) {
-  const card = document.getElementById('card-'+chunkId);
-  if (!card) return;
-  const detail = document.getElementById('detail-'+chunkId);
-  if (!detail) return;
-  if (card.classList.contains('expanded')) { card.classList.remove('expanded'); return; }
-  card.classList.add('expanded');
-  if (expandedCache[chunkId]) { detail.innerHTML = expandedCache[chunkId]; return; }
+  const wrapper = document.getElementById('wrapper-' + chunkId);
+  const toggle = document.getElementById('toggle-' + chunkId);
+  const card = document.getElementById('card-' + chunkId);
+  const detail = document.getElementById('detail-' + chunkId);
+  if (!wrapper || !toggle || !card) return;
+
+  const isOpen = wrapper.classList.contains('open');
+
+  if (isOpen) {
+    wrapper.classList.remove('open');
+    card.classList.remove('expanded');
+    toggle.textContent = '展开';
+  } else {
+    // Load detail content on first expand
+    if (!expandedCache[chunkId]) {
+      loadChunkDetail(chunkId, detail);
+    }
+    wrapper.classList.add('open');
+    card.classList.add('expanded');
+    toggle.textContent = '收起';
+  }
+}
+
+function loadChunkDetail(chunkId, detailEl) {
+  detailEl.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
   fetch('http://localhost:8001/api/chunks/' + encodeURIComponent(chunkId))
     .then(r => r.json()).then(c => {
-      let h = '';
-      h += '<div class="detail-section"><h4>📄 完整文本</h4><div class="detail-text">'+esc(c.text||'')+'</div></div>';
-      if (c.fault_triplet && c.fault_triplet.length > 0) {
-        h += '<div class="detail-section"><h4>🔺 故障三元组 ('+c.fault_triplet.length+')</h4>';
-        c.fault_triplet.forEach(t => {
-          h += '<div class="triplet-card">'+
-            '<div class="trip-row"><span class="trip-label">症状</span><span>'+esc(t.symptom||'—')+'</span></div>'+
-            '<div class="trip-row"><span class="trip-label">原因</span><span>'+esc(t.cause||'—')+'</span></div>'+
-            '<div class="trip-row"><span class="trip-label">处理</span><span>'+esc(t.action||'—')+'</span></div>';
-          if (t.component) h += '<div class="trip-row"><span class="trip-label">部件</span><span>'+esc(t.component||'')+'</span></div>';
-          if (t.can_diy !== undefined) h += '<div class="trip-row"><span class="trip-label">可DIY</span><span>'+(t.can_diy?'✅ 是':'❌ 否')+'</span></div>';
-          h += '</div>';
-        });
-        h += '</div>';
-      }
-      if (c.important_kwd) h += '<div class="detail-section"><h4>🔑 重要关键词</h4><div class="val">'+esc(c.important_kwd)+'</div></div>';
-      if (c.question_kwd) h += '<div class="detail-section"><h4>❓ 预设问题</h4><div class="val">'+esc(c.question_kwd).replace(/\n/g,'<br>')+'</div></div>';
-      if (c.parent_id || (c.child_ids&&c.child_ids.length>0)) {
-        h += '<div class="detail-section"><h4>🔗 关联</h4><div class="val">';
-        if (c.parent_id) h += 'parent: <b>'+esc(c.parent_id)+'</b> ';
-        if (c.child_ids&&c.child_ids.length>0) h += 'children: <b>'+c.child_ids.map(esc).join(', ')+'</b>';
-        h += '</div></div>';
-      }
-      if (c.repair_level||c.risk_level) {
-        h += '<div class="detail-section"><h4>⚙️ 等级</h4><div class="val">';
-        if (c.repair_level) h += '维修: <b>'+esc(c.repair_level)+'</b> ';
-        if (c.risk_level) h += '风险: <b>'+esc(c.risk_level)+'</b>';
-        h += '</div></div>';
-      }
-      expandedCache[chunkId] = h; detail.innerHTML = h;
-    }).catch(err => { detail.innerHTML = '<div style="color:var(--red)">加载失败: '+esc(err.message)+'</div>'; });
+      let h = buildDetailHTML(c);
+      expandedCache[chunkId] = h;
+      detailEl.innerHTML = h;
+    }).catch(err => {
+      detailEl.innerHTML = '<div style="color:var(--red);font-size:13px">加载失败: ' + esc(err.message) + '</div>';
+    });
 }
 
+function buildDetailHTML(c) {
+  let h = '';
+
+  // Full text
+  h += '<div class="detail-section">';
+  h += '<div class="ds-heading">完整文本</div>';
+  h += '<div class="detail-text">' + esc(c.text||'') + '</div>';
+  h += '</div>';
+
+  // Fault triplets
+  if (c.fault_triplet && c.fault_triplet.length > 0) {
+    h += '<div class="detail-section">';
+    h += '<div class="ds-heading">故障三元组 (' + c.fault_triplet.length + ')</div>';
+    h += '<div class="triplet-grid">';
+    c.fault_triplet.forEach(t => {
+      h += '<div class="triplet-card">';
+      if (t.symptom) h += '<div class="trip-field"><div class="trip-key">Symptom</div><div class="trip-val">' + esc(t.symptom) + '</div></div>';
+      if (t.component) h += '<div class="trip-field"><div class="trip-key">Component</div><div class="trip-val">' + esc(t.component) + '</div></div>';
+      if (t.cause) h += '<div class="trip-field"><div class="trip-key">Cause</div><div class="trip-val">' + esc(t.cause) + '</div></div>';
+      if (t.action) h += '<div class="trip-field"><div class="trip-key">Action</div><div class="trip-val">' + esc(t.action) + '</div></div>';
+      if (t.can_diy !== undefined && t.can_diy !== null) h += '<div class="trip-field"><div class="trip-key">Can DIY</div><div class="trip-val">' + (t.can_diy ? '是' : '否') + '</div></div>';
+      h += '</div>';
+    });
+    h += '</div></div>';
+  }
+
+  // Keywords
+  if (c.important_kwd) {
+    h += '<div class="detail-section">';
+    h += '<div class="ds-heading">重要关键词</div>';
+    h += '<div class="ds-content">' + esc(c.important_kwd) + '</div>';
+    h += '</div>';
+  }
+
+  // Questions
+  if (c.question_kwd) {
+    h += '<div class="detail-section">';
+    h += '<div class="ds-heading">预设问题</div>';
+    h += '<div class="ds-content">' + esc(c.question_kwd).replace(/\n/g, '<br>') + '</div>';
+    h += '</div>';
+  }
+
+  // Tags row
+  let tagParts = [];
+  if (c.component && c.component.length > 0) c.component.forEach(co => tagParts.push('<span class="chip">' + esc(co) + '</span>'));
+  if (c.domain_tags && c.domain_tags.length > 0) c.domain_tags.forEach(t => tagParts.push('<span class="chip chip-domain">' + esc(t) + '</span>'));
+  if (c.warning_level) tagParts.push('<span class="chip" style="background:rgba(230,57,70,0.08);color:var(--red)">' + esc(c.warning_level) + '</span>');
+  if (tagParts.length > 0) {
+    h += '<div class="detail-section">';
+    h += '<div class="ds-heading">标签</div>';
+    h += '<div class="detail-tags">' + tagParts.join('') + '</div>';
+    h += '</div>';
+  }
+
+  // Relationships
+  if (c.parent_id || (c.child_ids && c.child_ids.length > 0)) {
+    h += '<div class="detail-section">';
+    h += '<div class="ds-heading">关联</div>';
+    h += '<div class="ds-content">';
+    if (c.parent_id) h += 'parent: ' + esc(c.parent_id) + ' ';
+    if (c.child_ids && c.child_ids.length > 0) h += 'children: ' + c.child_ids.map(esc).join(', ');
+    h += '</div></div>';
+  }
+
+  // Levels
+  if (c.repair_level || c.risk_level) {
+    h += '<div class="detail-section">';
+    h += '<div class="ds-heading">等级</div>';
+    h += '<div class="ds-content">';
+    if (c.repair_level) h += '维修: ' + esc(c.repair_level) + ' ';
+    if (c.risk_level) h += '风险: ' + esc(c.risk_level);
+    h += '</div></div>';
+  }
+
+  return h;
+}
+
+/* ── Quick filter by semantic type ──────────────── */
+function filterBySemantic(stype) {
+  if (state.semantic_type === stype) {
+    state.semantic_type = ''; document.getElementById('filter-semantic').value = '';
+  } else {
+    state.semantic_type = stype; document.getElementById('filter-semantic').value = stype;
+  }
+  state.page = 1; fetchData();
+}
+
+/* ── Pagination ──────────────────────────────────── */
 function renderPagination() {
   const el = document.getElementById('pagination');
-  if (state.totalPages <= 1) { el.innerHTML = state.total > 0 ? '<div class="total-info">共 '+state.total+' 条</div>' : ''; return; }
+  if (state.totalPages <= 1) {
+    el.innerHTML = state.total > 0 ? '<span style="color:var(--tx4);font-size:13px">共 ' + state.total + ' 条</span>' : '';
+    return;
+  }
   el.innerHTML =
-    '<button '+(state.page<=1?'disabled':'')+' onclick="goPage('+(state.page-1)+')">← 上一页</button>'+
-    '<span class="page-info">第 <b>'+state.page+'</b> / '+state.totalPages+' 页</span>'+
-    '<button '+(state.page>=state.totalPages?'disabled':'')+' onclick="goPage('+(state.page+1)+')">下一页 →</button>'+
-    '<span class="total-info">共 '+state.total+' 条</span>';
+    '<button ' + (state.page <= 1 ? 'disabled' : '') + ' onclick="goPage(' + (state.page - 1) + ')">← 上一页</button>' +
+    '<span style="color:var(--tx3);font-size:13px">第 <span class="page-num">' + state.page + '</span> / ' + state.totalPages + ' 页</span>' +
+    '<button ' + (state.page >= state.totalPages ? 'disabled' : '') + ' onclick="goPage(' + (state.page + 1) + ')">下一页 →</button>';
 }
 
-function goPage(p) { state.page = p; fetchData(); window.scrollTo({top:0,behavior:'smooth'}); }
+function goPage(p) {
+  state.page = p;
+  fetchData();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
 function clearFilters() {
-  state.semantic_type=''; state.part=''; state.search=''; state.has_fault=false; state.sort_by=''; state.sort_order='asc';
+  state.semantic_type=''; state.part=''; state.search=''; state.has_fault=false; state.sort_by=''; state.sort_order='asc'; state.page=1;
+  // Suppress event-triggered fetches while resetting DOM
+  state._suppress = true;
   document.getElementById('filter-semantic').value='';
   document.getElementById('filter-part').value='';
   document.getElementById('filter-search').value='';
   document.getElementById('filter-sort').value='';
-  document.getElementById('filter-order').value='asc';
   document.getElementById('filter-fault').checked=false;
-  state.page=1; fetchData();
+  state._suppress = false;
+  fetchData();
 }
 
-// Event listeners
-document.getElementById('filter-semantic').addEventListener('change', function(){state.semantic_type=this.value;state.page=1;fetchData();});
-document.getElementById('filter-part').addEventListener('change', function(){state.part=this.value;state.page=1;fetchData();});
-document.getElementById('filter-search').addEventListener('input', function(){state.search=this.value.trim();clearTimeout(state.debounceTimer);state.debounceTimer=setTimeout(()=>{state.page=1;fetchData();},500);});
-document.getElementById('filter-sort').addEventListener('change', function(){state.sort_by=this.value;state.page=1;fetchData();});
-document.getElementById('filter-order').addEventListener('change', function(){state.sort_order=this.value;state.page=1;fetchData();});
-document.getElementById('filter-fault').addEventListener('change', function(){state.has_fault=this.checked;state.page=1;fetchData();});
+/* ── Event Listeners ────────────────────────────── */
+document.getElementById('filter-semantic').addEventListener('change', function(){
+  if (state._suppress) return;
+  state.semantic_type = this.value; state.page = 1; fetchData();
+});
+document.getElementById('filter-part').addEventListener('change', function(){
+  if (state._suppress) return;
+  state.part = this.value; state.page = 1; fetchData();
+});
+document.getElementById('filter-search').addEventListener('input', function(){
+  if (state._suppress) return;
+  state.search = this.value.trim();
+  clearTimeout(state.debounceTimer);
+  state.debounceTimer = setTimeout(() => { state.page = 1; fetchData(); }, 300);
+});
+document.getElementById('filter-sort').addEventListener('change', function(){
+  if (state._suppress) return;
+  const v = this.value;
+  if (v.startsWith('-')) { state.sort_by = v.slice(1); state.sort_order = 'desc'; }
+  else if (v) { state.sort_by = v; state.sort_order = 'asc'; }
+  else { state.sort_by = ''; state.sort_order = 'asc'; }
+  state.page = 1; fetchData();
+});
+document.getElementById('filter-fault').addEventListener('change', function(){
+  if (state._suppress) return;
+  state.has_fault = this.checked; state.page = 1; fetchData();
+});
 
-function esc(s){const d=document.createElement('div');d.textContent=(s||'').toString();return d.innerHTML;}
-function escAttr(s){return (s||'').toString().replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+/* ── Helpers ────────────────────────────────────── */
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = (s || '').toString();
+  return d.innerHTML;
+}
+function escAttr(s) {
+  return (s || '').toString().replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
 
-// Init
+/* ── Init ───────────────────────────────────────── */
 fetchData();
 </script>
 </body>
