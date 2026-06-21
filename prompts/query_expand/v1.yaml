@@ -1,0 +1,16 @@
+id: query_expand
+version: v1
+description: "从用户问题中提取关键检索词，用于扩展 Qdrant 检索查询"
+
+prompt: |
+  从以下用户问题中提取关键检索词，用空格分隔。只输出关键词，不要解释。
+
+  问题：{query}
+  关键词：
+
+variables:
+  - query
+
+evaluation:
+  recall_at_5: null
+  notes: "待评测"

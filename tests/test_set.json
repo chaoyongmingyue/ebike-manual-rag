@@ -1,0 +1,714 @@
+[
+  {
+    "id": "Q001",
+    "question": "座椅加热怎么开",
+    "expected_semantic_type": "概述说明",
+    "expected_chunk_ids": [],
+    "expected_route": null,
+    "key_facts": [
+      "说明书未提及座椅加热功能"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q002",
+    "question": "蓝牙怎么连",
+    "expected_semantic_type": "概述说明",
+    "expected_chunk_ids": [],
+    "expected_route": null,
+    "key_facts": [
+      "说明书未提及蓝牙连接功能"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q003",
+    "question": "轮胎怎么换",
+    "expected_semantic_type": "概述说明",
+    "expected_chunk_ids": [],
+    "expected_route": null,
+    "key_facts": [
+      "说明书未提及更换轮胎的操作步骤"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q004",
+    "question": "手机支架怎么装",
+    "expected_semantic_type": "概述说明",
+    "expected_chunk_ids": [],
+    "expected_route": null,
+    "key_facts": [
+      "说明书未提及手机支架安装"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q005",
+    "question": "定速巡航怎么用",
+    "expected_semantic_type": "概述说明",
+    "expected_chunk_ids": [],
+    "expected_route": null,
+    "key_facts": [
+      "说明书未提及定速巡航功能"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q006",
+    "question": "调速失灵怎么修",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl103"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电池电压过低需充足电",
+      "调速转把故障需更换",
+      "控制器或电机故障联系授权服务站"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q007",
+    "question": "整车不通电",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl103",
+      "tbl108"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电源锁故障需维修或更换",
+      "保险丝断路需查明原因更换",
+      "电路接触不良需重新固定电源导线插头"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q008",
+    "question": "车充不进电",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl108"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电池欠压保护",
+      "重新插拔电池插头再接入充电器"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q009",
+    "question": "油门拧了不走",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl103"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电池电压过低需充足电",
+      "调速转把故障需更换",
+      "断电刹把失灵需维修或更换"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q010",
+    "question": "灯不亮了",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl102"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "检查大灯、转向灯、尾灯、刹车灯是否正常工作"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q011",
+    "question": "一次充电后跑不远",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl103"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "轮胎气压不足需充气至标准气压",
+      "充电不足需检查充电器",
+      "电池老化需联系授权服务站更换"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q012",
+    "question": "充电器不充电怎么办",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl106"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "接触不良需重新接插输入输出插头",
+      "充电器损坏需联系授权服务站更换",
+      "电池组开路需重新连接电池线"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q013",
+    "question": "上电开不了机",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl108"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "整车未上电或电池没电",
+      "检查电池插头是否插紧",
+      "充电器给电池充电后再装上车查看"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q014",
+    "question": "开机没电量显示",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl108"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "通讯丢失需重新插拔插头",
+      "送售后监测点维修"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q015",
+    "question": "低电量时突然断电",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl108"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电池没电属正常现象",
+      "建议找地方充电"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q016",
+    "question": "充电器红灯闪烁是什么原因",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl106"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "故障保护",
+      "插拔电池插头",
+      "返厂维修"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q017",
+    "question": "充电器绿灯一直闪正常吗",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "tbl106"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "充电器欠压或过压属正常现象",
+      "检查所充电池电压是否符合充电器充电范围"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q018",
+    "question": "充电时有异味怎么办",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "stp100",
+      "txt009"
+    ],
+    "expected_route": "safety",
+    "key_facts": [
+      "立即停止充电",
+      "送至雅迪授权服务商检修或更换",
+      "充电器外壳过热也需停止充电"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q019",
+    "question": "控制器出现故障怎么处理",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "txt094",
+      "tbl103"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "非专业维修人员只可检查线缆和接插件",
+      "不能排除故障应立即联系售后",
+      "切勿擅自打开控制器否则失去保修"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q020",
+    "question": "电机进水了怎么办",
+    "expected_semantic_type": "故障诊断",
+    "expected_chunk_ids": [
+      "stp093"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "涉水时水位高度不能超过后轮电机轴承座下沿",
+      "定期检查电动机接线是否松动",
+      "发现异常联系售后"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q021",
+    "question": "续航",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl126"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "续驶里程60km",
+      "百公里耗电量1.2kw·h/100km"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q022",
+    "question": "保修",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl118",
+      "tbl116"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电机保修26个月",
+      "控制器保修12个月",
+      "充电器保修12个月",
+      "车架保修24个月"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q023",
+    "question": "最高速",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl126"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "最高车速25km/h"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q024",
+    "question": "整车多重",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl126"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "整车质量55kg"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q025",
+    "question": "最高车速是多少",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl126"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "最高车速25km/h"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q026",
+    "question": "电池保修多长时间",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl118"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电机保修26个月",
+      "充电器保修12个月",
+      "控制器保修12个月"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q027",
+    "question": "电机保修期限多久",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl118"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电机保修26个月",
+      "油封、霍尔、磁钢、轴承属于易损件仅质保12个月"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q028",
+    "question": "载重量多少",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl126"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "载重量75kg"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q029",
+    "question": "三包包括什么",
+    "expected_semantic_type": "参数查询",
+    "expected_chunk_ids": [
+      "tbl116"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "车架保修24个月",
+      "主/侧支架保修12个月",
+      "私自改动不予三包"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q030",
+    "question": "怎么清洗电动车",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "stp085",
+      "stp011"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "清洗前断开整车电源",
+      "用湿毛巾甩干后擦拭整车外观",
+      "难以去除的污垢可用牙刷刷洗",
+      "禁止使用高压水枪冲洗"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q031",
+    "question": "大灯开关在哪里",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "txt037"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "右组合开关上的大灯&位置灯开关",
+      "开关拨到左边打开灯光总开关",
+      "开关拨到右边关闭"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q032",
+    "question": "P档开关怎么用",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "txt037"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "P档开关位于右组合开关",
+      "刹车和P档同时按下可启用驻车挡"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q033",
+    "question": "空气开关是干什么的",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "txt038"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "拨至ON位置整车通电",
+      "拨至OFF位置整车断电",
+      "长时间不骑行建议关闭空气开关"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q034",
+    "question": "电池怎么安装",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "stp045"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电源连接器插头需正确连接",
+      "蓄电池提手用于提起或固定蓄电池"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q035",
+    "question": "洗车前要做什么准备",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "stp085"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "清洗前断开整车电源",
+      "禁止用湿手碰触带电部位",
+      "避免水流冲击充电插口和线束接插件"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q036",
+    "question": "过交叉路口要注意什么",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "stp011"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "减速慢行",
+      "注意礼让行人，避让机动车"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q037",
+    "question": "转弯前应该怎么做",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "stp011"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "转弯前应发出转弯信号"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q038",
+    "question": "电源连接器怎么插",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "stp045"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "电源连接器位于电池顶部偏左位置",
+      "带有插头接口需正确对接"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q039",
+    "question": "右组合开关有哪些功能",
+    "expected_semantic_type": "操作步骤",
+    "expected_chunk_ids": [
+      "txt037"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "大灯&位置灯开关",
+      "P档开关",
+      "档位开关"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q040",
+    "question": "16岁以下能骑电动车吗",
+    "expected_semantic_type": "风险警告",
+    "expected_chunk_ids": [
+      "txt004"
+    ],
+    "expected_route": "safety",
+    "key_facts": [
+      "禁止16周岁以下人员驾驶电动自行车上道路行驶"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q041",
+    "question": "电动车可以在室内充电吗",
+    "expected_semantic_type": "风险警告",
+    "expected_chunk_ids": [
+      "txt009"
+    ],
+    "expected_route": "safety",
+    "key_facts": [
+      "禁止将电动车在居住建筑内和家庭室内充电和停放",
+      "充电时应远离可燃物",
+      "充电时间不宜过长"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q042",
+    "question": "电池暴晒会怎么样",
+    "expected_semantic_type": "风险警告",
+    "expected_chunk_ids": [
+      "txt097"
+    ],
+    "expected_route": "safety",
+    "key_facts": [
+      "电池不可靠近火源热源",
+      "严禁在阳光下暴晒",
+      "严禁放入火中、投入水中"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q043",
+    "question": "能用高压水枪洗电动车吗",
+    "expected_semantic_type": "风险警告",
+    "expected_chunk_ids": [
+      "txt086",
+      "stp085"
+    ],
+    "expected_route": "safety",
+    "key_facts": [
+      "禁止使用高压水枪或水管喷淋冲刷",
+      "不可使用蒸汽清洗",
+      "可能损坏车体外观和内部结构"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q044",
+    "question": "骑行必须戴头盔吗",
+    "expected_semantic_type": "风险警告",
+    "expected_chunk_ids": [
+      "txt004"
+    ],
+    "expected_route": "safety",
+    "key_facts": [
+      "骑行时必须佩戴头盔",
+      "建议佩戴护目镜等防护用品"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q045",
+    "question": "前灯罩在什么位置",
+    "expected_semantic_type": "部件说明",
+    "expected_chunk_ids": [
+      "txt015"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "标号1位于车头最左侧",
+      "圆柱形结构推测为前轮区域或前灯罩"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q046",
+    "question": "仪表盘在哪个位置",
+    "expected_semantic_type": "部件说明",
+    "expected_chunk_ids": [
+      "txt015"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "标号2位于车头右侧中部",
+      "可能对应控制手柄或仪表盘区域",
+      "车身中间网格状结构与310标识相邻可能是仪表盘"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q047",
+    "question": "后视镜怎么安装",
+    "expected_semantic_type": "部件说明",
+    "expected_chunk_ids": [
+      "txt040"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "将后视镜按顺时针方向旋转至合适位置",
+      "将后视镜连接件安装在方向把上"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q048",
+    "question": "后视镜连接件怎么装",
+    "expected_semantic_type": "部件说明",
+    "expected_chunk_ids": [
+      "txt040",
+      "txt042"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "将后视镜连接件安装在方向把上",
+      "按顺时针方向旋转",
+      "用扳手拧紧"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q049",
+    "question": "保险丝在电路图的什么位置",
+    "expected_semantic_type": "电路拓扑",
+    "expected_chunk_ids": [
+      "txt130"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "保险丝位于电路图左上角",
+      "保险丝旁标注+5V正电压输入",
+      "通过导线连接至开关"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q050",
+    "question": "防盗器在电路图哪个位置",
+    "expected_semantic_type": "电路拓扑",
+    "expected_chunk_ids": [
+      "txt132"
+    ],
+    "expected_route": null,
+    "key_facts": [
+      "防盗器位于电路图中央偏下位置",
+      "防盗器旁标注天线表示信号接收端口",
+      "防盗器连接控制组的信号线和+6V电源线"
+    ],
+    "difficulty": "easy"
+  }
+]

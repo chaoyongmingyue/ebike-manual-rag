@@ -6,3 +6,5 @@ qdrant_db/.lock
 .DS_Store
 Thumbs.db
 models/
+data/backups/
+.claude/

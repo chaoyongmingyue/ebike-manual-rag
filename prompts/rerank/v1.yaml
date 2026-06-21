@@ -1,0 +1,20 @@
+id: rerank
+version: v1
+description: "从候选 chunk 中选出与用户问题最相关的 top_k 条，按相关度排序"
+
+prompt: |
+  从以下候选段落中选出与用户问题最相关的 {top_k} 个。只输出编号，逗号分隔，按相关度从高到低排列。
+
+  用户问题：{query}
+
+  {candidates}
+  最相关的 {top_k} 个编号（从高到低）：
+
+variables:
+  - top_k
+  - query
+  - candidates
+
+evaluation:
+  ndcg_at_5: null
+  notes: "待评测"

@@ -1,0 +1,24 @@
+{
+  "qdrant_path": "..\\data\\qdrant_db",
+  "collection": "ebike_manual",
+  "ollama": {
+    "url": "http://localhost:11434/api/generate",
+    "model": "qwen2.5:7b",
+    "temperature": 0.3,
+    "num_predict": 512,
+    "timeout_seconds": 120
+  },
+  "retrieval": {
+    "top_k": 10,
+    "rerank_top_k": 5,
+    "context_max_chars": 8000
+  },
+  "retry": {
+    "ollama_max_retries": 2,
+    "qdrant_max_retries": 3,
+    "retry_delay_ms": 500
+  },
+  "server": {
+    "port": 8000
+  }
+}

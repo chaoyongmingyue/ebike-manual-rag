@@ -1,0 +1,21 @@
+# Prompt 评测结果追踪
+# 每次跑完评测脚本后更新此文件
+
+answer:
+  v1:
+    date: null
+    recall_at_5: null
+    groundedness: null
+    notes: "待跑评测脚本后回填"
+
+query_expand:
+  v1:
+    date: null
+    recall_at_5: null
+    notes: "待跑评测脚本后回填"
+
+rerank:
+  v1:
+    date: null
+    ndcg_at_5: null
+    notes: "待跑评测脚本后回填"
