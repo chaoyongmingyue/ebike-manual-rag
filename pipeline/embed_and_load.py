@@ -14,8 +14,9 @@ os.environ['TRANSFORMERS_OFFLINE'] = '1'
 # Paths relative to this script
 SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR / ".." / "data"
-CHUNKS_PATH = str(DATA_DIR / "chunks_v6_llm.json")
+CHUNKS_PATH = str(DATA_DIR / "chunks_v6.json")
 QDRANT_PATH = str(DATA_DIR / "qdrant_db")
+MODEL_PATH = str(SCRIPT_DIR / ".." / "models" / "bge-m3")
 
 def main():
     # Allow CLI override
@@ -37,7 +38,7 @@ def main():
     # ============================================================
     print("\n[Step 2] Loading BGE-M3 model...")
     from FlagEmbedding import BGEM3FlagModel
-    model = BGEM3FlagModel("BAAI/bge-m3", use_fp16=True, local_files_only=True)
+    model = BGEM3FlagModel(MODEL_PATH, use_fp16=True)
     print("Model loaded.")
 
     texts_to_encode = []
@@ -65,7 +66,7 @@ def main():
     for i, c in enumerate(chunks):
         w = output["lexical_weights"][i]
         c["_dense"] = output["dense_vecs"][i].tolist()
-        c["_sparse"] = {"indices": list(w.keys()), "values": list(w.values())}
+        c["_sparse"] = {"indices": list(w.keys()), "values": [float(v) for v in w.values()]}
 
     # Save intermediate result
     interm_path = chunks_path.replace('.json', '_encoded.json')

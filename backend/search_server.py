@@ -284,6 +284,7 @@ app.add_middleware(
 class ChatRequest(BaseModel):
     query: str = Field(..., description="用户问题", min_length=1)
     top_k: int = Field(default=5, ge=1, le=20, description="检索文档数量")
+    skip_answer: bool = Field(default=False, description="跳过LLM答案生成，仅返回检索结果（评测用）")
 
 
 class SourceItem(BaseModel):
@@ -380,6 +381,29 @@ def _fallback_keywords(query: str) -> str:
         "仪表": "仪表盘 指示灯 显示",
         "灯": "前照灯 尾灯 转向灯 刹车灯",
         "保养": "保养 维护 检查",
+        # v2 additions: oral→written transformations
+        "不亮": "不工作 故障 大灯",
+        "不走了": "失灵 故障",
+        "不走": "失灵 故障",
+        "充不进": "无法充电 电池",
+        "跑不远": "续行里程 不足",
+        "没电": "断电 电池 没电",
+        "多重": "整车质量 重量",
+        "最高速": "最高车速",
+        "续航": "续驶里程 百公里耗电",
+        "怎么洗": "清洗 清洁 水洗",
+        "洗车": "清洗 清洁 水洗",
+        "进水": "进水 电机 涉水",
+        "开不了机": "无法开机 上电 电池",
+        "没电量": "电量 通讯丢失 显示",
+        "突然断电": "断电 电池 保护",
+        "红灯闪": "故障保护 充电器",
+        "绿灯闪": "欠压 过压 充电器",
+        "异味": "异常 停止充电 过热",
+        "控制器": "控制器 线缆 接插件 故障",
+        "后视镜": "后视镜 安装 顺时针",
+        "怎么装": "安装 装配 连接 步骤",
+        "在哪": "位置 安装 开关",
     }
     extras = []
     for k, v in mapping.items():
@@ -595,22 +619,35 @@ def strip_thinking(text: str) -> str:
 
 
 async def _generate_answer(ctx: str, query: str) -> str:
-    """Call Ollama to generate an answer. Raises raw httpx exceptions for caller to handle."""
+    """Call Ollama to generate an answer with retry on transient failures."""
     prompt = ANSWER_PROMPT.format(query=query, context=ctx)
-    async with httpx.AsyncClient(
-        timeout=httpx.Timeout(OLLAMA_TIMEOUT, connect=10.0), proxy=None, trust_env=False,
-    ) as client:
-        resp = await client.post(
-            f"{OLLAMA_URL}/api/generate",
-            json={
-                "model": OLLAMA_MODEL, "prompt": prompt, "stream": False,
-                "options": {"temperature": OLLAMA_TEMPERATURE, "num_predict": OLLAMA_NUM_PREDICT},
-            },
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        raw = data.get("response", "")
-        return strip_thinking(raw)
+    last_error = None
+    for attempt in range(RETRY_OLLAMA_MAX + 1):
+        try:
+            async with httpx.AsyncClient(
+                timeout=httpx.Timeout(OLLAMA_TIMEOUT, connect=10.0), proxy=None, trust_env=False,
+            ) as client:
+                resp = await client.post(
+                    f"{OLLAMA_URL}/api/generate",
+                    json={
+                        "model": OLLAMA_MODEL, "prompt": prompt, "stream": False,
+                        "options": {"temperature": OLLAMA_TEMPERATURE, "num_predict": OLLAMA_NUM_PREDICT},
+                    },
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                raw = data.get("response", "")
+                return strip_thinking(raw)
+        except (httpx.TimeoutException, httpx.ReadTimeout) as e:
+            last_error = e
+            if attempt < RETRY_OLLAMA_MAX:
+                wait = (attempt + 1) * 2  # 2s, 4s
+                logger.warning("Ollama timeout (attempt %d/%d), retrying in %ds...", attempt + 1, RETRY_OLLAMA_MAX + 1, wait)
+                await __import__('asyncio').sleep(wait)
+        except (httpx.ConnectError, httpx.HTTPStatusError) as e:
+            # Don't retry on connection/HTTP errors — they're usually not transient
+            raise
+    raise last_error  # type: ignore[misc]
 
 
 # ---------------------------------------------------------------------------
@@ -823,11 +860,27 @@ async def chat(req: ChatRequest):
     # ---- Timing ----
     t_start = time.perf_counter()
 
-    # Phase 1: Query expansion
+    # Phase 1a: Pre-rejection — use raw query (not expanded) for sparse check.
+    # If raw query has zero lexical overlap with all chunks, refuse to answer.
+    SPARSE_REJECT_THRESHOLD = 0.015  # below this = no lexical overlap (valid ≥0.027)
+    _, raw_sparse_vec = _encode_query(req.query)
+    try:
+        raw_sparse_check = qdrant.query_points(
+            collection_name=COLLECTION_NAME,
+            query=raw_sparse_vec,
+            using='sparse',
+            limit=1,
+        )
+        top_raw_sparse = raw_sparse_check.points[0].score if raw_sparse_check.points else 0.0
+    except Exception:
+        top_raw_sparse = 1.0
+    logger.info("Raw query sparse score: %.4f (threshold=%.4f)", top_raw_sparse, SPARSE_REJECT_THRESHOLD)
+
+    # Phase 1b: Query expansion
     expanded_query = await expand_query(req.query)
     t1 = time.perf_counter()
 
-    # Phase 2: Encode
+    # Phase 2: Encode (expanded)
     dense_vec, sparse_vec = _encode_query(expanded_query)
     t2 = time.perf_counter()
 
@@ -891,53 +944,63 @@ async def chat(req: ChatRequest):
     # Build context
     context, _, included_ids = _build_context(hits)
 
-    # Generate answer — with degradation
+    # Pre-rejection gate: raw query sparse score < threshold → reject
+    should_reject = (top_raw_sparse < SPARSE_REJECT_THRESHOLD)
+
+    # Generate answer — with degradation (skipped when skip_answer=True)
     answer = ""
-    t7 = time.perf_counter()  # default if degradation
-    try:
-        answer = await _generate_answer(context, req.query)
-        t7 = time.perf_counter()
+    t7 = time.perf_counter()
+    if should_reject:
+        logger.info("Pre-rejection: no term overlap between query '%s' and top-3 chunks", req.query)
+        answer = "知识库中未找到相关信息。该问题可能超出本说明书的覆盖范围，建议联系雅迪授权服务站或拨打400-900-1212咨询。"
+        degraded = True
+        degraded_reason = "检索结果与查询无词语重叠，直接拒答"
         request_success += 1
-    except (httpx.TimeoutException, httpx.ConnectError, httpx.ReadTimeout) as e:
-        t7 = time.perf_counter()
-        logger.warning("Ollama unavailable (timeout/connect), fallback to retrieval-only: %s", e)
-        error_types["ollama_timeout"] = error_types.get("ollama_timeout", 0) + 1
-        request_success += 1  # still counts as success — we served a degraded response
-        fallback_parts = []
-        for c in hits[:RERANK_TOP_K]:
-            part_label = c.get("part", "")
-            section_label = c.get("section", "")
-            text_snippet = (c.get("text", "") or "")[:300]
-            fallback_parts.append(f"[{part_label} {section_label}]\n{text_snippet}")
-        answer = (
-            "⚠️ AI 生成服务暂时不可用。以下是检索到的最相关内容。\n\n"
-            + "\n\n".join(fallback_parts)
-        )
-        degraded = True
-        degraded_reason = "Ollama 服务不可用，返回纯检索结果"
-    except httpx.HTTPStatusError as e:
-        t7 = time.perf_counter()
-        logger.error("Ollama HTTP error: %s", e)
-        error_types["ollama_timeout"] = error_types.get("ollama_timeout", 0) + 1
-        request_error += 1
-        raise HTTPException(status_code=502, detail=f"Ollama 返回错误: {e.response.status_code}")
-    except Exception as e:
-        t7 = time.perf_counter()
-        logger.error("Ollama unexpected error: %s", e)
-        error_types["ollama_timeout"] = error_types.get("ollama_timeout", 0) + 1
-        fallback_parts = []
-        for c in hits[:RERANK_TOP_K]:
-            part_label = c.get("part", "")
-            section_label = c.get("section", "")
-            text_snippet = (c.get("text", "") or "")[:300]
-            fallback_parts.append(f"[{part_label} {section_label}]\n{text_snippet}")
-        answer = (
-            "⚠️ AI 生成服务暂时不可用。以下是检索到的最相关内容。\n\n"
-            + "\n\n".join(fallback_parts)
-        )
-        degraded = True
-        degraded_reason = f"Ollama 服务不可用: {str(e)[:200]}"
-        request_success += 1  # degraded but served
+    elif not req.skip_answer:
+        try:
+            answer = await _generate_answer(context, req.query)
+            t7 = time.perf_counter()
+            request_success += 1
+        except (httpx.TimeoutException, httpx.ConnectError, httpx.ReadTimeout) as e:
+            t7 = time.perf_counter()
+            logger.warning("Ollama unavailable (timeout/connect), fallback to retrieval-only: %s", e)
+            error_types["ollama_timeout"] = error_types.get("ollama_timeout", 0) + 1
+            request_success += 1  # still counts as success — we served a degraded response
+            fallback_parts = []
+            for c in hits[:RERANK_TOP_K]:
+                part_label = c.get("part", "")
+                section_label = c.get("section", "")
+                text_snippet = (c.get("text", "") or "")[:300]
+                fallback_parts.append(f"[{part_label} {section_label}]\n{text_snippet}")
+            answer = (
+                "⚠️ AI 生成服务暂时不可用。以下是检索到的最相关内容。\n\n"
+                + "\n\n".join(fallback_parts)
+            )
+            degraded = True
+            degraded_reason = "Ollama 服务不可用，返回纯检索结果"
+        except httpx.HTTPStatusError as e:
+            t7 = time.perf_counter()
+            logger.error("Ollama HTTP error: %s", e)
+            error_types["ollama_timeout"] = error_types.get("ollama_timeout", 0) + 1
+            request_error += 1
+            raise HTTPException(status_code=502, detail=f"Ollama 返回错误: {e.response.status_code}")
+        except Exception as e:
+            t7 = time.perf_counter()
+            logger.error("Ollama unexpected error: %s", e)
+            error_types["ollama_timeout"] = error_types.get("ollama_timeout", 0) + 1
+            fallback_parts = []
+            for c in hits[:RERANK_TOP_K]:
+                part_label = c.get("part", "")
+                section_label = c.get("section", "")
+                text_snippet = (c.get("text", "") or "")[:300]
+                fallback_parts.append(f"[{part_label} {section_label}]\n{text_snippet}")
+            answer = (
+                "⚠️ AI 生成服务暂时不可用。以下是检索到的最相关内容。\n\n"
+                + "\n\n".join(fallback_parts)
+            )
+            degraded = True
+            degraded_reason = f"Ollama 服务不可用: {str(e)[:200]}"
+            request_success += 1  # degraded but served
 
     total_ms = round((t7 - t_start) * 1000)
     latencies.append(total_ms)
