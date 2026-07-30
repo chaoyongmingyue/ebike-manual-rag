@@ -1,7 +1,7 @@
 """
 Yadea DM6 Electric Bicycle Manual Knowledge Base Q&A Backend v6
 FastAPI + Qdrant (hybrid RRF) + BGE-M3 + Ollama (qwen2.5:7b)
-v6 additions: Query expansion, Routing, LLM Rerank, Metadata Boost, Parent aggregation
+v6.2: Phase 0 in stream, removed Phase 6 Parent expansion, routing uses expanded query
 v6.1: Structured logging, deep health checks, memory metrics, degradation, config file
 """
 
@@ -29,6 +29,7 @@ import httpx
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
@@ -202,6 +203,47 @@ logger.info(
 )
 
 # ---------------------------------------------------------------------------
+# Chunks JSON loading
+# ---------------------------------------------------------------------------
+CHUNKS_JSON_PATH: str = os.environ.get(
+    "CHUNKS_PATH",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "chunks_v6.json")),
+)
+
+
+def _load_chunks() -> list[dict]:
+    """Load chunks from chunks_v6.json, flattening metadata fields to top level."""
+    if not os.path.exists(CHUNKS_JSON_PATH):
+        logger.warning("Chunks file not found: %s", CHUNKS_JSON_PATH)
+        return []
+    with open(CHUNKS_JSON_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    raw = data.get("chunks", data) if isinstance(data, dict) else data
+    chunks = []
+    for c in raw:
+        chunk = dict(c)
+        meta = chunk.pop("metadata", {}) or {}
+        chunk["part"] = meta.get("part", "") or ""
+        chunk["section"] = meta.get("section", "") or ""
+        chunk["warning_level"] = meta.get("warning_level", "") or ""
+        chunk.setdefault("important_kwd", "")
+        chunk.setdefault("question_kwd", "")
+        chunk.setdefault("domain_tags", [])
+        chunks.append(chunk)
+    return chunks
+
+
+_chunks_cache: list[dict] | None = None
+
+
+def _get_chunks() -> list[dict]:
+    global _chunks_cache
+    if _chunks_cache is None:
+        _chunks_cache = _load_chunks()
+    return _chunks_cache
+
+
+# ---------------------------------------------------------------------------
 # Globals
 # ---------------------------------------------------------------------------
 model: Any = None
@@ -276,6 +318,16 @@ app.add_middleware(
     ],
     allow_credentials=False, allow_methods=["*"], allow_headers=["*"],
 )
+
+from starlette.responses import RedirectResponse
+
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/static/search.html")
+
+# Mount frontend static files so file:// CORS restrictions are avoided
+FRONTEND_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend"))
+app.mount("/static", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
 
 
 # ---------------------------------------------------------------------------
@@ -519,43 +571,6 @@ def metadata_boost(query: str, chunk: dict) -> float:
     return min(boost, 0.3)
 
 
-# ---------------------------------------------------------------------------
-# Phase 6: Parent Chunk Aggregation
-# ---------------------------------------------------------------------------
-def expand_context(chunks: list[dict]) -> list[dict]:
-    """Add parent/mom chunks to the result set."""
-    ids = set()
-    for c in chunks:
-        if c.get("parent_id"):
-            ids.add(c["parent_id"])
-        if c.get("mom_id"):
-            ids.add(c["mom_id"])
-    if not ids:
-        return chunks
-    try:
-        parents = qdrant.retrieve(
-            collection_name=COLLECTION_NAME,
-            ids=list(ids),
-            with_payload=[
-                "text", "chunk_id", "part", "section",
-                "semantic_type", "domain_tags", "content_type",
-            ],
-        )
-        for p in parents:
-            chunks.append({
-                "chunk_id": p.payload.get("chunk_id", p.id),
-                "text": p.payload.get("text", ""),
-                "part": p.payload.get("part", ""),
-                "section": p.payload.get("section", ""),
-                "semantic_type": p.payload.get("semantic_type", ""),
-                "domain_tags": p.payload.get("domain_tags", []),
-                "content_type": p.payload.get("content_type", "text"),
-                "score": 0.0,
-                "is_parent": True,
-            })
-    except Exception as e:
-        logger.warning("Parent expansion failed: %s", e)
-    return chunks
 
 
 # ---------------------------------------------------------------------------
@@ -846,7 +861,6 @@ async def chat(req: ChatRequest):
     global request_total, request_success, request_error, error_types
 
     trace_id = _make_trace_id()
-    route_type = _get_route_type(req.query)
     request_total += 1
     request_timestamps.append(time.time())
 
@@ -878,14 +892,15 @@ async def chat(req: ChatRequest):
 
     # Phase 1b: Query expansion
     expanded_query = await expand_query(req.query)
+    route_type = _get_route_type(expanded_query)
     t1 = time.perf_counter()
 
     # Phase 2: Encode (expanded)
     dense_vec, sparse_vec = _encode_query(expanded_query)
     t2 = time.perf_counter()
 
-    # Phase 2.5: Route
-    route = route_query(req.query)
+    # Phase 2.5: Route (uses expanded query)
+    route = route_query(expanded_query)
     t25 = time.perf_counter()
 
     # Phase 3: Qdrant search
@@ -936,10 +951,6 @@ async def chat(req: ChatRequest):
         h["score"] = round(h.get("score", 0) + boost, 3)
     hits.sort(key=lambda x: x.get("score", 0), reverse=True)
     t5 = time.perf_counter()
-
-    # Phase 6: Parent expansion
-    hits = expand_context(hits)
-    t6 = time.perf_counter()
 
     # Build context
     context, _, included_ids = _build_context(hits)
@@ -1014,8 +1025,7 @@ async def chat(req: ChatRequest):
         "qdrant_search_ms": round((t3 - t2) * 1000),
         "rerank_ms": round((t4 - t3) * 1000),
         "boost_ms": round((t5 - t4) * 1000),
-        "expand_parent_ms": round((t6 - t5) * 1000),
-        "ollama_generate_ms": round((t7 - t6) * 1000),
+        "ollama_generate_ms": round((t7 - t5) * 1000),
         "total_ms": total_ms,
     }
 
@@ -1059,7 +1069,7 @@ async def debug_context(req: ChatRequest):
 
     expanded_query = await expand_query(req.query)
     dense_vec, sparse_vec = _encode_query(expanded_query)
-    route = route_query(req.query)
+    route = route_query(expanded_query)
     prefetch_limit = max(route["top_k"] * 4, 40)
     search_kwargs = {
         "collection_name": COLLECTION_NAME,
@@ -1109,12 +1119,41 @@ async def chat_stream(req: ChatRequest):
 
     trace_id = _make_trace_id()
 
+    # Phase 0: Pre-rejection — use raw query for sparse check.
+    # If raw query has zero lexical overlap with all chunks, refuse to answer.
+    SPARSE_REJECT_THRESHOLD = 0.015  # below this = no lexical overlap (valid >= 0.027)
+    _, raw_sparse_vec = _encode_query(req.query)
+    try:
+        raw_sparse_check = qdrant.query_points(
+            collection_name=COLLECTION_NAME,
+            query=raw_sparse_vec,
+            using='sparse',
+            limit=1,
+        )
+        top_raw_sparse = raw_sparse_check.points[0].score if raw_sparse_check.points else 0.0
+    except Exception:
+        top_raw_sparse = 1.0
+    logger.info("Stream raw query sparse score: %.4f (threshold=%.4f)", top_raw_sparse, SPARSE_REJECT_THRESHOLD)
+
+    if top_raw_sparse < SPARSE_REJECT_THRESHOLD:
+        logger.info("Stream pre-rejection: no term overlap for query '%s'", req.query)
+        async def reject_stream() -> AsyncGenerator[str, None]:
+            msg = "知识库中未找到相关信息。该问题可能超出本说明书的覆盖范围，建议联系雅迪授权服务站或拨打400-900-1212咨询。"
+            yield f"data: {json.dumps({'type': 'start', 'message': '正在检查...', '_trace_id': trace_id})}\n\n"
+            yield f"data: {json.dumps({'type': 'token', 'content': msg})}\n\n"
+            yield f"data: {json.dumps({'type': 'done', 'answer': msg, '_trace_id': trace_id, 'degraded': True, 'degraded_reason': '检索结果与查询无词语重叠，直接拒答'})}\n\n"
+        return StreamingResponse(
+            reject_stream(),
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no"},
+        )
+
     # Phase 1
     expanded_query = await expand_query(req.query)
     # Phase 2
     dense_vec, sparse_vec = _encode_query(expanded_query)
     # Phase 2.5
-    route = route_query(req.query)
+    route = route_query(expanded_query)
     # Phase 3
     prefetch_limit = max(route["top_k"] * 4, 40)
     search_kwargs = {
@@ -1147,8 +1186,6 @@ async def chat_stream(req: ChatRequest):
         boost = metadata_boost(req.query, h)
         h["score"] = round(h.get("score", 0) + boost, 3)
     hits.sort(key=lambda x: x.get("score", 0), reverse=True)
-    # Phase 6
-    hits = expand_context(hits)
 
     context, _, included_ids = _build_context(hits)
     sources = _build_sources(hits, included_ids)
@@ -1209,6 +1246,116 @@ async def _stream_ollama(prompt: str) -> AsyncGenerator[str, None]:
     except Exception as e:
         logger.error("Unexpected error in stream: %s", e)
         yield f"__ERROR__{str(e)}"
+
+
+# ===========================================================================
+# Chunks Browser API — read-only end points for chunks.html data dashboard
+# ===========================================================================
+
+@app.get("/api/chunks")
+async def list_chunks(
+    page: int = Query(default=1, ge=1),
+    page_size: int = Query(default=20, ge=1, le=200),
+    semantic_type: str = Query(default=""),
+    part: str = Query(default=""),
+    search: str = Query(default=""),
+    has_fault: bool = Query(default=False),
+    sort_by: str = Query(default=""),
+    sort_order: str = Query(default="asc"),
+):
+    """Paginated, filterable, sortable chunk listing with live stats."""
+    all_chunks = _get_chunks()
+
+    # --- filters ---
+    filtered = all_chunks
+    if semantic_type:
+        filtered = [c for c in filtered if (c.get("semantic_type") or "概述说明") == semantic_type]
+    if part:
+        filtered = [c for c in filtered if (c.get("part") or "") == part]
+    if search:
+        kw = search.lower()
+        filtered = [c for c in filtered if kw in (c.get("chunk_id", "") or "").lower()
+                    or kw in (c.get("text", "") or "").lower()]
+    if has_fault:
+        filtered = [c for c in filtered if (c.get("fault_triplet") or [])]
+
+    # --- sort ---
+    if sort_by:
+        valid_sort_fields = {"token_count", "part", "semantic_type", "chunk_id"}
+        if sort_by in valid_sort_fields:
+            reverse = sort_order.lower() == "desc"
+            filtered = sorted(filtered, key=lambda c: (c.get(sort_by) or "") if sort_by != "token_count" else (c.get("token_count") or 0), reverse=reverse)
+
+    # --- stats ---
+    total = len(all_chunks)
+    filtered_total = len(filtered)
+    tokens = [c.get("token_count", 0) or 0 for c in all_chunks]
+    avg_tokens = round(sum(tokens) / max(total, 1))
+    fault_count = sum(1 for c in all_chunks if c.get("fault_triplet"))
+    fragment_count = sum(1 for t in tokens if t < 50)
+    oversized_count = sum(1 for t in tokens if t > 768)
+
+    by_semantic: dict[str, int] = {}
+    for c in filtered:
+        st = c.get("semantic_type") or "概述说明"
+        by_semantic[st] = by_semantic.get(st, 0) + 1
+
+    # token histogram — 100t buckets
+    buckets: dict[str, int] = {}
+    for t in tokens:
+        bucket = f"{t // 100 * 100}-{t // 100 * 100 + 99}"
+        buckets[bucket] = buckets.get(bucket, 0) + 1
+    dist_labels = ["0-99", "100-199", "200-299", "300-399", "400-499", "500-599", "600+"]
+    distribution = []
+    for label in dist_labels:
+        if label == "600+":
+            cnt = sum(1 for t in tokens if t >= 600)
+        else:
+            lo, hi = label.split("-")
+            cnt = sum(1 for t in tokens if int(lo) <= t <= int(hi))
+        distribution.append({"range": label, "count": cnt})
+
+    # --- pagination ---
+    total_pages = max(1, (filtered_total + page_size - 1) // page_size)
+    start = (page - 1) * page_size
+    page_chunks = filtered[start:start + page_size]
+
+    # --- filters_available ---
+    stypes = sorted({c.get("semantic_type") or "概述说明" for c in all_chunks})
+    parts = sorted({c.get("part") or "" for c in all_chunks if c.get("part")})
+
+    stats = {
+        "total_chunks": total,
+        "avg_tokens": avg_tokens,
+        "fault_triplet_count": fault_count,
+        "fragment_count": fragment_count,
+        "oversized_count": oversized_count,
+        "by_semantic_type": by_semantic,
+        "token_distribution": distribution,
+    }
+
+    return {
+        "total": filtered_total,
+        "total_pages": total_pages,
+        "page": page,
+        "page_size": page_size,
+        "chunks": page_chunks,
+        "stats": stats,
+        "filters_available": {
+            "semantic_types": stypes,
+            "parts": parts,
+        },
+    }
+
+
+@app.get("/api/chunks/{chunk_id}")
+async def get_chunk(chunk_id: str):
+    """Get a single chunk by ID with full detail."""
+    all_chunks = _get_chunks()
+    for c in all_chunks:
+        if c.get("chunk_id") == chunk_id:
+            return c
+    raise HTTPException(status_code=404, detail=f"Chunk not found: {chunk_id}")
 
 
 # ---------------------------------------------------------------------------

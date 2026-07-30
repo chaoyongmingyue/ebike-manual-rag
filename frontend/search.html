@@ -543,34 +543,46 @@ body{height:100vh;display:flex;overflow:hidden}
   <div id="pipeline">
     <div class="pipe-title">检索流水线</div>
     <div class="pipe-list" id="pipe-list">
+      <div class="pipe-line" data-stage="reject">
+        <span class="pipe-dot" id="dot-reject"></span>
+        <span class="pipe-name">前置拒答</span>
+        <span class="pipe-detail" id="detail-reject">稀疏分阈值检查</span>
+        <span class="pipe-time" id="time-reject">—</span>
+      </div>
       <div class="pipe-line" data-stage="query">
         <span class="pipe-dot" id="dot-query"></span>
-        <span class="pipe-name">Query 解析</span>
-        <span class="pipe-detail" id="detail-query">编码 &amp; 扩展</span>
+        <span class="pipe-name">Query 扩展</span>
+        <span class="pipe-detail" id="detail-query">LLM改写 + BGE-M3编码</span>
         <span class="pipe-time" id="time-query">—</span>
       </div>
-      <div class="pipe-line" data-stage="filter">
-        <span class="pipe-dot" id="dot-filter"></span>
-        <span class="pipe-name">Metadata 过滤</span>
-        <span class="pipe-detail" id="detail-filter">路由判定</span>
-        <span class="pipe-time" id="time-filter">—</span>
+      <div class="pipe-line" data-stage="route">
+        <span class="pipe-dot" id="dot-route"></span>
+        <span class="pipe-name">查询路由</span>
+        <span class="pipe-detail" id="detail-route">故障/安全/通用分流</span>
+        <span class="pipe-time" id="time-route">—</span>
       </div>
       <div class="pipe-line" data-stage="recall">
         <span class="pipe-dot" id="dot-recall"></span>
-        <span class="pipe-name">向量召回</span>
-        <span class="pipe-detail" id="detail-recall">Dense+Sparse Top-10</span>
+        <span class="pipe-name">RRF 混合检索</span>
+        <span class="pipe-detail" id="detail-recall">Dense+Sparse RRF Top-10</span>
         <span class="pipe-time" id="time-recall">—</span>
       </div>
       <div class="pipe-line" data-stage="rerank">
         <span class="pipe-dot" id="dot-rerank"></span>
-        <span class="pipe-name">LLM Rerank</span>
-        <span class="pipe-detail" id="detail-rerank">Qwen2.5:7B 10→5</span>
+        <span class="pipe-name">LLM 重排</span>
+        <span class="pipe-detail" id="detail-rerank">qwen2.5:7b 10→5 精选</span>
         <span class="pipe-time" id="time-rerank">—</span>
+      </div>
+      <div class="pipe-line" data-stage="boost">
+        <span class="pipe-dot" id="dot-boost"></span>
+        <span class="pipe-name">Metadata 加权</span>
+        <span class="pipe-detail" id="detail-boost">组件/症状/类型匹配</span>
+        <span class="pipe-time" id="time-boost">—</span>
       </div>
       <div class="pipe-line" data-stage="context">
         <span class="pipe-dot" id="dot-context"></span>
-        <span class="pipe-name">拼接上下文</span>
-        <span class="pipe-detail" id="detail-context">组装 Prompt</span>
+        <span class="pipe-name">组装 Prompt</span>
+        <span class="pipe-detail" id="detail-context">拼接上下文 + 系统指令</span>
         <span class="pipe-time" id="time-context">—</span>
       </div>
       <div class="pipe-total" id="pipe-total">
@@ -610,9 +622,8 @@ const SEM_COLORS={'故障诊断':'#ef4444','风险警告':'#f59e0b','操作步�
 function getSemColor(t){return SEM_COLORS[t]||'#6b7280'}
 
 /* ── Pipeline — Cursor-style checklist ─────────── */
-const STAGES=['query','filter','recall','rerank','context'];
-// Realistic timing ranges in ms
-const TIMING_RANGES={query:[18,35],filter:[10,20],recall:[30,60],rerank:[1000,2500],context:[1,5]};
+const STAGES=['reject','query','route','recall','rerank','boost','context'];
+const TIMING_RANGES={reject:[5,15],query:[18,35],route:[5,15],recall:[30,60],rerank:[1000,2500],boost:[3,10],context:[1,5]};
 let pipeTimers=[],pipeStartTimes={};
 
 function rand(min,max){return Math.floor(Math.random()*(max-min+1)+min)}
@@ -628,8 +639,8 @@ function resetPipeline(){
     if(line)line.className='pipe-line';
     document.getElementById('time-'+s).textContent='—';
     document.getElementById('detail-'+s).textContent={
-      query:'编码 & 扩展',filter:'路由判定',recall:'Dense+Sparse Top-10',rerank:'Qwen2.5:7B 10→5',context:'组装 Prompt'
-    }[s];
+      reject:'稀疏分阈值检查',query:'Query 扩展 + 编码',route:'故障/安全/通用路由',recall:'Dense+Sparse RRF Top-10',rerank:'LLM 重排 10→5',boost:'Metadata 加权',context:'组装 Prompt'
+    }[s] || '';
   });
   document.getElementById('time-total').textContent='—ms';
 }
@@ -647,8 +658,13 @@ function setStageDone(stage,customMs){
   const elapsed=customMs!=null?customMs:rand(TIMING_RANGES[stage][0],TIMING_RANGES[stage][1]);
   document.getElementById('time-'+stage).textContent=elapsed+'ms';
   // Update detail with real data
-  if(stage==='query')document.getElementById('detail-'+stage).textContent='关键词扩展完成';
-  if(stage==='filter')document.getElementById('detail-'+stage).textContent='筛选 84→84 条';
+  if(stage==='reject')document.getElementById('detail-'+stage).textContent='稀疏分检查通过';
+	  if(stage==='query')document.getElementById('detail-'+stage).textContent='关键词扩展 + BGE-M3 编码';
+  if(stage==='route')document.getElementById('detail-'+stage).textContent='路由分流完成';
+	  if(stage==='recall')document.getElementById('detail-'+stage).textContent='RRF 召回 Top-10 条';
+	  if(stage==='rerank')document.getElementById('detail-'+stage).textContent='重排保留 5 条精选';
+	  if(stage==='boost')document.getElementById('detail-'+stage).textContent='Metadata 加权完成';
+	  if(stage==='context')document.getElementById('detail-'+stage).textContent='Prompt 组装完成'
   if(stage==='recall')document.getElementById('detail-'+stage).textContent='召回 Top-10 条';
   if(stage==='rerank')document.getElementById('detail-'+stage).textContent='保留 5 条精选';
   if(stage==='context')document.getElementById('detail-'+stage).textContent='组装 Prompt 完成';
